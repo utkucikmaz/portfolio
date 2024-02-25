@@ -19,7 +19,7 @@ const Experience = () => {
           <span className='qualification__calendar'>
             <img
               className='w-6 h-6 mr-2 inline-block'
-              src='/src/assets/svg/calendar.svg'
+              src='/svg/calendar.svg'
               alt='Tailwind Logo'
               width={35}
               height={35}
@@ -29,7 +29,7 @@ const Experience = () => {
           <div>
             <img
               className='w-6 h-6 mr-1 inline-block'
-              src='/src/assets/svg/location.svg'
+              src='/svg/location.svg'
               alt='location Logo'
               width={35}
               height={35}
@@ -57,7 +57,7 @@ const Experience = () => {
           <span className='qualification__calendar'>
             <img
               className='w-6 h-6 mr-2 inline-block'
-              src='/src/assets/svg/calendar.svg'
+              src='/svg/calendar.svg'
               alt='Tailwind Logo'
               width={35}
               height={35}
@@ -67,7 +67,7 @@ const Experience = () => {
           <div>
             <img
               className='w-6 h-6 mr-1 inline-block'
-              src='/src/assets/svg/location.svg'
+              src='/svg/location.svg'
               alt='location Logo'
               width={35}
               height={35}
@@ -86,7 +86,7 @@ const Experience = () => {
           <span className='qualification__calendar'>
             <img
               className='w-6 h-6 mr-2 inline-block'
-              src='/src/assets/svg/calendar.svg'
+              src='/svg/calendar.svg'
               alt='Tailwind Logo'
               width={35}
               height={35}
@@ -96,7 +96,7 @@ const Experience = () => {
           <div>
             <img
               className='w-6 h-6 mr-1 inline-block'
-              src='/src/assets/svg/location.svg'
+              src='/svg/location.svg'
               alt='location Logo'
               width={35}
               height={35}
@@ -124,7 +124,7 @@ const Experience = () => {
           <span className='qualification__calendar'>
             <img
               className='w-6 h-6 mr-2 inline-block'
-              src='/src/assets/svg/calendar.svg'
+              src='/svg/calendar.svg'
               alt='Tailwind Logo'
               width={35}
               height={35}
@@ -134,7 +134,7 @@ const Experience = () => {
           <div>
             <img
               className='w-6 h-6 mr-1 inline-block'
-              src='/src/assets/svg/location.svg'
+              src='/svg/location.svg'
               alt='location Logo'
               width={35}
               height={35}
@@ -156,7 +156,7 @@ const Experience = () => {
           <span className='qualification__calendar'>
             <img
               className='w-6 h-6 mr-2 inline-block'
-              src='/src/assets/svg/calendar.svg'
+              src='/svg/calendar.svg'
               alt='Tailwind Logo'
               width={35}
               height={35}
@@ -166,7 +166,7 @@ const Experience = () => {
           <div>
             <img
               className='w-6 h-6 mr-1 inline-block'
-              src='/src/assets/svg/location.svg'
+              src='/svg/location.svg'
               alt='location Logo'
               width={35}
               height={35}
@@ -192,7 +192,7 @@ const Experience = () => {
           <span className='qualification__calendar'>
             <img
               className='w-6 h-6 mr-2 inline-block'
-              src='/src/assets/svg/calendar.svg'
+              src='/svg/calendar.svg'
               alt='Tailwind Logo'
               width={35}
               height={35}
@@ -202,7 +202,7 @@ const Experience = () => {
           <div>
             <img
               className='w-6 h-6 mr-1 inline-block'
-              src='/src/assets/svg/location.svg'
+              src='/svg/location.svg'
               alt='location Logo'
               width={35}
               height={35}
@@ -221,7 +221,7 @@ const Experience = () => {
           <span className='qualification__calendar'>
             <img
               className='w-6 h-6 mr-2 inline-block'
-              src='/src/assets/svg/calendar.svg'
+              src='/svg/calendar.svg'
               alt='Tailwind Logo'
               width={35}
               height={35}
@@ -231,7 +231,7 @@ const Experience = () => {
           <div>
             <img
               className='w-6 h-6 mr-1 inline-block'
-              src='/src/assets/svg/location.svg'
+              src='/svg/location.svg'
               alt='location Logo'
               width={35}
               height={35}
@@ -257,7 +257,7 @@ const Experience = () => {
         <div className='flex justify-center mb-12 mt-10'>
           <div
             className={` mr-12 flex  items-center cursor-pointer ${
-              toggleState === 2
+              toggleState === 1
                 ? 'text-purple-500 text-2xl'
                 : 'text-white-700 text-base'
             }`}
@@ -265,7 +265,7 @@ const Experience = () => {
           >
             <img
               className='w-6 h-6 mr-2'
-              src='/src/assets/svg/laptop.svg'
+              src='/svg/laptop.svg'
               alt='Tailwind Logo'
               width={35}
               height={35}
@@ -274,7 +274,7 @@ const Experience = () => {
           </div>
           <div
             className={`flex items-center cursor-pointer ${
-              toggleState === 1
+              toggleState === 2
                 ? 'text-purple-500 text-2xl'
                 : 'text-white-700 text-base'
             }`}
@@ -282,7 +282,7 @@ const Experience = () => {
           >
             <img
               className='w-6 h-6 mr-2'
-              src='/src/assets/svg/graduation.svg'
+              src='/svg/graduation.svg'
               alt='Tailwind Logo'
               width={35}
               height={35}

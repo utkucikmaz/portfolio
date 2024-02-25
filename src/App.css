@@ -61,7 +61,7 @@ body {
 }
 
 .home_img {
-  background: url(assets/images/hero.png);
+  background: url(/images/hero.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

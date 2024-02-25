@@ -9,7 +9,7 @@ const projectsData = [
     title: 'Memoria',
     description:
       'Social media web app to connect with loved ones. Create private groups, enjoy posts enhanced by OpenAI and make accessibility a priority with story narration.',
-    image: '/src/assets/images/projects/1.png',
+    image: '/images/projects/1.png',
     tag: ['Web'],
     gitUrl: 'https://github.com/Drunk-Aunties/Memoria-client',
     previewUrl: 'https://memoriapp.netlify.app/',
@@ -19,7 +19,7 @@ const projectsData = [
     title: 'PlantIQ',
     description:
       'Go-to website for intelligent plant care and identification. Harnesses the power of Image Recognition AI to recognize your plants and offers expert advice on their well-being through the responses of the GPT API.',
-    image: '/src/assets/images/projects/2.png',
+    image: '/images/projects/2.png',
     tag: ['Web'],
     gitUrl: 'https://github.com/Drunk-Aunties/PlantIQ',
     previewUrl: 'https://plantiq.fly.dev/',
@@ -29,7 +29,7 @@ const projectsData = [
     title: 'Hotel Middle Earth',
     description:
       'A game that is designed to challenge your decision-making skills, focus and reflexes while immersing you in the fantasy world of Middle Earth.',
-    image: '/src/assets/images/projects/3.png',
+    image: '/images/projects/3.png',
     tag: ['Web'],
     gitUrl: 'https://github.com/utkucikmaz/Hotel-Middle-Earth',
     previewUrl: 'https://utkucikmaz.github.io/Hotel-Middle-Earth/',
@@ -39,7 +39,7 @@ const projectsData = [
     title: 'React Movie App',
     description:
       "Structured the app with components for a clean and organized design. Created custom hooks for efficient data fetching. Centralized local state management using useReducer when it's suitable. Test the app with Cypress to ensure its functionality and reliability.",
-    image: '/src/assets/images/projects/4.png',
+    image: '/images/projects/4.png',
     tag: ['Web'],
     gitUrl: 'https://github.com/utkucikmaz/React-Movie-App',
     previewUrl: 'https://utkucikmazmovieapp.vercel.app/',

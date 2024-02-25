@@ -11,7 +11,7 @@ const TAB_DATA = [
           <li className='pb-1'>
             <img
               className='relative inline-block pr-2'
-              src='/src/assets/svg/tailwind.svg'
+              src='/svg/tailwind.svg'
               alt='Tailwind Logo'
               width={35}
               height={35}
@@ -21,7 +21,7 @@ const TAB_DATA = [
           <li className='pb-1'>
             <img
               className='relative inline-block pr-2'
-              src='/src/assets/svg/javascript.svg'
+              src='/svg/javascript.svg'
               alt='javascript Logo'
               width={35}
               height={35}
@@ -31,7 +31,7 @@ const TAB_DATA = [
           <li className='pb-1'>
             <img
               className='relative inline-block pr-2'
-              src='/src/assets/svg/typescript.svg'
+              src='/svg/typescript.svg'
               alt='typescript Logo'
               width={35}
               height={35}
@@ -41,7 +41,7 @@ const TAB_DATA = [
           <li className='pb-1'>
             <img
               className='relative inline-block pr-2'
-              src='/src/assets/svg/react.svg'
+              src='/svg/react.svg'
               alt='react Logo'
               width={35}
               height={35}
@@ -51,7 +51,7 @@ const TAB_DATA = [
           <li className='pb-1'>
             <img
               className='relative inline-block pr-2'
-              src='/src/assets/svg/next.svg'
+              src='/svg/next.svg'
               alt='Next.js Logo'
               width={35}
               height={35}
@@ -63,7 +63,7 @@ const TAB_DATA = [
           <li className='pb-1'>
             <img
               className='relative inline-block pr-2'
-              src='/src/assets/svg/nodejs.svg'
+              src='/svg/nodejs.svg'
               alt='nodejs Logo'
               width={35}
               height={35}
@@ -73,7 +73,7 @@ const TAB_DATA = [
           <li className='pb-1'>
             <img
               className='relative inline-block pr-2'
-              src='/src/assets/svg/expressjs.svg'
+              src='/svg/expressjs.svg'
               alt='expressjs Logo'
               width={35}
               height={35}
@@ -83,7 +83,7 @@ const TAB_DATA = [
           <li className='pb-1'>
             <img
               className='relative inline-block pr-2'
-              src='/src/assets/svg/postgresql.svg'
+              src='/svg/postgresql.svg'
               alt='postgresql Logo'
               width={35}
               height={35}
@@ -93,7 +93,7 @@ const TAB_DATA = [
           <li className='pb-1'>
             <img
               className='relative inline-block pr-2'
-              src='/src/assets/svg/nestjs.svg'
+              src='/svg/nestjs.svg'
               alt='nestjs Logo'
               width={35}
               height={35}
@@ -103,7 +103,7 @@ const TAB_DATA = [
           <li className='pb-1'>
             <img
               className='relative inline-block pr-2'
-              src='/src/assets/svg/mongodb.svg'
+              src='/svg/mongodb.svg'
               alt='mongodb Logo'
               width={35}
               height={35}
@@ -115,7 +115,7 @@ const TAB_DATA = [
           <li className='pb-1'>
             <img
               className='relative inline-block pr-2'
-              src='/src/assets/svg/git.svg'
+              src='/svg/git.svg'
               alt='git Logo'
               width={35}
               height={35}
@@ -125,7 +125,7 @@ const TAB_DATA = [
           <li className='pb-1'>
             <img
               className='relative inline-block pr-2'
-              src='/src/assets/svg/redux.svg'
+              src='/svg/redux.svg'
               alt='redux Logo'
               width={35}
               height={35}
@@ -135,7 +135,7 @@ const TAB_DATA = [
           <li className='pb-1'>
             <img
               className='relative inline-block pr-2'
-              src='/src/assets/svg/html.svg'
+              src='/svg/html.svg'
               alt='Html Logo'
               width={35}
               height={35}
@@ -145,7 +145,7 @@ const TAB_DATA = [
           <li className='pb-1'>
             <img
               className='relative inline-block pr-2'
-              src='/src/assets/svg/css.svg'
+              src='/svg/css.svg'
               alt='CSS Logo'
               width={35}
               height={35}
@@ -155,7 +155,7 @@ const TAB_DATA = [
           <li className='pb-1'>
             <img
               className='relative inline-block pr-2'
-              src='/src/assets/svg/bootstrap.svg'
+              src='/svg/bootstrap.svg'
               alt='bootstrap Logo'
               width={35}
               height={35}
@@ -175,7 +175,7 @@ const TAB_DATA = [
           <li>
             <img
               className='relative inline-block pr-2'
-              src='/src/assets/logo/ironhack.png'
+              src='/logo/ironhack.png'
               alt='ironhack Logo'
               width={35}
               height={35}
@@ -190,7 +190,7 @@ const TAB_DATA = [
           <li>
             <img
               className='relative inline-block pr-2'
-              src='/src/assets/logo/digihome.png'
+              src='/logo/digihome.png'
               alt='digihome Logo'
               width={35}
               height={35}
@@ -226,7 +226,7 @@ const AboutSection = () => {
         <img
           className='relative rounded-lg mt-8 transition-transform duration-500 transition-move hover:ring-4 hover:ring-purple-500'
           id='about-image'
-          src='/src/assets/images/about.png'
+          src='/images/about.png'
           alt='Personal Logo'
           width={450}
           height={450}

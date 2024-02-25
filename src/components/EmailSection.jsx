@@ -47,14 +47,14 @@ const EmailSection = () => {
             target='_blank'
             rel='noopener noreferrer'
           >
-            <img src='/src/assets/svg/github-icon.svg' alt='Github Icon' />
+            <img src='/svg/github-icon.svg' alt='Github Icon' />
           </a>
           <a
             href='https://www.linkedin.com/in/utkucikmaz/'
             target='_blank'
             rel='noopener noreferrer'
           >
-            <img src='/src/assets/svg/linkedin-icon.svg' alt='Linkedin Icon' />
+            <img src='/svg/linkedin-icon.svg' alt='Linkedin Icon' />
           </a>
         </div>
       </div>

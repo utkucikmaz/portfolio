@@ -36,7 +36,7 @@ const Navbar = () => {
           {/* LOGO IMAGE */}
           <img
             className='relative rounded-full transition duration-300 hover:ring-4 hover:ring-purple-500'
-            src='/src/assets/images/navbar.gif'
+            src='/images/navbar.gif'
             alt='Personal Logo'
             width={60}
             height={60}
