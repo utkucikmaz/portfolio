@@ -43,6 +43,13 @@ const EmailSection = () => {
         </p>
         <div className='socials flex flex-row gap-2'>
           <a
+            href='https://www.instagram.com/utkucikmaz/'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <img src='/svg/instagram.svg' alt='Instagram Icon' />
+          </a>
+          <a
             href='https://github.com/utkucikmaz'
             target='_blank'
             rel='noopener noreferrer'

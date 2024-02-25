@@ -227,7 +227,7 @@ const AboutSection = () => {
           className='relative rounded-lg mt-8 transition-transform duration-500 transition-move hover:ring-4 hover:ring-purple-500'
           id='about-image'
           src='/images/about.png'
-          alt='Personal Logo'
+          alt='Personal Image'
           width={450}
           height={450}
           style={{

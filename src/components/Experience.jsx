@@ -20,7 +20,7 @@ const Experience = () => {
             <img
               className='w-6 h-6 mr-2 inline-block'
               src='/svg/calendar.svg'
-              alt='Tailwind Logo'
+              alt='Calendar Logo'
               width={35}
               height={35}
             />
@@ -58,7 +58,7 @@ const Experience = () => {
             <img
               className='w-6 h-6 mr-2 inline-block'
               src='/svg/calendar.svg'
-              alt='Tailwind Logo'
+              alt='calendar Logo'
               width={35}
               height={35}
             />
@@ -87,7 +87,7 @@ const Experience = () => {
             <img
               className='w-6 h-6 mr-2 inline-block'
               src='/svg/calendar.svg'
-              alt='Tailwind Logo'
+              alt='calendar Logo'
               width={35}
               height={35}
             />
@@ -125,7 +125,7 @@ const Experience = () => {
             <img
               className='w-6 h-6 mr-2 inline-block'
               src='/svg/calendar.svg'
-              alt='Tailwind Logo'
+              alt='calendar Logo'
               width={35}
               height={35}
             />
@@ -157,7 +157,7 @@ const Experience = () => {
             <img
               className='w-6 h-6 mr-2 inline-block'
               src='/svg/calendar.svg'
-              alt='Tailwind Logo'
+              alt='calendar Logo'
               width={35}
               height={35}
             />
@@ -193,7 +193,7 @@ const Experience = () => {
             <img
               className='w-6 h-6 mr-2 inline-block'
               src='/svg/calendar.svg'
-              alt='Tailwind Logo'
+              alt='calendar Logo'
               width={35}
               height={35}
             />
@@ -222,7 +222,7 @@ const Experience = () => {
             <img
               className='w-6 h-6 mr-2 inline-block'
               src='/svg/calendar.svg'
-              alt='Tailwind Logo'
+              alt='calendar Logo'
               width={35}
               height={35}
             />
@@ -261,12 +261,12 @@ const Experience = () => {
                 ? 'text-purple-500 text-2xl'
                 : 'text-white-700 text-base'
             }`}
-            onClick={() => toggleTab(2)}
+            onClick={() => toggleTab(1)}
           >
             <img
               className='w-6 h-6 mr-2'
               src='/svg/laptop.svg'
-              alt='Tailwind Logo'
+              alt='laptop Logo'
               width={35}
               height={35}
             />
@@ -278,12 +278,12 @@ const Experience = () => {
                 ? 'text-purple-500 text-2xl'
                 : 'text-white-700 text-base'
             }`}
-            onClick={() => toggleTab(1)}
+            onClick={() => toggleTab(2)}
           >
             <img
               className='w-6 h-6 mr-2'
               src='/svg/graduation.svg'
-              alt='Tailwind Logo'
+              alt='graduation cap Logo'
               width={35}
               height={35}
             />
@@ -292,8 +292,8 @@ const Experience = () => {
         </div>
 
         <div>
-          {toggleState === 1 ? educationContent : null}
-          {toggleState === 2 ? experienceContent : null}
+          {toggleState === 1 ? experienceContent : null}
+          {toggleState === 2 ? educationContent : null}
         </div>
       </div>
     </section>
