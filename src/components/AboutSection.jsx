@@ -213,8 +213,8 @@ const AboutSection = () => {
   const [imagePosition, setImagePosition] = useState(0)
 
   const handleTabChange = (id) => {
+    setTab(id)
     startTransition(() => {
-      setTab(id)
       const newPosition = TAB_DATA.lastIndexOf((t) => t.id === id)
       setImagePosition(newPosition)
     })

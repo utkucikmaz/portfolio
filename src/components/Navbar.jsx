@@ -33,7 +33,6 @@ const Navbar = () => {
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className='text-2xl md:text-4xl text-white font-semibold'
         >
-          {/* LOGO IMAGE */}
           <img
             className='relative rounded-full transition duration-300 hover:ring-4 hover:ring-purple-500'
             src='/images/navbar.gif'

@@ -9,7 +9,7 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
         style={{
           background: `url(${imgUrl})`,
           backgroundSize: 'cover',
-          width: '100%', // Set the width to 100% for responsiveness
+          width: '100%',
           height: '20rem',
         }}
       >

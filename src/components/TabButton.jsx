@@ -8,8 +8,8 @@ const variants = {
 
 const TabButton = ({ active, selectTab, children }) => {
   const textStyles = {
-    color: active ? '#9370DB' : 'rgba(255, 255, 255, 0.5)', // Purple when active, 50% opacity when not active
-    fontSize: active ? '1.3rem' : '1rem', // Adjust font size based on the state
+    color: active ? '#9370DB' : 'rgba(255, 255, 255, 0.5)',
+    fontSize: active ? '1.3rem' : '1rem',
   }
 
   return (

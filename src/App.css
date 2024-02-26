@@ -67,23 +67,37 @@ body {
   width: 300px;
   height: 300px;
   animation: profile__animate 8s ease-in-out infinite 1s;
-  position: absolute; /* Set position to fixed by default */
-  right: 10rem; /* Adjust as needed */
-  top: 50%; /* Center vertically */
-  transform: translateY(-50%); /* Center vertically */
+  position: absolute;
+  right: 10rem;
+  top: 50%;
+  transform: translateY(-50%);
+
+  @media (min-width: 1025px) {
+    position: absolute;
+    right: 3rem;
+    top: 10rem;
+    transform: none;
+  }
 
   @media (max-width: 1024px) {
-    position: absolute; /* Reset position for smaller screens */
-    right: 1rem; /* Adjust as needed */
-    top: 10rem; /* Center vertically */
-    transform: none; /* Reset transform for smaller screens */
+    position: absolute;
+    right: 1rem;
+    top: 10rem;
+    transform: none;
   }
 
   @media (max-width: 768px) {
-    position: relative; /* Reset position for smaller screens */
-    left: 15%; /* Reset right for smaller screens */
-    top: 3rem; /* Reset top for smaller screens */
-    transform: none; /* Reset transform for smaller screens */
+    position: relative;
+    top: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @media (min-width: 1600px) {
+    position: absolute;
+    right: 20%;
+    top: 10rem;
+    transform: none;
   }
 }
 
