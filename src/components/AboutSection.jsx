@@ -7,7 +7,7 @@ const TAB_DATA = [
     id: 'skills',
     content: (
       <div className='flex'>
-        <ul className='pl-4'>
+        <ul className='pl-4 skills-tab'>
           <li className='pb-1'>
             <img
               className='relative inline-block pr-2'
@@ -59,7 +59,7 @@ const TAB_DATA = [
             Next.js
           </li>
         </ul>
-        <ul className='pl-14'>
+        <ul className='pl-14 skills-tab'>
           <li className='pb-1'>
             <img
               className='relative inline-block pr-2'
@@ -111,7 +111,7 @@ const TAB_DATA = [
             MongoDB
           </li>
         </ul>
-        <ul className='pl-14'>
+        <ul className='pl-14 skills-tab'>
           <li className='pb-1'>
             <img
               className='relative inline-block pr-2'
@@ -240,28 +240,43 @@ const AboutSection = () => {
           <h2 className='text-4xl font-bold text-white pt-4 pb-1 mt-3'>
             About Me
           </h2>
-          <p className='text-base lg:text-lg'>
+          <p className='text-base lg:text-lg mb-5'>
             I am a full stack web developer with a passion for creating
             interactive and responsive web applications. I have experience
             working with HTML, CSS, JavaScript, Typescript, React, Next.js,
-            Redux, Node.js, Express, Nest.js, PostgreSQL, MongoDB and Git. I am
-            a quick learner and I am always looking to expand my knowledge and
-            skill set. I am a team player and I am excited to work with others
-            to create amazing applications.
+            Redux, Node.js, Express, Nest.js, PostgreSQL, MongoDB and Git.
           </p>
-          <div className='flex flex-row justify-between mt-8'>
+          <p className='text-base lg:text-lg'>
+            I am a quick learner and I am always looking to expand my knowledge
+            and skill set. I am a team player and I am excited to work with
+            others to create amazing applications.
+          </p>
+          <div className='flex flex-row gap-10 mt-8'>
             <TabButton
               selectTab={() => handleTabChange('skills')}
               active={tab === 'skills'}
             >
               {' '}
+              <img
+                className='relative inline-block mr-1'
+                src='/svg/skills.svg'
+                alt='Html Logo'
+                width={25}
+                height={20}
+              />{' '}
               Skills{' '}
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange('certifications')}
               active={tab === 'certifications'}
             >
-              {' '}
+              <img
+                className='relative inline-block mr-1'
+                src='/svg/certificate.svg'
+                alt='Html Logo'
+                width={25}
+                height={20}
+              />{' '}
               Certifications{' '}
             </TabButton>
           </div>

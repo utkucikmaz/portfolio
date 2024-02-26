@@ -11,10 +11,19 @@ const Experience = () => {
     <div>
       <div className='qualification__data'>
         <div>
-          <h3 className='qualification__title'>
+          <h3 className='qualification__title text-xl'>
             Full Stack Web Development Bootcamp
           </h3>
-          <span className='qualification__subtitle'>Ironhack</span>
+          <span className='qualification__subtitle'>
+            <img
+              className='w-6 h-6 mr-2 inline-block'
+              src='/svg/school.svg'
+              alt='school Logo'
+              width={35}
+              height={35}
+            />
+            Ironhack
+          </span>
           <br />
           <span className='qualification__calendar'>
             <img
@@ -26,7 +35,7 @@ const Experience = () => {
             />
             2023
           </span>
-          <div>
+          <div className='qualification__calendar'>
             <img
               className='w-6 h-6 mr-1 inline-block'
               src='/svg/location.svg'
@@ -49,10 +58,19 @@ const Experience = () => {
           <span className='qualification__line'></span>
         </div>
         <div>
-          <h3 className='qualification__title'>
+          <h3 className='qualification__title text-xl'>
             Full Stack Web Development Bootcamp
           </h3>
-          <span className='qualification__subtitle'>Digi-Homeschooling</span>
+          <span className='qualification__subtitle'>
+            <img
+              className='w-6 h-6 mr-2 inline-block'
+              src='/svg/school.svg'
+              alt='school Logo'
+              width={35}
+              height={35}
+            />
+            Digi-Homeschooling
+          </span>
           <br />
           <span className='qualification__calendar'>
             <img
@@ -64,7 +82,7 @@ const Experience = () => {
             />
             2022
           </span>
-          <div>
+          <div className='qualification__calendar'>
             <img
               className='w-6 h-6 mr-1 inline-block'
               src='/svg/location.svg'
@@ -78,10 +96,19 @@ const Experience = () => {
       </div>
       <div className='qualification__data'>
         <div>
-          <h3 className='qualification__title'>
+          <h3 className='qualification__title text-xl'>
             Chinese Language and Literature
           </h3>
-          <span className='qualification__subtitle'>Istanbul University</span>
+          <span className='qualification__subtitle'>
+            <img
+              className='w-6 h-6 mr-2 inline-block'
+              src='/svg/school.svg'
+              alt='school Logo'
+              width={35}
+              height={35}
+            />
+            Istanbul University
+          </span>
           <br />
           <span className='qualification__calendar'>
             <img
@@ -93,7 +120,7 @@ const Experience = () => {
             />
             2016 - 2020
           </span>
-          <div>
+          <div className='qualification__calendar'>
             <img
               className='w-6 h-6 mr-1 inline-block'
               src='/svg/location.svg'
@@ -116,8 +143,15 @@ const Experience = () => {
           <span className='qualification__line'></span>
         </div>
         <div>
-          <h3 className='qualification__title'>Sociology</h3>
+          <h3 className='qualification__title text-xl'>Sociology</h3>
           <span className='qualification__subtitle'>
+            <img
+              className='w-6 h-6 mr-2 inline-block'
+              src='/svg/school.svg'
+              alt='school Logo'
+              width={35}
+              height={35}
+            />
             Turkish Military Academy
           </span>
           <br />
@@ -131,7 +165,7 @@ const Experience = () => {
             />
             2012 - 2015
           </span>
-          <div>
+          <div className='qualification__calendar'>
             <img
               className='w-6 h-6 mr-1 inline-block'
               src='/svg/location.svg'
@@ -150,8 +184,17 @@ const Experience = () => {
     <div>
       <div className='qualification__data'>
         <div>
-          <h3 className='qualification__title'>Front-End Developer</h3>
-          <span className='qualification__subtitle'>Arbithub</span>
+          <h3 className='qualification__title text-xl'>Front-End Developer</h3>
+          <span className='qualification__subtitle'>
+            <img
+              className='w-6 h-6 mr-2 inline-block'
+              src='/svg/company.svg'
+              alt='company Logo'
+              width={35}
+              height={35}
+            />
+            Arbithub
+          </span>
           <br />
           <span className='qualification__calendar'>
             <img
@@ -163,7 +206,7 @@ const Experience = () => {
             />
             01.2024 - Present
           </span>
-          <div>
+          <div className='qualification__calendar'>
             <img
               className='w-6 h-6 mr-1 inline-block'
               src='/svg/location.svg'
@@ -186,8 +229,19 @@ const Experience = () => {
           <span className='qualification__line'></span>
         </div>
         <div>
-          <h3 className='qualification__title'>Full Stack Developer Trainee</h3>
-          <span className='qualification__subtitle'>LightUp Digital</span>
+          <h3 className='qualification__title text-xl'>
+            Full Stack Developer Trainee
+          </h3>
+          <span className='qualification__subtitle'>
+            <img
+              className='w-6 h-6 mr-2 inline-block'
+              src='/svg/company.svg'
+              alt='company Logo'
+              width={35}
+              height={35}
+            />
+            LightUp Digital
+          </span>
           <br />
           <span className='qualification__calendar'>
             <img
@@ -199,7 +253,7 @@ const Experience = () => {
             />
             10.2023 - 01.2024
           </span>
-          <div>
+          <div className='qualification__calendar'>
             <img
               className='w-6 h-6 mr-1 inline-block'
               src='/svg/location.svg'
@@ -213,10 +267,19 @@ const Experience = () => {
       </div>
       <div className='qualification__data'>
         <div>
-          <h3 className='qualification__title'>
+          <h3 className='qualification__title text-xl'>
             Integrated Operation Control Officer
           </h3>
-          <span className='qualification__subtitle'>Turkish Airlines</span>
+          <span className='qualification__subtitle'>
+            <img
+              className='w-6 h-6 mr-2 inline-block'
+              src='/svg/company.svg'
+              alt='company Logo'
+              width={35}
+              height={35}
+            />
+            Turkish Airlines
+          </span>
           <br />
           <span className='qualification__calendar'>
             <img
@@ -228,7 +291,7 @@ const Experience = () => {
             />
             03.2019 - 05.2020
           </span>
-          <div>
+          <div className='qualification__calendar'>
             <img
               className='w-6 h-6 mr-1 inline-block'
               src='/svg/location.svg'
@@ -256,10 +319,10 @@ const Experience = () => {
 
         <div className='flex justify-center mb-12 mt-10'>
           <div
-            className={` mr-12 flex  items-center cursor-pointer ${
+            className={` mr-12 flex  items-center cursor-pointer transition-all duration-100 ${
               toggleState === 1
                 ? 'text-purple-500 text-2xl'
-                : 'text-white-700 text-base'
+                : 'text-white-700 text-base opacity-50'
             }`}
             onClick={() => toggleTab(1)}
           >
@@ -273,10 +336,10 @@ const Experience = () => {
             Experience
           </div>
           <div
-            className={`flex items-center cursor-pointer ${
+            className={`flex items-center cursor-pointer transition-all duration-100 ${
               toggleState === 2
                 ? 'text-purple-500 text-2xl'
-                : 'text-white-700 text-base'
+                : 'text-white-700 text-base opacity-50'
             }`}
             onClick={() => toggleTab(2)}
           >

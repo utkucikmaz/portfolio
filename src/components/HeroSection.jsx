@@ -18,12 +18,12 @@ const HeroSection = () => {
 
   return (
     <section className='lg:py-16'>
-      <div className='grid grid-cols-1 sm:grid-cols-12 mt-20'>
+      <div className='flex flex-col sm:flex-row mt-20'>
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className='col-span-8 place-self-center text-center sm:text-left justify-self-start'
+          className='sm:col-span-8 sm:order-1 self-center text-center sm:text-left justify-self-start'
         >
           <h1 className='text-white mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold'>
             <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600'>
@@ -37,7 +37,7 @@ const HeroSection = () => {
               repeat={Infinity}
             />
           </h1>
-          <div className='pl-2'>
+          <div className='pl-2 flex'>
             <img
               className='relative inline-block'
               src='/svg/html.svg'
@@ -103,7 +103,7 @@ const HeroSection = () => {
             />
           </div>
           <br />
-          <div className='pl-2'>
+          <div className='pl-2 flex'>
             <img
               className='relative inline-block pl-2'
               src='/svg/nodejs.svg'
@@ -158,7 +158,7 @@ const HeroSection = () => {
                 }
               }}
             >
-              Hire Me
+              Get in touch
             </button>
             <button
               onClick={downloadCV}
@@ -170,7 +170,7 @@ const HeroSection = () => {
             </button>
           </div>
         </motion.div>
-        <div className='home_img'></div>
+        <div className='home_img order-2 sm:order-2'></div>
       </div>
     </section>
   )
