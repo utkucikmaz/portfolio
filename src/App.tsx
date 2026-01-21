@@ -25,6 +25,7 @@ function App(): JSX.Element {
   const { t } = useTranslation()
   const [isDarkMode, setIsDarkMode] = useState<boolean>(true)
   const [showSplash, setShowSplash] = useState<boolean>(true)
+  const [isLargeScreen, setIsLargeScreen] = useState<boolean>(false)
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme')
@@ -85,6 +86,17 @@ function App(): JSX.Element {
     return () => clearTimeout(timer)
   }, [isDarkMode])
 
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsLargeScreen(window.innerWidth > 768)
+    }
+
+    checkScreenSize()
+    window.addEventListener('resize', checkScreenSize)
+
+    return () => window.removeEventListener('resize', checkScreenSize)
+  }, [])
+
   const handleSetIsDarkMode: NavbarProps['setIsDarkMode'] = (
     value: boolean
   ) => {
@@ -99,9 +111,11 @@ function App(): JSX.Element {
           <SplashScreen isVisible={showSplash} isDarkMode={isDarkMode} />
         )}
       </AnimatePresence>
-      <Suspense fallback={null}>
-        <BackgroundThree isDarkMode={isDarkMode} />
-      </Suspense>
+      {isLargeScreen && (
+        <Suspense fallback={null}>
+          <BackgroundThree isDarkMode={isDarkMode} />
+        </Suspense>
+      )}
       <ThemeCelestial isDarkMode={isDarkMode} />
       <a href='#main-content' tabIndex={-1} className='skip-to-main'>
         {t('nav.skipToMain')}

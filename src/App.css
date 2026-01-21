@@ -28,6 +28,13 @@ main section:first-of-type {
   padding-top: var(--spacing-5xl) !important;
 }
 
+/* Hero section gets more top padding on smaller screens for moon drag space */
+@media (max-width: 639px) {
+  main section#hero {
+    padding-top: var(--spacing-6xl) !important;
+  }
+}
+
 /* Larger spacing on desktop screens */
 @media (min-width: 1024px) {
   main section {

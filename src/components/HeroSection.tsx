@@ -92,7 +92,7 @@ const HeroSection = ({ isDarkMode = true }: HeroSectionProps): JSX.Element => {
         setCelestialPosition((prev) => {
           if (prev.x === 0 && prev.y === 0) {
             if (isMobile) {
-              return { x: 0, y: 0 }
+              return { x: (sectionWidth - celestialSize / 2) / 2, y: 0 }
             }
             return { x: sectionWidth * 0.55, y: 10 }
           }
