@@ -1,8 +1,9 @@
-import { useState, useRef, useEffect, useMemo } from 'react'
+import { useState, useRef, useEffect, useMemo, lazy, Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
-import HawkingRadiation from './HawkingRadiation'
 import ScrambleWords from './ScrambleWords'
+
+const HawkingRadiation = lazy(() => import('./HawkingRadiation'))
 
 const FADE_DURATION = 250
 
@@ -12,28 +13,35 @@ function calculateParagraphDuration(
   baseWordDurationMs: number = 30
 ): number {
   const tokens = text.split(/(\s+)/)
-  const msPerWord = Math.max(40, Math.min(120, Math.round(60000 / wordsPerMinute)))
-  
+  const msPerWord = Math.max(
+    40,
+    Math.min(120, Math.round(60000 / wordsPerMinute))
+  )
+
   let cumulativeDelay = 0
   let lastWordStartDelay = 0
   let lastWordDuration = 0
-  
+
   for (const token of tokens) {
     if (/^\s+$/.test(token)) continue
-    
+
     const word = token
-    const durationMs = Math.max(80, Math.min(200, baseWordDurationMs + word.length * 3))
-    
+    const durationMs = Math.max(
+      80,
+      Math.min(200, baseWordDurationMs + word.length * 3)
+    )
+
     lastWordStartDelay = cumulativeDelay
     lastWordDuration = durationMs
-    
+
     let pause = 0
     if (/[.!?]$/.test(word)) pause = 60
     else if (/[,;:]$/.test(word)) pause = 30
-    
-    cumulativeDelay += Math.max(40, Math.min(120, msPerWord + word.length * 2)) + pause
+
+    cumulativeDelay +=
+      Math.max(40, Math.min(120, msPerWord + word.length * 2)) + pause
   }
-  
+
   return lastWordStartDelay + lastWordDuration + FADE_DURATION
 }
 
@@ -93,27 +101,27 @@ const PersonalSection = (): JSX.Element => {
     if (!useScrambleAnimation) {
       return [0, 0, 0]
     }
-    
+
     const wordsPerMinute = 2500
     const baseWordDurationMs = 30
-    
+
     const texts = [
       t(isUnformal ? 'personal.unformal1' : 'personal.formal1'),
       t(isUnformal ? 'personal.unformal2' : 'personal.formal2'),
       t(isUnformal ? 'personal.unformal3' : 'personal.formal3'),
     ]
-    
-    const durations = texts.map(text => 
+
+    const durations = texts.map((text) =>
       calculateParagraphDuration(text, wordsPerMinute, baseWordDurationMs)
     )
-    
+
     const delays: number[] = [0]
     for (let i = 1; i < durations.length; i++) {
       const prevDelay = delays[i - 1] ?? 0
       const prevDuration = durations[i - 1] ?? 0
       delays.push(prevDelay + prevDuration)
     }
-    
+
     return delays
   }, [t, isUnformal, useScrambleAnimation])
 
@@ -136,7 +144,13 @@ const PersonalSection = (): JSX.Element => {
           transition={{ duration: 0.6 }}
           className='flex items-center justify-center w-full h-full max-h-[300px] md:max-h-none lg:min-h-[500px] lg:min-w-[600px] rounded-lg overflow-hidden'
         >
-          <HawkingRadiation />
+          <Suspense
+            fallback={
+              <div className='w-full h-full bg-neutral-100 dark:bg-neutral-900 animate-pulse' />
+            }
+          >
+            <HawkingRadiation />
+          </Suspense>
         </motion.div>
 
         <motion.div
@@ -155,26 +169,38 @@ const PersonalSection = (): JSX.Element => {
             tabIndex={0}
           >
             <p className='text-justify relative'>
-              <span className='invisible block whitespace-pre-wrap' aria-hidden='true'>
+              <span
+                className='invisible block whitespace-pre-wrap'
+                aria-hidden='true'
+              >
                 {t('personal.formal1')}
               </span>
-              <span className='invisible block absolute top-0 left-0 w-full whitespace-pre-wrap' aria-hidden='true'>
+              <span
+                className='invisible block absolute top-0 left-0 w-full whitespace-pre-wrap'
+                aria-hidden='true'
+              >
                 {t('personal.unformal1')}
               </span>
               <span className='absolute top-0 left-0 w-full block text-justify'>
                 <span
                   className={`absolute top-0 left-0 w-full transition-opacity duration-1000 ease-in ${
-                    useScrambleAnimation ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                    useScrambleAnimation
+                      ? 'opacity-100'
+                      : 'opacity-0 pointer-events-none'
                   }`}
                 >
                   <ScrambleWords
-                    text={t(isUnformal ? 'personal.unformal1' : 'personal.formal1')}
+                    text={t(
+                      isUnformal ? 'personal.unformal1' : 'personal.formal1'
+                    )}
                     paragraphDelayMs={paragraphDelays[0]}
                   />
                 </span>
                 <span
                   className={`transition-opacity duration-1000 ease-out ${
-                    useScrambleAnimation ? 'opacity-0 pointer-events-none' : 'opacity-100'
+                    useScrambleAnimation
+                      ? 'opacity-0 pointer-events-none'
+                      : 'opacity-100'
                   }`}
                 >
                   {t(isUnformal ? 'personal.unformal1' : 'personal.formal1')}
@@ -182,26 +208,38 @@ const PersonalSection = (): JSX.Element => {
               </span>
             </p>
             <p className='text-justify relative'>
-              <span className='invisible block whitespace-pre-wrap' aria-hidden='true'>
+              <span
+                className='invisible block whitespace-pre-wrap'
+                aria-hidden='true'
+              >
                 {t('personal.formal2')}
               </span>
-              <span className='invisible block absolute top-0 left-0 w-full whitespace-pre-wrap' aria-hidden='true'>
+              <span
+                className='invisible block absolute top-0 left-0 w-full whitespace-pre-wrap'
+                aria-hidden='true'
+              >
                 {t('personal.unformal2')}
               </span>
               <span className='absolute top-0 left-0 w-full block text-justify'>
                 <span
                   className={`absolute top-0 left-0 w-full transition-opacity duration-1000 ease-out ${
-                    useScrambleAnimation ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                    useScrambleAnimation
+                      ? 'opacity-100'
+                      : 'opacity-0 pointer-events-none'
                   }`}
                 >
                   <ScrambleWords
-                    text={t(isUnformal ? 'personal.unformal2' : 'personal.formal2')}
+                    text={t(
+                      isUnformal ? 'personal.unformal2' : 'personal.formal2'
+                    )}
                     paragraphDelayMs={paragraphDelays[1]}
                   />
                 </span>
                 <span
                   className={`transition-opacity duration-1000 ease-out ${
-                    useScrambleAnimation ? 'opacity-0 pointer-events-none' : 'opacity-100'
+                    useScrambleAnimation
+                      ? 'opacity-0 pointer-events-none'
+                      : 'opacity-100'
                   }`}
                 >
                   {t(isUnformal ? 'personal.unformal2' : 'personal.formal2')}
@@ -209,26 +247,38 @@ const PersonalSection = (): JSX.Element => {
               </span>
             </p>
             <p className='text-justify relative'>
-              <span className='invisible block whitespace-pre-wrap' aria-hidden='true'>
+              <span
+                className='invisible block whitespace-pre-wrap'
+                aria-hidden='true'
+              >
                 {t('personal.formal3')}
               </span>
-              <span className='invisible block absolute top-0 left-0 w-full whitespace-pre-wrap' aria-hidden='true'>
+              <span
+                className='invisible block absolute top-0 left-0 w-full whitespace-pre-wrap'
+                aria-hidden='true'
+              >
                 {t('personal.unformal3')}
               </span>
               <span className='absolute top-0 left-0 w-full block text-justify'>
                 <span
                   className={`absolute top-0 left-0 w-full transition-opacity duration-1000 ease-out ${
-                    useScrambleAnimation ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                    useScrambleAnimation
+                      ? 'opacity-100'
+                      : 'opacity-0 pointer-events-none'
                   }`}
                 >
                   <ScrambleWords
-                    text={t(isUnformal ? 'personal.unformal3' : 'personal.formal3')}
+                    text={t(
+                      isUnformal ? 'personal.unformal3' : 'personal.formal3'
+                    )}
                     paragraphDelayMs={paragraphDelays[2]}
                   />
                 </span>
                 <span
                   className={`transition-opacity duration-1000 ease-out ${
-                    useScrambleAnimation ? 'opacity-0 pointer-events-none' : 'opacity-100'
+                    useScrambleAnimation
+                      ? 'opacity-0 pointer-events-none'
+                      : 'opacity-100'
                   }`}
                 >
                   {t(isUnformal ? 'personal.unformal3' : 'personal.formal3')}

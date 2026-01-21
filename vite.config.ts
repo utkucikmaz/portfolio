@@ -10,4 +10,21 @@ export default defineConfig({
       include: '**/*.svg',
     }),
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'three-vendor': ['three', '@react-three/fiber', '@react-three/drei'],
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'i18n-vendor': [
+            'i18next',
+            'react-i18next',
+            'i18next-browser-languagedetector',
+          ],
+          'animation-vendor': ['framer-motion'],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 1000,
+  },
 })

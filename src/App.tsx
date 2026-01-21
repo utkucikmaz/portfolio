@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, lazy, Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
 import { AnimatePresence } from 'framer-motion'
 import { Toaster } from 'react-hot-toast'
@@ -14,11 +14,12 @@ import EmailSection from './components/EmailSection'
 import Footer from './components/Footer'
 import ScrollToTopButton from './components/ScrollToTopButton'
 import ThemeCelestial from './components/ThemeCelestial'
-import BackgroundThree from './components/BackgroundThree'
 import SplashScreen from './components/SplashScreen'
 import type { NavbarProps } from './types'
 import './App.css'
 import './index.css'
+
+const BackgroundThree = lazy(() => import('./components/BackgroundThree'))
 
 function App(): JSX.Element {
   const { t } = useTranslation()
@@ -76,7 +77,7 @@ function App(): JSX.Element {
       root.classList.remove('dark')
     }
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light')
-    
+
     const timer = setTimeout(() => {
       root.style.transition = ''
     }, 2000)
@@ -98,7 +99,9 @@ function App(): JSX.Element {
           <SplashScreen isVisible={showSplash} isDarkMode={isDarkMode} />
         )}
       </AnimatePresence>
-      <BackgroundThree isDarkMode={isDarkMode} />
+      <Suspense fallback={null}>
+        <BackgroundThree isDarkMode={isDarkMode} />
+      </Suspense>
       <ThemeCelestial isDarkMode={isDarkMode} />
       <a href='#hero' className='skip-to-main'>
         {t('nav.skipToMain')}
