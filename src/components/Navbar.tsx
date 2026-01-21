@@ -9,7 +9,6 @@ import {
   MoonIcon,
   SunIcon,
 } from '@heroicons/react/24/outline'
-import toast from 'react-hot-toast'
 import type { NavbarProps, NavLink as NavLinkType } from '../types'
 
 const navLinks: NavLinkType[] = [
@@ -101,9 +100,6 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps): JSX.Element => {
   const toggleTheme = (): void => {
     const newIsDarkMode = !isDarkMode
     setIsDarkMode(newIsDarkMode)
-    toast.success(
-      newIsDarkMode ? t('toast.theme.darkMode') : t('toast.theme.lightMode')
-    )
   }
 
   return (

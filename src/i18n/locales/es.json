@@ -14,6 +14,7 @@
 		"subtitle": "Desarrollador Full Stack orientado a resultados con experiencia comprobada en la construcción de aplicaciones web escalables y de alto rendimiento. Especializado en ecosistemas JavaScript modernos y arquitecturas backend robustas.",
 		"getInTouch": "Contactar",
 		"downloadCV": "Descargar CV",
+		"downloadCVTooltip": "Descarga el currículum en diferentes idiomas cambiando el idioma del sitio web",
 		"technologies": "Tecnologías que utilizo:",
 		"scroll": "Desplazar"
 	},
@@ -50,7 +51,7 @@
 	},
 	"personal": {
 		"title": "Como Persona",
-		"subtitle": "Una breve configuración humana.",
+		"subtitle": "Un autorretrato, anotado por el propio yo.",
 		"unformal1": "Soy una estrella. Friki de física y astronomía. Buceador en filosofía. Enamorado de la programación, el arte, la música, la literatura y cualquier otra belleza del mundo, especialmente las que no necesitan justificar su existencia.",
 		"unformal2": "Soy una mente artística atrapada dentro de un frasco, filtrando pinturas, codificando silenciosamente sueños de escape en lenguajes encantadores que solo las máquinas entienden completamente. Escapé de la cueva de Platón y todavía estoy perdido afuera. Asustado de la espaguetización pero me pregunto más allá de los horizontes de eventos, compilando pensamientos que podrían nunca terminar. Amo todos los colores pero el amarillo más. El niño que Yuri Gagarin dejó atrás, todavía curioso, todavía orbitando la maravilla.",
 		"unformal3": "Mis pensamientos corren en bucles infinitos; algunos de ellos son bastante elegantes. Amante del mar, extrañador de montañas, compilador de gravedad. Cuestiono todo hasta que las preguntas comienzan a cuestionarme de vuelta. Casi el apartamento más acogedor de la ciudad, donde el arte, la lógica, la música y la sintaxis coexisten sin pedir permiso.",
@@ -173,6 +174,14 @@
 			"email": "juan@example.com",
 			"subject": "Consulta sobre proyecto",
 			"message": "Cuéntame sobre tu proyecto..."
+		},
+		"tooltip": {
+			"name": "Por favor, ingrese su nombre completo aquí.",
+			"email": "Su dirección de correo electrónico donde puedo contactarlo.",
+			"subject": "Breve resumen de lo que le gustaría discutir.",
+			"message": "Comparta sus pensamientos, preguntas o detalles del proyecto aquí.",
+			"github": "Visite mi perfil de GitHub para ver mi código y proyectos.",
+			"linkedin": "Conéctese conmigo en LinkedIn."
 		},
 		"sendMessage": "Enviar mensaje",
 		"sending": "Enviando...",

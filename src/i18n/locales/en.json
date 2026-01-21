@@ -14,6 +14,7 @@
 		"subtitle": "Results-driven Full Stack Developer with proven expertise in building scalable, high-performance web applications. Specialized in modern JavaScript ecosystems and robust backend architectures.",
 		"getInTouch": "Get in touch",
 		"downloadCV": "Download CV",
+		"downloadCVTooltip": "Download the resume in different languages by switching the website language",
 		"technologies": "Technologies I work with:",
 		"scroll": "Scroll"
 	},
@@ -50,7 +51,7 @@
 	},
 	"personal": {
 		"title": "As a Person",
-		"subtitle": "A brief human configuration.",
+		"subtitle": "A self-portrait, annotated by the self.",
 		"unformal1": "I’m a star. Physics and astronomy nerd. Philosophy diver. In love with programming, art, music, literature and every other beauty in the world, especially the ones that don’t need to justify their existence.",
 		"unformal2": "I am an artistic mind trapped inside a jar, leaking paints, quietly coding escape dreams in charming languages only machines fully understand. Escaped from Plato’s cave and still lost outside. Scared of spaghettification but wonder beyond event horizons, compiling thoughts that might never terminate. Love all colors but yellow more. The child Yuri Gagarin left behind, still curious, still orbiting wonder.",
 		"unformal3": "My thoughts run in infinite loops; some of them are quite elegant. Sea lover, mountain misser, gravity compiler. Question everything until the questions start questioning me back. Almost the coziest flat in town, where art, logic, music, and syntax coexist without asking permission.",
@@ -60,7 +61,7 @@
 	},
 	"journey": {
 		"title": "Trajectory",
-		"subtitle": "A work still in progress.",
+		"subtitle": "A work, still in progress.",
 		"experience": "Experience",
 		"education": "Education",
 		"experiences": {
@@ -173,6 +174,14 @@
 			"email": "john@example.com",
 			"subject": "Project inquiry",
 			"message": "Tell me about your project..."
+		},
+		"tooltip": {
+			"name": "Please, enter your full name here.",
+			"email": "Your email address where I can reach you back.",
+			"subject": "Brief summary of what you'd like to discuss.",
+			"message": "Share your thoughts, questions, or project details here.",
+			"github": "Visit my GitHub profile to see my code and projects.",
+			"linkedin": "Connect with me on LinkedIn."
 		},
 		"sendMessage": "Send Message",
 		"sending": "Sending...",

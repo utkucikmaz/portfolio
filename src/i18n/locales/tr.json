@@ -14,6 +14,7 @@
 		"subtitle": "Ölçeklenebilir, yüksek performanslı web uygulamaları oluşturmada kanıtlanmış uzmanlığa sahip sonuç odaklı Full Stack Geliştirici. Modern JavaScript ekosistemleri ve sağlam backend mimarilerinde bilgili bir yazılımcıyım.",
 		"getInTouch": "İletişime geç",
 		"downloadCV": "CV İndir",
+		"downloadCVTooltip": "Web sitesi dilini değiştirerek özgeçmişi farklı dillerde indirebilirsiniz.",
 		"technologies": "Çalıştığım teknolojiler:",
 		"scroll": "Kaydır"
 	},
@@ -50,7 +51,7 @@
 	},
 	"personal": {
 		"title": "Insan Olarak",
-		"subtitle": "Kısa bir insan konfigürasyonu.",
+		"subtitle": "Kendisi tarafından açıklanmış bir otoportre.",
 		"unformal1": "Ben bir yıldızım. Fizik ve astronomi tutkunu. Felsefe dalgıcı. Programlamaya, sanata, müziğe, edebiyata ve dünyadaki diğer tüm güzelliklere, özellikle de varlıklarını haklı çıkarmaları gerekmeyenleri seviyorum.",
 		"unformal2": "Ben bir kavanozun içinde sıkışmış sanatsal bir zihnim, boyalarım sızıyor, sadece makinelerin tam olarak anladığı büyüleyici dillerde sessizce kaçış rüyalarını kodluyorum. Platon'un mağarasından kaçtım ve hala dışarıda kaybolmuş durumdayım. Spagettileşmeden korkuyorum ama olay ufuklarının ötesini merak ediyorum, asla bitmeyebilecek düşünceler derliyorum. Tüm renkleri seviyorum ama sarıyı hepsinden daha çok. Yuri Gagarin'in geride bıraktığı çocuğum, hala merakın etrafında dönüyorum.",
 		"unformal3": "Düşüncelerim sonsuz döngülerde çalışıyor; bazıları oldukça zarif bir şekilde. Deniz aşığı, dağ özleyicisi, yerçekimi derleyicisiyim. Sorular bana geri sormaya başlayana kadar her şeyi sorguluyorum. Neredeyse şehirdeki en rahat daire, sanatın, mantığın, müziğin ve sözdiziminin izin istemeden bir arada var olduğu yerdeyim.",
@@ -173,6 +174,14 @@
 			"email": "ahmet@ornek.com",
 			"subject": "Proje sorusu",
 			"message": "Projenizden bahsedin..."
+		},
+		"tooltip": {
+			"name": "Lütfen tam adınızı buraya girin.",
+			"email": "Size ulaşabileceğim e-posta adresiniz.",
+			"subject": "Tartışmak istediğiniz konunun kısa özeti.",
+			"message": "Düşüncelerinizi, sorularınızı veya proje detaylarınızı buraya paylaşın.",
+			"github": "Kodlarımı ve projelerimi görmek için GitHub profilimi ziyaret edin.",
+			"linkedin": "LinkedIn'de benimle bağlantı kurun."
 		},
 		"sendMessage": "Mesaj Gönder",
 		"sending": "Gönderiliyor...",

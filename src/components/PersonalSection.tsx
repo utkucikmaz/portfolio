@@ -4,13 +4,15 @@ import { motion } from 'framer-motion'
 import HawkingRadiation from './HawkingRadiation'
 import ScrambleWords from './ScrambleWords'
 
-function calculateTotalDuration(
+const FADE_DURATION = 250
+
+function calculateParagraphDuration(
   text: string,
-  wordsPerMinute: number = 800,
-  baseWordDurationMs: number = 80
+  wordsPerMinute: number = 2500,
+  baseWordDurationMs: number = 30
 ): number {
   const tokens = text.split(/(\s+)/)
-  const msPerWord = Math.max(60, Math.min(150, Math.round(60000 / wordsPerMinute)))
+  const msPerWord = Math.max(40, Math.min(120, Math.round(60000 / wordsPerMinute)))
   
   let cumulativeDelay = 0
   let lastWordStartDelay = 0
@@ -20,24 +22,25 @@ function calculateTotalDuration(
     if (/^\s+$/.test(token)) continue
     
     const word = token
-    const durationMs = Math.max(100, Math.min(250, baseWordDurationMs + word.length * 3))
+    const durationMs = Math.max(80, Math.min(200, baseWordDurationMs + word.length * 3))
     
     lastWordStartDelay = cumulativeDelay
     lastWordDuration = durationMs
     
     let pause = 0
-    if (/[.!?]$/.test(word)) pause = 80
-    else if (/[,;:]$/.test(word)) pause = 40
+    if (/[.!?]$/.test(word)) pause = 60
+    else if (/[,;:]$/.test(word)) pause = 30
     
-    cumulativeDelay += Math.max(50, Math.min(150, msPerWord + word.length * 2)) + pause
+    cumulativeDelay += Math.max(40, Math.min(120, msPerWord + word.length * 2)) + pause
   }
   
-  return lastWordStartDelay + lastWordDuration
+  return lastWordStartDelay + lastWordDuration + FADE_DURATION
 }
 
 const PersonalSection = (): JSX.Element => {
   const { t } = useTranslation()
   const [isUnformal, setIsUnformal] = useState(false)
+  const [useScrambleAnimation, setUseScrambleAnimation] = useState(false)
   const hoverTimeoutRef = useRef<number | null>(null)
 
   useEffect(() => {
@@ -53,6 +56,7 @@ const PersonalSection = (): JSX.Element => {
       window.clearTimeout(hoverTimeoutRef.current)
     }
     hoverTimeoutRef.current = window.setTimeout(() => {
+      setUseScrambleAnimation(true)
       setIsUnformal(true)
     }, 500)
   }
@@ -62,6 +66,7 @@ const PersonalSection = (): JSX.Element => {
       window.clearTimeout(hoverTimeoutRef.current)
       hoverTimeoutRef.current = null
     }
+    setUseScrambleAnimation(false)
     setIsUnformal(false)
   }
 
@@ -70,6 +75,7 @@ const PersonalSection = (): JSX.Element => {
       window.clearTimeout(hoverTimeoutRef.current)
     }
     hoverTimeoutRef.current = window.setTimeout(() => {
+      setUseScrambleAnimation(true)
       setIsUnformal(true)
     }, 500)
   }
@@ -79,12 +85,17 @@ const PersonalSection = (): JSX.Element => {
       window.clearTimeout(hoverTimeoutRef.current)
       hoverTimeoutRef.current = null
     }
+    setUseScrambleAnimation(false)
     setIsUnformal(false)
   }
 
-  const speedAdjustments = useMemo(() => {
-    const defaultWordsPerMinute = 800
-    const defaultBaseWordDurationMs = 80
+  const paragraphDelays = useMemo(() => {
+    if (!useScrambleAnimation) {
+      return [0, 0, 0]
+    }
+    
+    const wordsPerMinute = 2500
+    const baseWordDurationMs = 30
     
     const texts = [
       t(isUnformal ? 'personal.unformal1' : 'personal.formal1'),
@@ -93,30 +104,18 @@ const PersonalSection = (): JSX.Element => {
     ]
     
     const durations = texts.map(text => 
-      calculateTotalDuration(text, defaultWordsPerMinute, defaultBaseWordDurationMs)
+      calculateParagraphDuration(text, wordsPerMinute, baseWordDurationMs)
     )
     
-    const maxDuration = Math.max(...durations)
-    
-    if (maxDuration === 0) {
-      return [defaultWordsPerMinute, defaultWordsPerMinute, defaultWordsPerMinute]
+    const delays: number[] = [0]
+    for (let i = 1; i < durations.length; i++) {
+      const prevDelay = delays[i - 1] ?? 0
+      const prevDuration = durations[i - 1] ?? 0
+      delays.push(prevDelay + prevDuration)
     }
-
-    const wordsPerMinuteValues = durations.map((duration) => {
-      if (duration === 0) return defaultWordsPerMinute
-      
-      const durationRatio = duration / maxDuration
-      
-      let targetWordsPerMinute = defaultWordsPerMinute * durationRatio
-      
-      const lengthBoost = 1 + (durationRatio * 0.1)
-      targetWordsPerMinute = targetWordsPerMinute * lengthBoost
-      
-      return Math.max(400, Math.min(1200, Math.round(targetWordsPerMinute)))
-    })
     
-    return wordsPerMinuteValues
-  }, [t, isUnformal])
+    return delays
+  }, [t, isUnformal, useScrambleAnimation])
 
   return (
     <section id='personal'>
@@ -156,19 +155,30 @@ const PersonalSection = (): JSX.Element => {
             tabIndex={0}
           >
             <p className='text-justify relative'>
-              {/* Reserve space with both versions invisibly */}
               <span className='invisible block whitespace-pre-wrap' aria-hidden='true'>
                 {t('personal.formal1')}
               </span>
               <span className='invisible block absolute top-0 left-0 w-full whitespace-pre-wrap' aria-hidden='true'>
                 {t('personal.unformal1')}
               </span>
-              {/* Visible animated content */}
               <span className='absolute top-0 left-0 w-full block text-justify'>
-                <ScrambleWords
-                  text={t(isUnformal ? 'personal.unformal1' : 'personal.formal1')}
-                  wordsPerMinute={speedAdjustments[0]}
-                />
+                <span
+                  className={`absolute top-0 left-0 w-full transition-opacity duration-1000 ease-in ${
+                    useScrambleAnimation ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                  }`}
+                >
+                  <ScrambleWords
+                    text={t(isUnformal ? 'personal.unformal1' : 'personal.formal1')}
+                    paragraphDelayMs={paragraphDelays[0]}
+                  />
+                </span>
+                <span
+                  className={`transition-opacity duration-1000 ease-out ${
+                    useScrambleAnimation ? 'opacity-0 pointer-events-none' : 'opacity-100'
+                  }`}
+                >
+                  {t(isUnformal ? 'personal.unformal1' : 'personal.formal1')}
+                </span>
               </span>
             </p>
             <p className='text-justify relative'>
@@ -179,10 +189,23 @@ const PersonalSection = (): JSX.Element => {
                 {t('personal.unformal2')}
               </span>
               <span className='absolute top-0 left-0 w-full block text-justify'>
-                <ScrambleWords
-                  text={t(isUnformal ? 'personal.unformal2' : 'personal.formal2')}
-                  wordsPerMinute={speedAdjustments[1]}
-                />
+                <span
+                  className={`absolute top-0 left-0 w-full transition-opacity duration-1000 ease-out ${
+                    useScrambleAnimation ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                  }`}
+                >
+                  <ScrambleWords
+                    text={t(isUnformal ? 'personal.unformal2' : 'personal.formal2')}
+                    paragraphDelayMs={paragraphDelays[1]}
+                  />
+                </span>
+                <span
+                  className={`transition-opacity duration-1000 ease-out ${
+                    useScrambleAnimation ? 'opacity-0 pointer-events-none' : 'opacity-100'
+                  }`}
+                >
+                  {t(isUnformal ? 'personal.unformal2' : 'personal.formal2')}
+                </span>
               </span>
             </p>
             <p className='text-justify relative'>
@@ -193,10 +216,23 @@ const PersonalSection = (): JSX.Element => {
                 {t('personal.unformal3')}
               </span>
               <span className='absolute top-0 left-0 w-full block text-justify'>
-                <ScrambleWords
-                  text={t(isUnformal ? 'personal.unformal3' : 'personal.formal3')}
-                  wordsPerMinute={speedAdjustments[2]}
-                />
+                <span
+                  className={`absolute top-0 left-0 w-full transition-opacity duration-1000 ease-out ${
+                    useScrambleAnimation ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                  }`}
+                >
+                  <ScrambleWords
+                    text={t(isUnformal ? 'personal.unformal3' : 'personal.formal3')}
+                    paragraphDelayMs={paragraphDelays[2]}
+                  />
+                </span>
+                <span
+                  className={`transition-opacity duration-1000 ease-out ${
+                    useScrambleAnimation ? 'opacity-0 pointer-events-none' : 'opacity-100'
+                  }`}
+                >
+                  {t(isUnformal ? 'personal.unformal3' : 'personal.formal3')}
+                </span>
               </span>
             </p>
           </div>

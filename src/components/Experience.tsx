@@ -83,26 +83,31 @@ const TimelineItem = memo(
                     {item.company}
                   </span>
                 ) : item.logo ? (
-                  <Tooltip.Provider>
-                    <Tooltip.Root>
-                      <Tooltip.Trigger asChild>
-                        <img
-                          src={item.logo}
-                          alt={item.institution}
-                          className='h-8 w-auto object-contain max-w-[120px] sm:max-w-[150px] cursor-help'
-                        />
-                      </Tooltip.Trigger>
-                      <Tooltip.Portal>
-                        <Tooltip.Content
-                          className='bg-neutral-200 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 px-3 py-1.5 rounded-md text-sm font-medium shadow-lg z-50 border border-neutral-300 dark:border-neutral-700'
-                          sideOffset={5}
-                        >
-                          {item.institution}
-                          <Tooltip.Arrow className='fill-neutral-200 dark:fill-neutral-800' />
-                        </Tooltip.Content>
-                      </Tooltip.Portal>
-                    </Tooltip.Root>
-                  </Tooltip.Provider>
+                  <>
+                    <span className='text-sm font-medium text-left sm:text-right text-neutral-600 dark:text-neutral-400 md:hidden'>
+                      {item.institution}
+                    </span>
+                    <Tooltip.Provider>
+                      <Tooltip.Root>
+                        <Tooltip.Trigger asChild>
+                          <img
+                            src={item.logo}
+                            alt={item.institution}
+                            className='hidden md:block h-8 w-auto object-contain max-w-[120px] sm:max-w-[150px] cursor-help'
+                          />
+                        </Tooltip.Trigger>
+                        <Tooltip.Portal>
+                          <Tooltip.Content
+                            className='bg-neutral-200 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 px-3 py-1.5 rounded-md text-sm font-medium shadow-lg z-50 border border-neutral-300 dark:border-neutral-700'
+                            sideOffset={5}
+                          >
+                            {item.institution}
+                            <Tooltip.Arrow className='fill-neutral-200 dark:fill-neutral-800' />
+                          </Tooltip.Content>
+                        </Tooltip.Portal>
+                      </Tooltip.Root>
+                    </Tooltip.Provider>
+                  </>
                 ) : (
                   <span className='text-sm font-medium text-left sm:text-right text-neutral-600 dark:text-neutral-400'>
                     {item.institution}
@@ -199,7 +204,7 @@ const TimelineItem = memo(
           </div>
         </div>
 
-        <div className='hidden md:flex absolute left-1/2 transform -translate-x-1/2 flex-col items-center'>
+        <div className='hidden lg:flex absolute left-1/2 transform -translate-x-1/2 flex-col items-center'>
           <div className='w-4 h-4 bg-primary-600 dark:bg-primary-400 rounded-full border-4 border-white dark:border-neutral-900 z-10'></div>
           {!isLast && (
             <div className='w-0.5 h-8 bg-neutral-300 dark:bg-neutral-600 mt-2'></div>

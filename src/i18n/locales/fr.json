@@ -14,6 +14,7 @@
 		"subtitle": "Développeur Full Stack axé sur les résultats avec une expertise prouvée dans la construction d'applications web scalables et performantes. Spécialisé dans les écosystèmes JavaScript modernes et les architectures backend robustes.",
 		"getInTouch": "Entrer en contact",
 		"downloadCV": "Télécharger le CV",
+		"downloadCVTooltip": "Téléchargez le CV dans différentes langues en changeant la langue du site web",
 		"technologies": "Technologies avec lesquelles je travaille :",
 		"scroll": "Défiler"
 	},
@@ -50,7 +51,7 @@
 	},
 	"personal": {
 		"title": "En tant que Personne",
-		"subtitle": "Une brève configuration humaine.",
+		"subtitle": "Un autoportrait, annoté par le soi.",
 		"unformal1": "Je suis une étoile. Passionné de physique et d'astronomie. Plongeur en philosophie. Amoureux de la programmation, de l'art, de la musique, de la littérature et de toute autre beauté dans le monde, surtout celles qui n'ont pas besoin de justifier leur existence.",
 		"unformal2": "Je suis un esprit artistique piégé dans un bocal, qui fuit des peintures, codant silencieusement des rêves d'évasion dans des langages charmants que seules les machines comprennent pleinement. Échappé de la caverne de Platon et toujours perdu dehors. Effrayé de la spaghettification mais m'émerveille au-delà des horizons d'événements, compilant des pensées qui pourraient ne jamais se terminer. J'aime toutes les couleurs mais le jaune plus. L'enfant que Yuri Gagarin a laissé derrière, toujours curieux, toujours en orbite autour de l'émerveillement.",
 		"unformal3": "Mes pensées tournent en boucles infinies ; certaines d'entre elles sont assez élégantes. Amoureux de la mer, nostalgique des montagnes, compilateur de gravité. Je remets tout en question jusqu'à ce que les questions commencent à me questionner en retour. Presque l'appartement le plus confortable de la ville, où l'art, la logique, la musique et la syntaxe coexistent sans demander la permission.",
@@ -173,6 +174,14 @@
 			"email": "jean@exemple.com",
 			"subject": "Demande de projet",
 			"message": "Parlez-moi de votre projet..."
+		},
+		"tooltip": {
+			"name": "Veuillez entrer votre nom complet ici.",
+			"email": "Votre adresse e-mail où je peux vous joindre.",
+			"subject": "Brève description de ce dont vous souhaitez discuter.",
+			"message": "Partagez vos pensées, questions ou détails du projet ici.",
+			"github": "Visitez mon profil GitHub pour voir mon code et mes projets.",
+			"linkedin": "Connectez-vous avec moi sur LinkedIn."
 		},
 		"sendMessage": "Envoyer le message",
 		"sending": "Envoi en cours...",

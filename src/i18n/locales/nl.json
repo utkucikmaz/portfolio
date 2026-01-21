@@ -14,6 +14,7 @@
 		"subtitle": "Resultaatgerichte Full Stack Ontwikkelaar met bewezen expertise in het bouwen van schaalbare, hoogwaardige webapplicaties. Gespecialiseerd in moderne JavaScript-ecosystemen en robuuste backend-architecturen.",
 		"getInTouch": "Neem contact op",
 		"downloadCV": "CV downloaden",
+		"downloadCVTooltip": "Download het cv in verschillende talen door de website-taal te wijzigen",
 		"technologies": "Technologieën waarmee ik werk:",
 		"scroll": "Scrollen"
 	},
@@ -50,7 +51,7 @@
 	},
 	"personal": {
 		"title": "Als Persoon",
-		"subtitle": "Een korte menselijke configuratie.",
+		"subtitle": "Een zelfportret, geannoteerd door het zelf.",
 		"unformal1": "Ik ben een ster. Natuurkunde- en astronomie-nerd. Filosofie-duiker. Verliefd op programmeren, kunst, muziek, literatuur en alle andere schoonheid in de wereld, vooral degenen die hun bestaan niet hoeven te rechtvaardigen.",
 		"unformal2": "Ik ben een artistieke geest opgesloten in een pot, lekkende verf, stilletjes ontsnappingsdromen coderen in charmante talen die alleen machines volledig begrijpen. Ontsnapt uit de grot van Plato en nog steeds verloren buiten. Bang voor spaghettificatie maar verwonder me voorbij gebeurtenishorizonten, compilatie van gedachten die misschien nooit eindigen. Hou van alle kleuren maar geel meer. Het kind dat Yuri Gagarin achterliet, nog steeds nieuwsgierig, nog steeds rond verwondering cirkelend.",
 		"unformal3": "Mijn gedachten draaien in oneindige lussen; sommige zijn behoorlijk elegant. Zee-liefhebber, berg-misser, zwaartekracht-compiler. Vraag alles tot de vragen me terug beginnen te vragen. Bijna de gezelligste flat in de stad, waar kunst, logica, muziek en syntaxis naast elkaar bestaan zonder toestemming te vragen.",
@@ -173,6 +174,14 @@
 			"email": "jan@voorbeeld.nl",
 			"subject": "Projectaanvraag",
 			"message": "Vertel me over je project..."
+		},
+		"tooltip": {
+			"name": "Voer hier uw volledige naam in.",
+			"email": "Uw e-mailadres waar ik u kan bereiken.",
+			"subject": "Korte samenvatting van wat u wilt bespreken.",
+			"message": "Deel hier uw gedachten, vragen of projectdetails.",
+			"github": "Bezoek mijn GitHub-profiel om mijn code en projecten te bekijken.",
+			"linkedin": "Maak verbinding met mij op LinkedIn."
 		},
 		"sendMessage": "Bericht verzenden",
 		"sending": "Verzenden...",

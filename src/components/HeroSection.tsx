@@ -6,6 +6,7 @@ import { ArrowDownIcon } from '@heroicons/react/24/outline'
 import toast from 'react-hot-toast'
 import axios from 'axios'
 import Draggable from 'react-draggable'
+import * as Tooltip from '@radix-ui/react-tooltip'
 import heroImage from '/images/hero.jpg'
 import heroHoverImage from '/images/hero-hover.png'
 
@@ -645,12 +646,28 @@ const HeroSection = ({ isDarkMode = true }: HeroSectionProps): JSX.Element => {
               >
                 {t('hero.getInTouch')}
               </button>
-              <button
-                onClick={() => void downloadCV()}
-                className='download-cv-button px-6 py-3 text-neutral-700 dark:text-neutral-300 rounded-lg font-medium hover:bg-neutral-300 dark:hover:bg-neutral-700 transition-colors duration-200'
-              >
-                {t('hero.downloadCV')}
-              </button>
+              <Tooltip.Provider>
+                <Tooltip.Root>
+                  <Tooltip.Trigger asChild>
+                    <button
+                      onClick={() => void downloadCV()}
+                      className='download-cv-button px-6 py-3 text-neutral-700 dark:text-neutral-300 rounded-lg font-medium hover:bg-neutral-300 dark:hover:bg-neutral-700 transition-colors duration-200'
+                    >
+                      {t('hero.downloadCV')}
+                    </button>
+                  </Tooltip.Trigger>
+                  <Tooltip.Portal>
+                    <Tooltip.Content
+                      className='bg-neutral-200 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 px-3 py-1.5 rounded-md text-sm font-medium shadow-lg z-50 border border-neutral-300 dark:border-neutral-700'
+                      side='bottom'
+                      sideOffset={5}
+                    >
+                      {t('hero.downloadCVTooltip')}
+                      <Tooltip.Arrow className='fill-neutral-200 dark:fill-neutral-800' />
+                    </Tooltip.Content>
+                  </Tooltip.Portal>
+                </Tooltip.Root>
+              </Tooltip.Provider>
             </motion.div>
           </motion.div>
 

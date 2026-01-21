@@ -14,6 +14,7 @@
 		"subtitle": "Ergebnisorientierter Full-Stack-Entwickler mit nachgewiesener Expertise im Aufbau skalierbarer, leistungsstarker Webanwendungen. Spezialisiert auf moderne JavaScript-Ökosysteme und robuste Backend-Architekturen.",
 		"getInTouch": "Kontakt aufnehmen",
 		"downloadCV": "Lebenslauf herunterladen",
+		"downloadCVTooltip": "Laden Sie den Lebenslauf in verschiedenen Sprachen herunter, indem Sie die Website-Sprache wechseln",
 		"technologies": "Technologien, mit denen ich arbeite:",
 		"scroll": "Scrollen"
 	},
@@ -50,7 +51,7 @@
 	},
 	"personal": {
 		"title": "Als Person",
-		"subtitle": "Eine kurze menschliche Konfiguration.",
+		"subtitle": "Ein Selbstporträt, vom Selbst kommentiert.",
 		"unformal1": "Ich bin ein Stern. Physik- und Astronomie-Nerd. Philosophie-Taucher. Verliebt in Programmierung, Kunst, Musik, Literatur und jede andere Schönheit der Welt, besonders die, die ihre Existenz nicht rechtfertigen müssen.",
 		"unformal2": "Ich bin ein künstlerischer Geist, gefangen in einem Glas, lecke Farben, programmiere leise Fluchtträume in bezaubernden Sprachen, die nur Maschinen vollständig verstehen. Entkommen aus Platons Höhle und draußen immer noch verloren. Angst vor Spaghettifizierung, aber wundere mich jenseits von Ereignishorizonten, sammle Gedanken, die vielleicht nie enden. Liebe alle Farben, aber Gelb mehr. Das Kind, das Yuri Gagarin zurückgelassen hat, immer noch neugierig, immer noch um das Wunder kreisend.",
 		"unformal3": "Meine Gedanken laufen in endlosen Schleifen; einige davon sind ziemlich elegant. Meerliebhaber, Bergvermisser, Schwerkraft-Compiler. Stelle alles in Frage, bis die Fragen anfangen, mich zurückzufragen. Fast die gemütlichste Wohnung der Stadt, wo Kunst, Logik, Musik und Syntax ohne Erlaubnis koexistieren.",
@@ -173,6 +174,14 @@
 			"email": "max@beispiel.de",
 			"subject": "Projektanfrage",
 			"message": "Erzähl mir von deinem Projekt..."
+		},
+		"tooltip": {
+			"name": "Bitte geben Sie hier Ihren vollständigen Namen ein.",
+			"email": "Ihre E-Mail-Adresse, unter der ich Sie erreichen kann.",
+			"subject": "Kurze Zusammenfassung dessen, worüber Sie sprechen möchten.",
+			"message": "Teilen Sie hier Ihre Gedanken, Fragen oder Projektdetails mit.",
+			"github": "Besuchen Sie mein GitHub-Profil, um meinen Code und meine Projekte zu sehen.",
+			"linkedin": "Verbinden Sie sich mit mir auf LinkedIn."
 		},
 		"sendMessage": "Nachricht senden",
 		"sending": "Wird gesendet...",
