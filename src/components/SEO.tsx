@@ -29,11 +29,11 @@ const SEO = (): null => {
     const title = t('seo.title', { defaultValue: 'utku cikmaz' })
     const description = t('seo.description', {
       defaultValue:
-        'Full stack web developer specializing in React, TypeScript, Node.js, and modern web technologies. Building scalable applications with a focus on clean code and user experience.',
+        'Portfolio website of Utku Cikmaz, a Full stack web developer specializing in Vue, Django, React, TypeScript, Node.js, Python and modern web technologies.',
     })
     const keywords = t('seo.keywords', {
       defaultValue:
-        'full stack developer, web developer, React, TypeScript, Node.js, JavaScript, frontend developer, backend developer',
+        'full stack developer, web developer, React developer, Vue developer, Django developer, Django Rest Framework developer, Python developer, TypeScript developer, Node.js developer, JavaScript developer, frontend developer, backend developer, software engineer, web development services, Vue expert, Django expert, Django Rest Framework expert, Python expert, React expert, TypeScript expert, modern web applications, scalable web solutions, clean code, user experience, performance optimization, Hamburg developer, Germany developer',
     })
 
     const updateMetaTag = (
@@ -251,7 +251,7 @@ const SEO = (): null => {
     websiteScript.type = 'application/ld+json'
     websiteScript.textContent = JSON.stringify(websiteStructuredData, null, 2)
     document.head.appendChild(websiteScript)
-    
+
     const serviceStructuredData = {
       '@context': 'https://schema.org',
       '@type': 'ProfessionalService',
