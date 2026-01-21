@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Background Animation Test</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background: #0a0a0a;
+			color: white;
+			font-family: Arial, sans-serif;
+			min-height: 100vh;
+		}
+
+		.content {
+			padding: 2rem;
+			position: relative;
+			z-index: 1;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="content">
+		<h1>Tree Branch Background Test</h1>
+		<p>This page tests the hand-drawn tree branch background animation.</p>
+		<p>If you can see subtle tree branches growing from the bottom in the background, the animation is working!</p>
+		<p>The animation should:</p>
+		<ul>
+			<li>Show organic tree branches growing upward</li>
+			<li>Branches respond to mouse movement (grow toward cursor)</li>
+			<li>Branch density increases with scroll position</li>
+			<li>Very subtle glow effect around mouse</li>
+			<li>Adapt to dark/light themes with different colors</li>
+		</ul>
+		<p>Scroll down to see the parallax effect.</p>
+		<div style="height: 200vh;"></div>
+	</div>
+
+	<script type="module">
+		import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.module.js';
+
+		function clampDpr(dpr) {
+			return Math.min(Math.max(dpr, 1), 1.4);
+		}
+
+		function getScrollProgress() {
+			const doc = document.documentElement;
+			const max = Math.max(1, doc.scrollHeight - window.innerHeight);
+			return Math.min(1, Math.max(0, window.scrollY / max));
+		}
+
+		// Create the background
+		const container = document.createElement('div');
+		container.style.position = 'fixed';
+		container.style.top = '0';
+		container.style.left = '0';
+		container.style.width = '100%';
+		container.style.height = '100%';
+		container.style.zIndex = '-20';
+		container.style.pointerEvents = 'none';
+		document.body.appendChild(container);
+
+		const scene = new THREE.Scene();
+		const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+
+		const renderer = new THREE.WebGLRenderer({
+			antialias: false,
+			alpha: true,
+			powerPreference: 'low-power',
+		});
+		renderer.setClearColor(0x000000, 0);
+		renderer.setPixelRatio(clampDpr(window.devicePixelRatio || 1));
+		renderer.setSize(window.innerWidth, window.innerHeight);
+		renderer.domElement.style.width = '100%';
+		renderer.domElement.style.height = '100%';
+		container.appendChild(renderer.domElement);
+
+		const uniforms = {
+			uTime: { value: 0 },
+			uResolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) },
+			uTheme: { value: 1 }, // dark mode
+			uScroll: { value: getScrollProgress() },
+			uMouse: { value: new THREE.Vector2(0.5, 0.5) },
+			uOpacity: { value: 1 },
+		};
+
+		const material = new THREE.ShaderMaterial({
+			uniforms,
+			vertexShader: `
+                varying vec2 vUv;
+                void main() {
+                    vUv = uv;
+                    gl_Position = vec4(position.xy, 0.0, 1.0);
+                }
+            `,
+			fragmentShader: `
+                precision mediump float;
+
+                uniform float uTime;
+                uniform vec2 uResolution;
+                uniform float uTheme;
+                uniform float uScroll;
+                uniform vec2 uMouse;
+                uniform float uOpacity;
+                varying vec2 vUv;
+
+                float hash(vec2 p) {
+                    return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
+                }
+
+                float noise(vec2 p) {
+                    vec2 i = floor(p);
+                    vec2 f = fract(p);
+                    f = f * f * (3.0 - 2.0 * f);
+                    float a = hash(i);
+                    float b = hash(i + vec2(1.0, 0.0));
+                    float c = hash(i + vec2(0.0, 1.0));
+                    float d = hash(i + vec2(1.0, 1.0));
+                    return mix(mix(a, b, f.x), mix(c, d, f.x), f.y);
+                }
+
+                float fbm(vec2 p) {
+                    float value = 0.0;
+                    float amplitude = 0.5;
+                    for(int i = 0; i < 3; i++) {
+                        value += amplitude * noise(p);
+                        p *= 2.0;
+                        amplitude *= 0.5;
+                    }
+                    return value;
+                }
+
+                float treeBranch(vec2 uv, vec2 start, vec2 direction, float length, float thickness) {
+                    vec2 pos = uv - start;
+                    float angle = atan(direction.y, direction.x);
+                    float c = cos(angle);
+                    float s = sin(angle);
+
+                    vec2 rotated = vec2(
+                        pos.x * c + pos.y * s,
+                        -pos.x * s + pos.y * c
+                    );
+
+                    float dist = abs(rotated.y);
+                    float along = rotated.x;
+
+                    float taper = 1.0 - smoothstep(0.0, length, along);
+                    float organic = fbm(rotated * 8.0 + uTime * 0.1) * 0.3;
+                    taper *= (1.0 + organic);
+
+                    float branch = smoothstep(thickness + 0.01, thickness - 0.01, dist / taper);
+                    branch *= smoothstep(-0.1, 0.0, along) * smoothstep(length + 0.1, length, along);
+
+                    return branch;
+                }
+
+                void main() {
+                    vec2 uv = vUv;
+                    vec2 st = uv;
+
+                    vec3 branchColorLight = vec3(0.85, 0.9, 0.95);
+                    vec3 branchColorDark = vec3(0.15, 0.25, 0.4);
+                    vec3 branchColor = mix(branchColorLight, branchColorDark, uTheme);
+
+                    vec3 glowColorLight = vec3(0.9, 0.95, 1.0);
+                    vec3 glowColorDark = vec3(0.3, 0.5, 0.8);
+                    vec3 glowColor = mix(glowColorLight, glowColorDark, uTheme);
+
+                    float branches = 0.0;
+                    float glow = 0.0;
+
+                    for(int tree = 0; tree < 5; tree++) {
+                        vec2 treeRoot = vec2(0.1 + float(tree) * 0.2 + hash(vec2(float(tree), 0.0)) * 0.1, 0.05);
+
+                        vec2 mouseDir = normalize(uMouse - treeRoot);
+                        vec2 baseDir = vec2(0.0, 1.0);
+                        vec2 growthDir = normalize(mix(baseDir, mouseDir, 0.3));
+
+                        float trunkLength = 0.3 + uScroll * 0.4 + sin(uTime * 0.5 + float(tree)) * 0.1;
+                        float trunkThickness = 0.008;
+                        branches += treeBranch(st, treeRoot, growthDir, trunkLength, trunkThickness);
+
+                        vec2 currentPos = treeRoot + growthDir * trunkLength * 0.6;
+                        for(int branch = 0; branch < 3; branch++) {
+                            float branchAngle = (float(branch) - 1.0) * 0.8 + sin(uTime * 0.3 + float(tree + branch)) * 0.3;
+                            vec2 branchDir = vec2(sin(branchAngle), cos(branchAngle));
+                            branchDir = normalize(mix(branchDir, mouseDir, 0.2));
+
+                            float branchLength = 0.15 + uScroll * 0.2 + hash(vec2(float(tree), float(branch))) * 0.1;
+                            float branchThickness = 0.004;
+                            branches += treeBranch(st, currentPos, branchDir, branchLength, branchThickness);
+
+                            vec2 subPos = currentPos + branchDir * branchLength * 0.7;
+                            for(int sub = 0; sub < 2; sub++) {
+                                float subAngle = branchAngle + (float(sub) - 0.5) * 1.2 + sin(uTime * 0.4 + float(tree + branch + sub)) * 0.2;
+                                vec2 subDir = vec2(sin(subAngle), cos(subAngle));
+                                subDir = normalize(mix(subDir, mouseDir, 0.15));
+
+                                float subLength = 0.08 + uScroll * 0.1;
+                                float subThickness = 0.002;
+                                branches += treeBranch(st, subPos, subDir, subLength, subThickness);
+                            }
+                        }
+                    }
+
+                    glow = branches * 0.3;
+                    vec3 color = branchColor * branches + glowColor * glow;
+                    color *= 0.8 + sin(uTime * 0.2) * 0.1;
+
+                    float mouseDist = distance(st, uMouse);
+                    float mouseGlow = 1.0 - smoothstep(0.0, 0.3, mouseDist);
+                    color += glowColor * mouseGlow * 0.1;
+
+                    float alpha = (branches + glow * 0.5) * mix(0.08, 0.12, uTheme) * uOpacity;
+                    vec2 center = st - 0.5;
+                    alpha *= 1.0 - dot(center, center) * 0.3;
+
+                    gl_FragColor = vec4(color, alpha);
+                }
+            `,
+			transparent: true,
+			depthWrite: false,
+			depthTest: false,
+		});
+
+		const mesh = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), material);
+		scene.add(mesh);
+
+		const clock = new THREE.Clock();
+
+		function animate() {
+			uniforms.uTime.value = clock.getElapsedTime();
+			uniforms.uScroll.value = getScrollProgress();
+			renderer.render(scene, camera);
+			requestAnimationFrame(animate);
+		}
+
+		animate();
+
+		window.addEventListener('resize', () => {
+			renderer.setSize(window.innerWidth, window.innerHeight);
+			uniforms.uResolution.value.set(window.innerWidth, window.innerHeight);
+		});
+
+		window.addEventListener('scroll', () => {
+			uniforms.uScroll.value = getScrollProgress();
+		});
+
+		window.addEventListener('mousemove', (e) => {
+			uniforms.uMouse.value.set(e.clientX / window.innerWidth, 1.0 - e.clientY / window.innerHeight);
+		});
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,235 @@
+{
+	"nav": {
+		"home": "Home",
+		"craft": "As a Developer",
+		"journey": "Trajectory",
+		"projects": "Inventory",
+		"personal": "As a Person",
+		"contact": "Connect",
+		"skipToMain": "Skip to main content"
+	},
+	"hero": {
+		"greeting": "Hi, I'm",
+		"title": "a developer.",
+		"subtitle": "Results-driven Full Stack Developer with proven expertise in building scalable, high-performance web applications. Specialized in modern JavaScript ecosystems and robust backend architectures.",
+		"getInTouch": "Get in touch",
+		"downloadCV": "Download CV",
+		"technologies": "Technologies I work with:",
+		"scroll": "Scroll"
+	},
+	"craft": {
+		"title": "As a Developer",
+		"subtitle": "Clean code, function first, beauty included.",
+		"description1": "I architect and deliver enterprise-grade full-stack solutions using cutting-edge technologies like React, Next.js, TypeScript, Node.js, and Django. My expertise spans the entire software development lifecycle, from designing intuitive user interfaces to building robust, scalable backend architectures that power high-performance applications.",
+		"description2": "With a proven track records I bring a unique blend of technical excellence and cross-cultural communication skills. My code is characterized by clean architecture, rigorous testing, and performance optimization—ensuring solutions that not only meet but exceed business objectives.",
+		"description3": "My approach to development is holistic: I don't just write code—I engineer solutions. With expertise in both frontend and backend technologies, I bridge the gap between design and implementation, ensuring seamless integration, optimal performance, and scalable architecture that grows with your business needs.",
+		"skills": "Skills",
+		"certifications": {
+			"title": "Certifications",
+			"ironhack": {
+				"name": "Ironhack",
+				"logo": "/logo/ironhack.png",
+				"title": "Full Stack Web Development Bootcamp",
+				"duration": "400 Hours",
+				"year": "2023"
+			},
+			"digihome": {
+				"name": "Digihome Schooling",
+				"logo": "/logo/digihome.png",
+				"title": "Full Stack Web Development Bootcamp",
+				"duration": "400 Hours",
+				"year": "2022"
+			}
+		},
+		"positions": {
+			"title": "Communication",
+			"item1": "Led multinational teams in an international training environment under North Atlantic Treaty Organization (NATO) supervision",
+			"item2": "Managed and mentored a large peer group (200+ members) with a focus on structure, clarity, and responsibility",
+			"item3": "Founded and chaired an international relations club, fostering dialogue across cultures and disciplines"
+		}
+	},
+	"personal": {
+		"title": "As a Person",
+		"subtitle": "A brief human configuration.",
+		"unformal1": "I’m a star. Physics and astronomy nerd. Philosophy diver. In love with programming, art, music, literature and every other beauty in the world, especially the ones that don’t need to justify their existence.",
+		"unformal2": "I am an artistic mind trapped inside a jar, leaking paints, quietly coding escape dreams in charming languages only machines fully understand. Escaped from Plato’s cave and still lost outside. Scared of spaghettification but wonder beyond event horizons, compiling thoughts that might never terminate. Love all colors but yellow more. The child Yuri Gagarin left behind, still curious, still orbiting wonder.",
+		"unformal3": "My thoughts run in infinite loops; some of them are quite elegant. Sea lover, mountain misser, gravity compiler. Question everything until the questions start questioning me back. Almost the coziest flat in town, where art, logic, music, and syntax coexist without asking permission.",
+		"formal1": "I’m Utku. Born in Istanbul, currently based in Hamburg. My path into development did not begin with code, but with curiosity about people, systems, and the quiet sense of wonder that keeps questions alive.",
+		"formal2": "I studied at two universities, shaped by very different kinds of structure. One was a military academy, where I focused on sociology, discipline, and order, learning how systems guide behavior. The other was Chinese Language and Literature, where structure appeared through culture, symbols, and unfamiliar logic. Long before software, trained to observe patterns, context, and meaning.",
+		"formal3": "Development became the canvas where all of this formed a coherent system. For me, code is not only technical, but living, logical, human, expressive in subtle ways. Today, I build digital experiences with clarity, calm interfaces, and systems that respect both the user and the idea behind the product."
+	},
+	"journey": {
+		"title": "Trajectory",
+		"subtitle": "A work still in progress.",
+		"experience": "Experience",
+		"education": "Education",
+		"experiences": {
+			"showDetails": "View details",
+			"hideDetails": "Hide details",
+			"ailon": {
+				"title": "Full Stack Developer",
+				"company": "AIlon/Erason",
+				"location": "Lüneburg, Germany",
+				"period": "Oct 2024 - Present",
+				"highlights": [
+					"Architecting and developing a production-grade AI analytics platform for enterprise clients using Vue 3, Django REST Framework, and Highcharts.",
+					"Engineered high-performance data visualization components for large-scale datasets, reducing render time by 60% through optimization techniques.",
+					"Established a comprehensive design system and component library to ensure visual consistency, reducing UI development time by 40%.",
+					"Implemented advanced state management with Vue 3 Composition API, Pinia, and TanStack Query to improve responsiveness.",
+					"Collaborated with product and design teams on strategic decisions, contributing to roadmap planning and technical feasibility."
+				]
+			},
+			"arbithub": {
+				"title": "Frontend Web Developer Trainee",
+				"company": "Arbithub",
+				"location": "Chicago, USA (Remote)",
+				"period": "Jan 2024 - Aug 2024",
+				"highlights": [
+					"Spearheaded a framework migration (React 17 to 18, React Router v5 to v6, Redux Toolkit, Tailwind CSS v2 to v3) with zero downtime, improving bundle size by 25%.",
+					"Built enterprise-grade search with advanced filtering, debouncing, and real-time updates, increasing user engagement by 35%.",
+					"Established code quality standards with ESLint and Prettier, reducing technical debt by 40% and standardizing workflows.",
+					"Delivered features in an Agile environment, participating in daily standups, sprint planning, and code reviews with cross-functional teams."
+				]
+			},
+			"lightup": {
+				"title": "Full Stack Developer Trainee",
+				"company": "LightUp Digital",
+				"location": "Berlin, Germany (Remote)",
+				"period": "Oct 2023 - Jan 2024",
+				"highlights": [
+					"Designed and implemented a scalable microservices architecture with NestJS and TypeScript using dependency injection and modular design patterns.",
+					"Developed production-ready responsive interfaces with React and Material-UI, creating reusable components that reduced development time by 30%.",
+					"Architected a secure authentication system with JWT and OAuth 2.0, implementing role-based access control for a multi-tenant app.",
+					"Established a comprehensive testing strategy achieving 85% coverage with Jest and Supertest to ensure reliability."
+				]
+			},
+			"turkishairlines": {
+				"title": "IOCC Operations Control Officer",
+				"company": "Turkish Airlines",
+				"location": "Istanbul",
+				"period": "Mar 2019 - May 2020",
+				"highlights": [
+					"Managed real-time operational control of 200+ daily flights in a mission-critical environment, requiring high-pressure decision-making and system reliability.",
+					"Coordinated cross-functional international teams, strengthening communication and problem-solving skills applicable to distributed software development."
+				]
+			}
+		},
+		"educations": {
+			"ironhack": {
+				"title": "Full Stack Web Development Bootcamp",
+				"institution": "Ironhack",
+				"location": "Remote",
+				"period": "2023",
+				"duration": "400 Hours"
+			},
+			"digihomeschooling": {
+				"title": "Full Stack Web Development Bootcamp",
+				"institution": "Digi-Homeschooling",
+				"location": "Remote",
+				"period": "2022",
+				"duration": "400 Hours"
+			},
+			"istanbuluni": {
+				"title": "Chinese Language and Literature",
+				"institution": "Istanbul University",
+				"location": "Istanbul",
+				"period": "2016 - 2020"
+			},
+			"turkishmilitary": {
+				"title": "Sociology",
+				"institution": "Turkish Military Academy",
+				"location": "Ankara",
+				"period": "2012 - 2015"
+			}
+		}
+	},
+	"projects": {
+		"title": "Inventory",
+		"subtitle": "Selected digital artifacts.",
+		"code": "Code",
+		"live": "Live",
+		"memoria": {
+			"description": "Social media platform for connecting with loved ones. Features private groups, AI-enhanced posts, and accessibility-focused story narration."
+		},
+		"plantiq": {
+			"description": "AI-powered plant identification and care platform. Uses image recognition and GPT integration for expert gardening advice."
+		},
+		"hotelmiddleearth": {
+			"description": "Interactive web-based game set in Middle Earth. Challenges decision-making, focus, and reflexes through engaging gameplay."
+		},
+		"reactmovieapp": {
+			"description": "Modern movie discovery app built with React. Features component architecture, custom hooks, and comprehensive testing."
+		}
+	},
+	"contact": {
+		"title": "Let's Connect",
+		"subtitle": "Ideas, questions, or quiet hellos.",
+		"name": "Name",
+		"email": "Email",
+		"subject": "Subject",
+		"message": "Message",
+		"placeholder": {
+			"name": "John Doe",
+			"email": "john@example.com",
+			"subject": "Project inquiry",
+			"message": "Tell me about your project..."
+		},
+		"sendMessage": "Send Message",
+		"sending": "Sending...",
+		"success": "Message sent successfully!",
+		"successMessage": "Thank you for reaching out. I'll get back to you as soon as possible.",
+		"error": {
+			"generic": "Failed to send message. Please try again.",
+			"rateLimit": "Too many requests. Please wait a moment and try again.",
+			"invalidData": "Invalid form data. Please check your input and try again.",
+			"auth": "Authentication failed. Please contact the administrator.",
+			"serviceUnavailable": "Service temporarily unavailable. Please try again later."
+		}
+	},
+	"footer": {
+		"copyright": "All rights reserved.",
+		"github": "GitHub",
+		"linkedin": "LinkedIn"
+	},
+	"theme": {
+		"toggleLight": "Switch to light mode",
+		"toggleDark": "Switch to dark mode"
+	},
+	"accessibility": {
+		"menuOpen": "Open menu",
+		"menuClose": "Close menu",
+		"scrollToTop": "Scroll to top",
+		"viewCode": "View source code",
+		"viewLive": "View live demo",
+		"changeLanguage": "Change language"
+	},
+	"toast": {
+		"email": {
+			"success": "Message sent successfully!",
+			"error": {
+				"generic": "Failed to send message. Please try again.",
+				"rateLimit": "Too many requests. Please wait a moment.",
+				"invalidData": "Invalid form data. Please check your input.",
+				"auth": "Authentication failed. Please contact support.",
+				"serviceUnavailable": "Service temporarily unavailable. Please try again later."
+			}
+		},
+		"language": {
+			"success": "Language changed successfully"
+		},
+		"cv": {
+			"downloading": "Downloading CV...",
+			"success": "CV downloaded successfully",
+			"error": "Failed to download CV"
+		},
+		"theme": {
+			"darkMode": "Dark mode enabled",
+			"lightMode": "Light mode enabled"
+		}
+	},
+	"seo": {
+		"title": "utku cikmaz",
+		"description": "Full stack web developer specializing in React, TypeScript, Node.js, and modern web technologies. Building scalable applications with a focus on clean code, user experience, and performance. Available for freelance projects and full-time opportunities.",
+		"keywords": "full stack developer, web developer, React developer, TypeScript developer, Node.js developer, JavaScript developer, frontend developer, backend developer, software engineer, web development services, React expert, TypeScript expert, modern web applications, scalable web solutions, clean code, user experience, performance optimization, Hamburg developer, Germany developer"
+	}
+}

@@ -1,0 +1,63 @@
+:root {
+  /* Spacing Scale (8px base) */
+  --spacing-xs: 0.25rem; /* 4px */
+  --spacing-sm: 0.5rem; /* 8px */
+  --spacing-md: 1rem; /* 16px */
+  --spacing-lg: 1.5rem; /* 24px */
+  --spacing-xl: 2rem; /* 32px */
+  --spacing-2xl: 3rem; /* 48px */
+  --spacing-3xl: 4rem; /* 64px */
+  --spacing-4xl: 6rem; /* 96px */
+  --spacing-5xl: 8rem; /* 128px */
+  --spacing-6xl: 12rem; /* 192px */
+  --spacing-7xl: 16rem; /* 256px */
+  --spacing-8xl: 20rem; /* 320px */
+
+  /* Typography */
+  --font-family-sans:
+    'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    sans-serif;
+
+  /* Colors - Light Mode */
+  --color-bg-primary: #f8f8f8;
+  --color-bg-secondary: #f2f2f2;
+  --color-bg-tertiary: #f5f5f5;
+  --color-bg-card: #ffffff;
+  --color-bg-inactive: #fafafa;
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #404040;
+  --color-text-tertiary: #6b6b6b;
+  --color-border: #d4d4d4;
+  --color-accent: #0ea5e9;
+  --color-accent-hover: #0284c7;
+
+  /* Toast Colors - Light Mode */
+  --toast-bg: #f8f8f8;
+  --toast-text: #1a1a1a;
+  --toast-border: #d4d4d4;
+}
+
+.dark {
+  /* Colors - Dark Mode */
+  --color-bg-primary: #0a0a0a;
+  --color-bg-secondary: #171717;
+  --color-bg-tertiary: #262626;
+  --color-bg-card: #171717;
+  --color-bg-inactive: #262626;
+  --color-text-primary: #fafafa;
+  --color-text-secondary: #a3a3a3;
+  --color-text-tertiary: #737373;
+  --color-border: #404040;
+  --color-accent: #38bdf8;
+  --color-accent-hover: #0ea5e9;
+
+  /* Toast Colors - Dark Mode */
+  --toast-bg: #171717;
+  --toast-text: #fafafa;
+  --toast-border: #404040;
+
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
+}

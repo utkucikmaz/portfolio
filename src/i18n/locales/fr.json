@@ -1,0 +1,235 @@
+{
+	"nav": {
+		"home": "Accueil",
+		"craft": "En tant que Développeur",
+		"journey": "Trajectoire",
+		"projects": "Inventaire",
+		"personal": "En tant que Personne",
+		"contact": "Contact",
+		"skipToMain": "Aller au contenu principal"
+	},
+	"hero": {
+		"greeting": "Salut, je suis",
+		"title": "un développeur.",
+		"subtitle": "Développeur Full Stack axé sur les résultats avec une expertise prouvée dans la construction d'applications web scalables et performantes. Spécialisé dans les écosystèmes JavaScript modernes et les architectures backend robustes.",
+		"getInTouch": "Entrer en contact",
+		"downloadCV": "Télécharger le CV",
+		"technologies": "Technologies avec lesquelles je travaille :",
+		"scroll": "Défiler"
+	},
+	"craft": {
+		"title": "En tant que Développeur",
+		"subtitle": "Code propre, fonction d'abord, beauté incluse.",
+		"description1": "Je conçois et livre des solutions Full Stack de niveau entreprise en utilisant des technologies de pointe comme React, Next.js, TypeScript, Node.js et Django. Mon expertise couvre tout le cycle de vie du développement logiciel, de la conception d'interfaces utilisateur intuitives à la construction d'architectures backend robustes et scalables qui alimentent des applications performantes.",
+		"description2": "Avec un historique éprouvé, j'apporte une combinaison unique d'excellence technique et de compétences en communication interculturelle. Mon code se caractérise par une architecture propre, des tests rigoureux et une optimisation des performances, garantissant des solutions qui non seulement répondent mais dépassent les objectifs commerciaux.",
+		"description3": "Mon approche du développement est holistique : je ne me contente pas d'écrire du code, j'ingénierie des solutions. Avec une expertise dans les technologies frontend et backend, je comble le fossé entre la conception et l'implémentation, garantissant une intégration transparente, des performances optimales et une architecture scalable qui évolue avec les besoins de votre entreprise.",
+		"skills": "Compétences",
+		"certifications": {
+			"title": "Certifications",
+			"ironhack": {
+				"name": "Ironhack",
+				"logo": "/logo/ironhack.png",
+				"title": "Bootcamp Développement Web Full Stack",
+				"duration": "400 Heures",
+				"year": "2023"
+			},
+			"digihome": {
+				"name": "Digihome Schooling",
+				"logo": "/logo/digihome.png",
+				"title": "Bootcamp Développement Web Full Stack",
+				"duration": "400 Heures",
+				"year": "2022"
+			}
+		},
+		"positions": {
+			"title": "Communication",
+			"item1": "Dirigé des équipes multinationales dans un environnement de formation international sous la supervision de l'Organisation du Traité de l'Atlantique Nord (OTAN)",
+			"item2": "Géré et mentoré un grand groupe de pairs (200+ membres) avec un accent sur la structure, la clarté et la responsabilité",
+			"item3": "Fondé et présidé un club de relations internationales, favorisant le dialogue entre les cultures et les disciplines"
+		}
+	},
+	"personal": {
+		"title": "En tant que Personne",
+		"subtitle": "Une brève configuration humaine.",
+		"unformal1": "Je suis une étoile. Passionné de physique et d'astronomie. Plongeur en philosophie. Amoureux de la programmation, de l'art, de la musique, de la littérature et de toute autre beauté dans le monde, surtout celles qui n'ont pas besoin de justifier leur existence.",
+		"unformal2": "Je suis un esprit artistique piégé dans un bocal, qui fuit des peintures, codant silencieusement des rêves d'évasion dans des langages charmants que seules les machines comprennent pleinement. Échappé de la caverne de Platon et toujours perdu dehors. Effrayé de la spaghettification mais m'émerveille au-delà des horizons d'événements, compilant des pensées qui pourraient ne jamais se terminer. J'aime toutes les couleurs mais le jaune plus. L'enfant que Yuri Gagarin a laissé derrière, toujours curieux, toujours en orbite autour de l'émerveillement.",
+		"unformal3": "Mes pensées tournent en boucles infinies ; certaines d'entre elles sont assez élégantes. Amoureux de la mer, nostalgique des montagnes, compilateur de gravité. Je remets tout en question jusqu'à ce que les questions commencent à me questionner en retour. Presque l'appartement le plus confortable de la ville, où l'art, la logique, la musique et la syntaxe coexistent sans demander la permission.",
+		"formal1": "Je suis Utku. Né à Istanbul, actuellement basé à Hambourg. Mon chemin vers le développement n'a pas commencé par le code, mais par la curiosité pour les gens, les systèmes et le sentiment silencieux d'émerveillement qui maintient les questions vivantes.",
+		"formal2": "J'ai étudié dans deux universités, façonné par des types de structures très différents. L'une était une académie militaire, où je me suis concentré sur la sociologie, la discipline et l'ordre, apprenant comment les systèmes guident le comportement. L'autre était la Langue et Littérature Chinoises, où la structure est apparue à travers la culture, les symboles et la logique inconnue. Bien avant le logiciel, formé pour observer les modèles, le contexte et le sens.",
+		"formal3": "Le développement est devenu la toile où tout cela a formé un système cohérent. Pour moi, le code n'est pas seulement technique, mais vivant, logique, humain, expressif de manière subtile. Aujourd'hui, je construis des expériences numériques avec clarté, des interfaces calmes et des systèmes qui respectent à la fois l'utilisateur et l'idée derrière le produit."
+	},
+	"journey": {
+		"title": "Trajectoire",
+		"subtitle": "Un travail encore en cours.",
+		"experience": "Expérience",
+		"education": "Formation",
+		"experiences": {
+			"showDetails": "Voir les détails",
+			"hideDetails": "Masquer les détails",
+			"ailon": {
+				"title": "Développeur Full Stack",
+				"company": "AIlon/Erason",
+				"location": "Lüneburg, Allemagne",
+				"period": "Oct 2024 - Présent",
+				"highlights": [
+					"Conception et développement d'une plateforme d'analyse IA de niveau production pour clients entreprises utilisant Vue 3, Django REST Framework et Highcharts.",
+					"Développement de composants de visualisation de données haute performance pour ensembles de données à grande échelle, réduisant le temps de rendu de 60% grâce à des techniques d'optimisation.",
+					"Établissement d'un système de design complet et d'une bibliothèque de composants pour assurer la cohérence visuelle, réduisant le temps de développement UI de 40%.",
+					"Implémentation d'une gestion d'état avancée avec Vue 3 Composition API, Pinia et TanStack Query pour améliorer la réactivité.",
+					"Collaboration avec les équipes produit et design sur les décisions stratégiques, contribuant à la planification de la feuille de route et à la faisabilité technique."
+				]
+			},
+			"arbithub": {
+				"title": "Stagiaire Développeur Web Frontend",
+				"company": "Arbithub",
+				"location": "Chicago, États-Unis (Distant)",
+				"period": "Jan 2024 - Août 2024",
+				"highlights": [
+					"Dirigé une migration de framework (React 17 vers 18, React Router v5 vers v6, Redux Toolkit, Tailwind CSS v2 vers v3) sans temps d'arrêt, améliorant la taille du bundle de 25%.",
+					"Construit une recherche de niveau entreprise avec filtrage avancé, debouncing et mises à jour en temps réel, augmentant l'engagement utilisateur de 35%.",
+					"Établi des standards de qualité de code avec ESLint et Prettier, réduisant la dette technique de 40% et standardisant les workflows.",
+					"Livré des fonctionnalités dans un environnement Agile, participant aux standups quotidiens, planification de sprint et revues de code avec des équipes cross-fonctionnelles."
+				]
+			},
+			"lightup": {
+				"title": "Stagiaire Développeur Full Stack",
+				"company": "LightUp Digital",
+				"location": "Berlin, Allemagne (Distant)",
+				"period": "Oct 2023 - Jan 2024",
+				"highlights": [
+					"Conçu et implémenté une architecture microservices scalable avec NestJS et TypeScript utilisant l'injection de dépendances et des modèles de conception modulaires.",
+					"Développé des interfaces responsives prêtes pour la production avec React et Material-UI, créant des composants réutilisables qui ont réduit le temps de développement de 30%.",
+					"Conçu un système d'authentification sécurisé avec JWT et OAuth 2.0, implémentant le contrôle d'accès basé sur les rôles pour une application multi-tenant.",
+					"Établi une stratégie de test complète atteignant 85% de couverture avec Jest et Supertest pour assurer la fiabilité."
+				]
+			},
+			"turkishairlines": {
+				"title": "Officier de Contrôle des Opérations IOCC",
+				"company": "Turkish Airlines",
+				"location": "Istanbul",
+				"period": "Mar 2019 - Mai 2020",
+				"highlights": [
+					"Géré le contrôle opérationnel en temps réel de plus de 200 vols quotidiens dans un environnement critique, nécessitant une prise de décision sous pression et une fiabilité du système.",
+					"Coordonné des équipes internationales cross-fonctionnelles, renforçant les compétences en communication et résolution de problèmes applicables au développement logiciel distribué."
+				]
+			}
+		},
+		"educations": {
+			"ironhack": {
+				"title": "Bootcamp Développement Web Full Stack",
+				"institution": "Ironhack",
+				"location": "Distant",
+				"period": "2023",
+				"duration": "400 Heures"
+			},
+			"digihomeschooling": {
+				"title": "Bootcamp Développement Web Full Stack",
+				"institution": "Digi-Homeschooling",
+				"location": "Distant",
+				"period": "2022",
+				"duration": "400 Heures"
+			},
+			"istanbuluni": {
+				"title": "Langue et littérature chinoises",
+				"institution": "Université d'Istanbul",
+				"location": "Istanbul",
+				"period": "2016 - 2020"
+			},
+			"turkishmilitary": {
+				"title": "Sociologie",
+				"institution": "Académie militaire turque",
+				"location": "Ankara",
+				"period": "2012 - 2015"
+			}
+		}
+	},
+	"projects": {
+		"title": "Inventaire",
+		"subtitle": "Artefacts numériques sélectionnés.",
+		"code": "Code",
+		"live": "En direct",
+		"memoria": {
+			"description": "Plateforme de médias sociaux pour se connecter avec ses proches. Comprend des groupes privés, des publications améliorées par l'IA et une narration d'histoires axée sur l'accessibilité."
+		},
+		"plantiq": {
+			"description": "Plateforme d'identification et de soin des plantes alimentée par l'IA. Utilise la reconnaissance d'images et l'intégration GPT pour des conseils de jardinage experts."
+		},
+		"hotelmiddleearth": {
+			"description": "Jeu interactif basé sur le web se déroulant en Terre du Milieu. Défie la prise de décision, la concentration et les réflexes grâce à un gameplay engageant."
+		},
+		"reactmovieapp": {
+			"description": "Application moderne de découverte de films construite avec React. Comprend une architecture de composants, des hooks personnalisés et des tests complets."
+		}
+	},
+	"contact": {
+		"title": "Restons en contact",
+		"subtitle": "Idées, questions ou salutations tranquilles.",
+		"name": "Nom",
+		"email": "E-mail",
+		"subject": "Sujet",
+		"message": "Message",
+		"placeholder": {
+			"name": "Jean Dupont",
+			"email": "jean@exemple.com",
+			"subject": "Demande de projet",
+			"message": "Parlez-moi de votre projet..."
+		},
+		"sendMessage": "Envoyer le message",
+		"sending": "Envoi en cours...",
+		"success": "Message envoyé avec succès !",
+		"successMessage": "Merci de m'avoir contacté. Je vous répondrai dans les plus brefs délais.",
+		"error": {
+			"generic": "Échec de l'envoi du message. Veuillez réessayer.",
+			"rateLimit": "Trop de demandes. Veuillez patienter un moment et réessayer.",
+			"invalidData": "Données de formulaire invalides. Veuillez vérifier votre saisie et réessayer.",
+			"auth": "Échec de l'authentification. Veuillez contacter l'administrateur.",
+			"serviceUnavailable": "Service temporairement indisponible. Veuillez réessayer plus tard."
+		}
+	},
+	"footer": {
+		"copyright": "Tous droits réservés.",
+		"github": "GitHub",
+		"linkedin": "LinkedIn"
+	},
+	"theme": {
+		"toggleLight": "Passer en mode clair",
+		"toggleDark": "Passer en mode sombre"
+	},
+	"accessibility": {
+		"menuOpen": "Ouvrir le menu",
+		"menuClose": "Fermer le menu",
+		"scrollToTop": "Défiler vers le haut",
+		"viewCode": "Voir le code source",
+		"viewLive": "Voir la démo en direct",
+		"changeLanguage": "Changer de langue"
+	},
+	"toast": {
+		"email": {
+			"success": "Message envoyé avec succès !",
+			"error": {
+				"generic": "Échec de l'envoi du message. Veuillez réessayer.",
+				"rateLimit": "Trop de demandes. Veuillez patienter un moment.",
+				"invalidData": "Données de formulaire invalides. Veuillez vérifier votre saisie.",
+				"auth": "Échec de l'authentification. Veuillez contacter le support.",
+				"serviceUnavailable": "Service temporairement indisponible. Veuillez réessayer plus tard."
+			}
+		},
+		"language": {
+			"success": "Langue changée avec succès"
+		},
+		"cv": {
+			"downloading": "Téléchargement du CV...",
+			"success": "CV téléchargé avec succès",
+			"error": "Échec du téléchargement du CV"
+		},
+		"theme": {
+			"darkMode": "Mode sombre activé",
+			"lightMode": "Mode clair activé"
+		}
+	},
+	"seo": {
+		"title": "utku cikmaz",
+		"description": "Développeur web full stack spécialisé en React, TypeScript, Node.js et technologies web modernes. Je construis des applications évolutives avec un accent sur le code propre, l'expérience utilisateur et les performances. Disponible pour des projets freelance et des opportunités à temps plein.",
+		"keywords": "développeur full stack, développeur web, développeur React, développeur TypeScript, développeur Node.js, développeur JavaScript, développeur frontend, développeur backend, ingénieur logiciel, services de développement web, expert React, expert TypeScript, applications web modernes, solutions web évolutives, code propre, expérience utilisateur, optimisation des performances, développeur Hambourg, développeur Allemagne"
+	}
+}

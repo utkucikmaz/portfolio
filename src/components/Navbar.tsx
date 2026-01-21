@@ -1,0 +1,250 @@
+import { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
+import { AnimatePresence, motion } from 'framer-motion'
+import NavLink from './NavLink'
+import LanguageSwitcher from './LanguageSwitcher'
+import {
+  Bars3Icon,
+  XMarkIcon,
+  MoonIcon,
+  SunIcon,
+} from '@heroicons/react/24/outline'
+import toast from 'react-hot-toast'
+import type { NavbarProps, NavLink as NavLinkType } from '../types'
+
+const navLinks: NavLinkType[] = [
+  {
+    key: 'nav.craft',
+    path: '#craft',
+  },
+  {
+    key: 'nav.journey',
+    path: '#journey',
+  },
+  {
+    key: 'nav.projects',
+    path: '#projects',
+  },
+  {
+    key: 'nav.personal',
+    path: '#personal',
+  },
+  {
+    key: 'nav.contact',
+    path: '#contact',
+  },
+]
+
+const sectionIds = navLinks.map((link) => link.path.replace('#', ''))
+
+const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps): JSX.Element => {
+  const { t } = useTranslation()
+  const [navbarOpen, setNavbarOpen] = useState<boolean>(false)
+  const [scrolled, setScrolled] = useState<boolean>(false)
+  const [activeSection, setActiveSection] = useState<string>('')
+
+  useEffect(() => {
+    let scrollRaf: number | null = null
+    const handleScroll = (): void => {
+      if (scrollRaf !== null) return
+      scrollRaf = window.requestAnimationFrame(() => {
+        const nextScrolled = window.scrollY > 20
+        setScrolled((prev) => (prev === nextScrolled ? prev : nextScrolled))
+
+        const scrollPosition = window.scrollY + 100
+
+        const heroElement = document.getElementById('hero')
+        if (heroElement) {
+          const heroRect = heroElement.getBoundingClientRect()
+          const heroBottom = heroRect.bottom + window.scrollY - 100
+
+          if (scrollPosition < heroBottom) {
+            setActiveSection((prev) => (prev === '' ? prev : ''))
+            scrollRaf = null
+            return
+          }
+        }
+
+        let currentSection = ''
+        let minDistance = Infinity
+
+        sectionIds.forEach((sectionId) => {
+          const element = document.getElementById(sectionId)
+          if (element) {
+            const rect = element.getBoundingClientRect()
+            const elementTop = rect.top + window.scrollY
+            const distance = Math.abs(scrollPosition - elementTop)
+
+            if (distance < minDistance) {
+              minDistance = distance
+              currentSection = sectionId
+            }
+          }
+        })
+
+        setActiveSection((prev) =>
+          prev === currentSection ? prev : currentSection
+        )
+        scrollRaf = null
+      })
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+
+    return () => {
+      if (scrollRaf !== null) window.cancelAnimationFrame(scrollRaf)
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
+  const toggleTheme = (): void => {
+    const newIsDarkMode = !isDarkMode
+    setIsDarkMode(newIsDarkMode)
+    toast.success(
+      newIsDarkMode ? t('toast.theme.darkMode') : t('toast.theme.lightMode')
+    )
+  }
+
+  return (
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-in-out ${
+        scrolled
+          ? 'bg-white/80 dark:bg-neutral-950/80 backdrop-blur-md shadow-sm'
+          : 'bg-white/10 dark:bg-neutral-950/10 backdrop-blur-sm'
+      }`}
+      role='navigation'
+      aria-label='Main navigation'
+    >
+      <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
+        <div className='flex items-center justify-between h-20'>
+          <a
+            href='/#'
+            onClick={(e) => {
+              e.preventDefault()
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+            }}
+            className='flex items-center space-x-3 group'
+            aria-label='Home'
+          >
+            <img
+              className='w-10 h-10 transition-transform duration-100 group-hover:scale-105'
+              src='/images/tree.png'
+              alt='Utku Cikmaz'
+              width={40}
+              height={40}
+            />
+            <span className='text-lg font-semibold text-neutral-900 dark:text-neutral-50 hidden sm:block'>
+              utku cikmaz
+            </span>
+          </a>
+
+          {/* Desktop Navigation */}
+          <div className='hidden md:flex items-center space-x-1'>
+            <ul className='flex items-center space-x-1'>
+              {navLinks.map((link, index) => (
+                <li key={index}>
+                  <NavLink
+                    to={link.path}
+                    titleKey={link.key}
+                    setNavbarOpen={setNavbarOpen}
+                    isActive={activeSection === link.path.replace('#', '')}
+                  />
+                </li>
+              ))}
+            </ul>
+            <LanguageSwitcher />
+            <button
+              onClick={toggleTheme}
+              className='p-2 rounded-lg text-neutral-900 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors'
+              aria-label={
+                isDarkMode ? t('theme.toggleLight') : t('theme.toggleDark')
+              }
+            >
+              {isDarkMode ? (
+                <SunIcon className='h-5 w-5' />
+              ) : (
+                <MoonIcon className='h-5 w-5' />
+              )}
+            </button>
+          </div>
+
+          <div className='flex items-center space-x-2 md:hidden'>
+            <LanguageSwitcher />
+            <button
+              onClick={toggleTheme}
+              className='p-2 rounded-lg text-neutral-900 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors'
+              aria-label={
+                isDarkMode ? t('theme.toggleLight') : t('theme.toggleDark')
+              }
+            >
+              {isDarkMode ? (
+                <SunIcon className='h-5 w-5' />
+              ) : (
+                <MoonIcon className='h-5 w-5' />
+              )}
+            </button>
+            <button
+              onClick={() => setNavbarOpen(!navbarOpen)}
+              className='p-2 rounded-lg text-neutral-900 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors'
+              aria-label={
+                navbarOpen
+                  ? t('accessibility.menuClose')
+                  : t('accessibility.menuOpen')
+              }
+              aria-expanded={navbarOpen}
+            >
+              {navbarOpen ? (
+                <XMarkIcon className='h-6 w-6' />
+              ) : (
+                <Bars3Icon className='h-6 w-6' />
+              )}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {navbarOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
+            className='md:hidden border-t-0 border-neutral-200/50 dark:border-neutral-800/50 bg-white/40 dark:bg-neutral-950/40 backdrop-blur-xl shadow-lg overflow-hidden'
+          >
+            <div className='container mx-auto px-4 sm:px-6'>
+              <motion.ul
+                initial={{ y: -20 }}
+                animate={{ y: 0 }}
+                exit={{ y: -20 }}
+                transition={{ duration: 0.3, ease: 'easeOut' }}
+                className='flex flex-col py-6 space-y-2 items-end'
+              >
+                {navLinks.map((link, index) => (
+                  <motion.li
+                    key={index}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.05, duration: 0.2 }}
+                    className='w-full md:w-auto'
+                  >
+                    <NavLink
+                      to={link.path}
+                      titleKey={link.key}
+                      setNavbarOpen={setNavbarOpen}
+                      isActive={activeSection === link.path.replace('#', '')}
+                    />
+                  </motion.li>
+                ))}
+              </motion.ul>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
+  )
+}
+
+export default Navbar
