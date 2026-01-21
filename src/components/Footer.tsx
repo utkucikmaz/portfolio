@@ -4,7 +4,7 @@ const Footer = (): JSX.Element => {
   const { t } = useTranslation()
   const currentYear = new Date().getFullYear()
   return (
-    <footer className='border-t border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950'>
+    <footer className='border-t border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 pb-6 lg:pb-2'>
       <div className='container mx-auto px-4 sm:px-6 lg:px-8 py-8'>
         <div className='flex flex-row sm:flex-row items-center justify-between gap-4 m-6'>
           <div className='flex items-center gap-3'>
@@ -23,21 +23,6 @@ const Footer = (): JSX.Element => {
 
           <div className='flex items-center gap-6'>
             <a
-              href='https://github.com/utkucikmaz'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors'
-              aria-label={t('footer.github')}
-              tabIndex={-1}
-            >
-              <img
-                src='/svg/github-icon.svg'
-                alt='GitHub'
-                className='w-5 h-5'
-                loading='lazy'
-              />
-            </a>
-            <a
               href='https://www.linkedin.com/in/utkucikmaz/'
               target='_blank'
               rel='noopener noreferrer'
@@ -48,7 +33,22 @@ const Footer = (): JSX.Element => {
               <img
                 src='/svg/linkedin-icon.svg'
                 alt='LinkedIn'
-                className='w-5 h-5'
+                className='w-5 h-5 brightness-0 dark:invert'
+                loading='lazy'
+              />
+            </a>
+            <a
+              href='https://github.com/utkucikmaz'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors'
+              aria-label={t('footer.github')}
+              tabIndex={-1}
+            >
+              <img
+                src='/svg/github-icon.svg'
+                alt='GitHub'
+                className='w-5 h-5 brightness-0 dark:invert'
                 loading='lazy'
               />
             </a>
