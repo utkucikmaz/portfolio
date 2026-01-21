@@ -777,7 +777,7 @@ npm run build
 
 ### Getting Help
 
-- 📧 **Email**: [your-email@example.com](mailto:your-email@example.com)
+- 📧 **Email**: [utkucikmaz@gmail.com](mailto:utkucikmaz@gmail.com)
 - 💬 **Issues**: [GitHub Issues](https://github.com/utkucikmaz/portfolio/issues)
 - 📖 **Documentation**: Check this README and code comments
 
