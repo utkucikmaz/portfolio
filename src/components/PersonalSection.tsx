@@ -128,7 +128,9 @@ const PersonalSection = (): JSX.Element => {
   const currentLang = i18n.language
   const extraGapForLang =
     isUnformal &&
-    ['tr', 'de', 'es', 'nl', 'ru', 'ko', 'zh', 'ja', 'pt'].includes(currentLang)
+    ['de', 'es', 'nl', 'ru', 'ko', 'zh', 'ja', 'pt'].includes(currentLang)
+
+  const extraMoreGapForLang = isUnformal && ['tr', 'fr'].includes(currentLang)
 
   return (
     <section id='personal'>
@@ -173,7 +175,7 @@ const PersonalSection = (): JSX.Element => {
             onBlurCapture={handleBlur}
             tabIndex={0}
           >
-            <p className='text-justify relative'>
+            <p className='relative'>
               <span
                 className='invisible block whitespace-pre-wrap'
                 aria-hidden='true'
@@ -186,7 +188,7 @@ const PersonalSection = (): JSX.Element => {
               >
                 {t('personal.unformal1')}
               </span>
-              <span className='absolute top-0 left-0 w-full block text-justify'>
+              <span className='absolute top-0 left-0 w-full block'>
                 <span
                   className={`absolute top-0 left-0 w-full transition-opacity duration-1000 ease-in ${
                     useScrambleAnimation
@@ -213,8 +215,9 @@ const PersonalSection = (): JSX.Element => {
               </span>
             </p>
             <p
-              className='text-justify relative'
-              style={extraGapForLang ? { paddingTop: '32px' } : undefined}
+              className={`relative ${
+                extraGapForLang ? ' pt-14 md:pt-10 lg:pt-8' : ''
+              } ${extraMoreGapForLang ? ' pt-20 md:pt-10 lg:pt-8' : ''} `}
             >
               <span
                 className='invisible block whitespace-pre-wrap'
@@ -228,7 +231,7 @@ const PersonalSection = (): JSX.Element => {
               >
                 {t('personal.unformal2')}
               </span>
-              <span className='absolute top-0 left-0 w-full block text-justify'>
+              <span className='absolute top-0 left-0 w-full block'>
                 <span
                   className={`absolute top-0 left-0 w-full transition-opacity duration-1000 ease-out ${
                     useScrambleAnimation
@@ -254,7 +257,7 @@ const PersonalSection = (): JSX.Element => {
                 </span>
               </span>
             </p>
-            <p className='text-justify relative'>
+            <p className='relative'>
               <span
                 className='invisible block whitespace-pre-wrap'
                 aria-hidden='true'
@@ -267,7 +270,7 @@ const PersonalSection = (): JSX.Element => {
               >
                 {t('personal.unformal3')}
               </span>
-              <span className='absolute top-0 left-0 w-full block text-justify'>
+              <span className='absolute top-0 left-0 w-full block'>
                 <span
                   className={`absolute top-0 left-0 w-full transition-opacity duration-1000 ease-out ${
                     useScrambleAnimation
