@@ -25,7 +25,6 @@ A modern, responsive portfolio website built with React, TypeScript, and cutting
 - [🚢 Deployment](#deployment)
 - [🧪 Development](#development)
 - [📝 Available Scripts](#available-scripts)
-- [🤝 Contributing](#contributing)
 - [🐛 Troubleshooting](#troubleshooting)
 - [📄 License](#license)
 - [👤 Author](#author)
@@ -35,6 +34,7 @@ A modern, responsive portfolio website built with React, TypeScript, and cutting
 ## Features
 
 ### 🌍 Multi-language Support
+
 - **12 Languages**: English, German, Turkish, Chinese, Japanese, Arabic, Russian, Spanish, Portuguese, French, Korean, Dutch
 - Automatic language detection based on browser settings
 - Persistent language preference with localStorage
@@ -42,6 +42,7 @@ A modern, responsive portfolio website built with React, TypeScript, and cutting
 - Language-specific CV downloads
 
 ### 🎨 Theme System
+
 - **Dark/Light Mode**: Seamless theme switching with smooth transitions
 - Persistent theme preference
 - System preference detection
@@ -49,6 +50,7 @@ A modern, responsive portfolio website built with React, TypeScript, and cutting
 - Celestial theme animations
 
 ### 🎭 3D Interactive Background
+
 - **Three.js Integration**: Immersive 3D particle system
 - Interactive celestial objects
 - Performance-optimized rendering
@@ -56,6 +58,7 @@ A modern, responsive portfolio website built with React, TypeScript, and cutting
 - Smooth animations and transitions
 
 ### 🚀 Animations & Interactions
+
 - **Framer Motion**: Fluid, engaging animations throughout
 - Type animation effects for hero section
 - Scroll-triggered animations
@@ -64,6 +67,7 @@ A modern, responsive portfolio website built with React, TypeScript, and cutting
 - Number animations for statistics
 
 ### 📱 Responsive Design
+
 - Mobile-first approach
 - Optimized for all screen sizes (320px - 4K)
 - Touch-friendly interactions
@@ -71,6 +75,7 @@ A modern, responsive portfolio website built with React, TypeScript, and cutting
 - Responsive typography
 
 ### ♿ Accessibility
+
 - WCAG 2.1 AA compliant
 - Keyboard navigation support
 - Screen reader optimized
@@ -79,6 +84,7 @@ A modern, responsive portfolio website built with React, TypeScript, and cutting
 - Semantic HTML structure
 
 ### 🔍 SEO Optimization
+
 - Comprehensive meta tags
 - Open Graph and Twitter Card support
 - Structured data (JSON-LD)
@@ -88,6 +94,7 @@ A modern, responsive portfolio website built with React, TypeScript, and cutting
 - Optimized page titles and descriptions
 
 ### 💼 Professional Sections
+
 - **Hero Section**: Animated introduction with type effects
 - **Craft Section**: Skills showcase with certifications
 - **Experience Section**: Professional journey timeline
@@ -97,6 +104,7 @@ A modern, responsive portfolio website built with React, TypeScript, and cutting
 - **Footer**: Social links and additional information
 
 ### ⚡ Performance
+
 - Vite for lightning-fast builds
 - Code splitting and lazy loading
 - Optimized asset loading
@@ -104,55 +112,60 @@ A modern, responsive portfolio website built with React, TypeScript, and cutting
 - Minimal bundle size
 - Fast HMR (Hot Module Replacement)
 
-
 ## Tech Stack
 
 ### Core Technologies
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| **React** | 18.2.0 | UI library for building components |
-| **TypeScript** | 5.9.3 | Type-safe JavaScript |
-| **Vite** | 5.1.4 | Build tool and dev server |
+
+| Technology     | Version | Purpose                            |
+| -------------- | ------- | ---------------------------------- |
+| **React**      | 18.2.0  | UI library for building components |
+| **TypeScript** | 5.9.3   | Type-safe JavaScript               |
+| **Vite**       | 5.1.4   | Build tool and dev server          |
 
 ### Styling & UI
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| **Tailwind CSS** | 3.3.0 | Utility-first CSS framework |
-| **Framer Motion** | 10.16.1 | Animation library |
-| **Heroicons** | 2.0.18 | Icon library |
-| **Radix UI** | 1.2.8 | Accessible component primitives |
+
+| Technology        | Version | Purpose                         |
+| ----------------- | ------- | ------------------------------- |
+| **Tailwind CSS**  | 3.3.0   | Utility-first CSS framework     |
+| **Framer Motion** | 10.16.1 | Animation library               |
+| **Heroicons**     | 2.0.18  | Icon library                    |
+| **Radix UI**      | 1.2.8   | Accessible component primitives |
 
 ### 3D Graphics
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| **Three.js** | 0.155.0 | 3D graphics library |
-| **@react-three/fiber** | 8.18.0 | React renderer for Three.js |
-| **@react-three/drei** | 9.122.0 | Useful helpers for react-three-fiber |
+
+| Technology             | Version | Purpose                              |
+| ---------------------- | ------- | ------------------------------------ |
+| **Three.js**           | 0.155.0 | 3D graphics library                  |
+| **@react-three/fiber** | 8.18.0  | React renderer for Three.js          |
+| **@react-three/drei**  | 9.122.0 | Useful helpers for react-three-fiber |
 
 ### Internationalization
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| **i18next** | 23.7.6 | Internationalization framework |
-| **react-i18next** | 13.5.0 | React bindings for i18next |
-| **i18next-browser-languagedetector** | 7.2.0 | Automatic language detection |
+
+| Technology                           | Version | Purpose                        |
+| ------------------------------------ | ------- | ------------------------------ |
+| **i18next**                          | 23.7.6  | Internationalization framework |
+| **react-i18next**                    | 13.5.0  | React bindings for i18next     |
+| **i18next-browser-languagedetector** | 7.2.0   | Automatic language detection   |
 
 ### Additional Libraries
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| **EmailJS** | 4.1.0 | Contact form service |
-| **React Router DOM** | 6.22.1 | Client-side routing |
-| **React Hot Toast** | 2.6.0 | Toast notifications |
-| **React Type Animation** | 3.1.0 | Typing animation effects |
-| **React Animated Numbers** | 0.16.0 | Number animations |
-| **Axios** | 1.6.7 | HTTP client |
-| **React Draggable** | 4.5.0 | Draggable components |
+
+| Technology                 | Version | Purpose                  |
+| -------------------------- | ------- | ------------------------ |
+| **EmailJS**                | 4.1.0   | Contact form service     |
+| **React Router DOM**       | 6.22.1  | Client-side routing      |
+| **React Hot Toast**        | 2.6.0   | Toast notifications      |
+| **React Type Animation**   | 3.1.0   | Typing animation effects |
+| **React Animated Numbers** | 0.16.0  | Number animations        |
+| **Axios**                  | 1.6.7   | HTTP client              |
+| **React Draggable**        | 4.5.0   | Draggable components     |
 
 ### Development Tools
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| **ESLint** | 8.56.0 | Code linting |
-| **Prettier** | 3.2.5 | Code formatting |
-| **TypeScript ESLint** | 8.53.0 | TypeScript-specific linting |
+
+| Technology            | Version | Purpose                     |
+| --------------------- | ------- | --------------------------- |
+| **ESLint**            | 8.56.0  | Code linting                |
+| **Prettier**          | 3.2.5   | Code formatting             |
+| **TypeScript ESLint** | 8.53.0  | TypeScript-specific linting |
 
 ---
 
@@ -186,12 +199,14 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 ### Step-by-Step Setup
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/utkucikmaz/portfolio.git
    cd portfolio
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    # or
@@ -201,8 +216,9 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
    ```
 
 3. **Set up environment variables**
-   
+
    Create a `.env` file in the root directory:
+
    ```env
    # EmailJS Configuration (Optional - for contact form)
    VITE_EMAILJS_SERVICE_ID=your_service_id
@@ -211,11 +227,13 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
    ```
 
 4. **Start the development server**
+
    ```bash
    npm run dev
    ```
 
 5. **Build for production**
+
    ```bash
    npm run build
    ```
@@ -249,6 +267,7 @@ Update the following files with your information:
 ### Theme Customization
 
 Edit color schemes in:
+
 - `src/styles/variables.css` - CSS custom properties
 - `tailwind.config.ts` - Tailwind theme configuration
 
@@ -345,12 +364,14 @@ portfolio/
 ### Adding a New Language
 
 1. **Create translation file**
+
    ```bash
    # Create a new file in src/i18n/locales/
    # e.g., src/i18n/locales/it.json
    ```
 
 2. **Copy structure from English**
+
    ```json
    {
      "nav": {
@@ -362,10 +383,11 @@ portfolio/
    ```
 
 3. **Update i18n config**
+
    ```typescript
    // src/i18n/config.ts
    import itTranslations from './locales/it.json'
-   
+
    const resources = {
      // ... existing languages
      it: {
@@ -375,11 +397,13 @@ portfolio/
    ```
 
 4. **Add CV file**
+
    ```bash
    # Add cv-italian.pdf to public/
    ```
 
 5. **Update CV language map**
+
    ```typescript
    // src/components/HeroSection.tsx
    const CV_LANGUAGE_MAP: Record<string, string> = {
@@ -397,6 +421,7 @@ portfolio/
 ### Modifying Theme Colors
 
 **Option 1: CSS Variables**
+
 ```css
 /* src/styles/variables.css */
 :root {
@@ -412,6 +437,7 @@ portfolio/
 ```
 
 **Option 2: Tailwind Config**
+
 ```typescript
 // tailwind.config.ts
 export default {
@@ -431,7 +457,9 @@ export default {
 ### Updating Content
 
 #### Personal Information
+
 Edit translation files in `src/i18n/locales/`:
+
 ```json
 {
   "hero": {
@@ -443,7 +471,9 @@ Edit translation files in `src/i18n/locales/`:
 ```
 
 #### Projects
+
 Update `ProjectsSection.tsx`:
+
 ```typescript
 const projectsData: ProjectData[] = [
   {
@@ -457,10 +487,13 @@ const projectsData: ProjectData[] = [
 ```
 
 #### Experience
+
 Update `Experience.tsx` with your work history.
 
 #### Skills
+
 Update `CraftSection.tsx`:
+
 ```typescript
 const skills: Skill[] = [
   { name: 'Your Skill', icon: '/svg/your-skill.svg', category: 'Category' },
@@ -473,24 +506,25 @@ const skills: Skill[] = [
 
 ### Supported Languages
 
-| Language | Code | Status | RTL Support |
-|----------|------|--------|-------------|
-| 🇺🇸 English | `en` | ✅ Complete | ❌ |
-| 🇩🇪 German | `de` | ✅ Complete | ❌ |
-| 🇹🇷 Turkish | `tr` | ✅ Complete | ❌ |
-| 🇨🇳 Chinese | `zh` | ✅ Complete | ❌ |
-| 🇯🇵 Japanese | `ja` | ✅ Complete | ❌ |
-| 🇸🇦 Arabic | `ar` | ✅ Complete | ✅ |
-| 🇷🇺 Russian | `ru` | ✅ Complete | ❌ |
-| 🇪🇸 Spanish | `es` | ✅ Complete | ❌ |
-| 🇵🇹 Portuguese | `pt` | ✅ Complete | ❌ |
-| 🇫🇷 French | `fr` | ✅ Complete | ❌ |
-| 🇰🇷 Korean | `ko` | ✅ Complete | ❌ |
-| 🇳🇱 Dutch | `nl` | ✅ Complete | ❌ |
+| Language      | Code | Status      | RTL Support |
+| ------------- | ---- | ----------- | ----------- |
+| 🇺🇸 English    | `en` | ✅ Complete | ❌          |
+| 🇩🇪 German     | `de` | ✅ Complete | ❌          |
+| 🇹🇷 Turkish    | `tr` | ✅ Complete | ❌          |
+| 🇨🇳 Chinese    | `zh` | ✅ Complete | ❌          |
+| 🇯🇵 Japanese   | `ja` | ✅ Complete | ❌          |
+| 🇸🇦 Arabic     | `ar` | ✅ Complete | ✅          |
+| 🇷🇺 Russian    | `ru` | ✅ Complete | ❌          |
+| 🇪🇸 Spanish    | `es` | ✅ Complete | ❌          |
+| 🇵🇹 Portuguese | `pt` | ✅ Complete | ❌          |
+| 🇫🇷 French     | `fr` | ✅ Complete | ❌          |
+| 🇰🇷 Korean     | `ko` | ✅ Complete | ❌          |
+| 🇳🇱 Dutch      | `nl` | ✅ Complete | ❌          |
 
 ### Language Detection
 
 The app automatically detects the user's language preference in this order:
+
 1. **localStorage** - Previously selected language
 2. **Browser settings** - Navigator language
 3. **HTML tag** - Lang attribute
@@ -499,6 +533,7 @@ The app automatically detects the user's language preference in this order:
 ### Adding RTL Support
 
 For RTL languages (like Arabic), the app automatically:
+
 - Flips the layout direction
 - Adjusts text alignment
 - Mirrors navigation and UI elements
@@ -510,11 +545,13 @@ For RTL languages (like Arabic), the app automatically:
 ### Vercel (Recommended)
 
 1. **Install Vercel CLI**
+
    ```bash
    npm i -g vercel
    ```
 
 2. **Deploy**
+
    ```bash
    vercel
    ```
@@ -528,6 +565,7 @@ For RTL languages (like Arabic), the app automatically:
 ### Netlify
 
 1. **Install Netlify CLI**
+
    ```bash
    npm i -g netlify-cli
    ```
@@ -541,11 +579,13 @@ For RTL languages (like Arabic), the app automatically:
 ### GitHub Pages
 
 1. **Install gh-pages**
+
    ```bash
    npm install --save-dev gh-pages
    ```
 
 2. **Add deploy script to package.json**
+
    ```json
    {
      "scripts": {
@@ -562,6 +602,7 @@ For RTL languages (like Arabic), the app automatically:
 ### Other Platforms
 
 The built `dist` folder can be deployed to any static hosting service:
+
 - **AWS S3 + CloudFront**
 - **Firebase Hosting**
 - **Cloudflare Pages**
@@ -574,16 +615,19 @@ The built `dist` folder can be deployed to any static hosting service:
 ### Development Workflow
 
 1. **Create a feature branch**
+
    ```bash
    git checkout -b feature/your-feature-name
    ```
 
 2. **Make your changes**
+
    - Write code
    - Add tests (if applicable)
    - Update documentation
 
 3. **Run checks**
+
    ```bash
    npm run lint
    npm run type-check
@@ -591,6 +635,7 @@ The built `dist` folder can be deployed to any static hosting service:
    ```
 
 4. **Commit changes**
+
    ```bash
    git add .
    git commit -m "feat: add your feature"
@@ -608,6 +653,7 @@ The built `dist` folder can be deployed to any static hosting service:
 - **TypeScript** for type safety
 
 Run before committing:
+
 ```bash
 npm run format
 npm run lint
@@ -617,29 +663,30 @@ npm run type-check
 ### Browser Support
 
 | Browser | Version | Status |
-|---------|---------|--------|
-| Chrome | >= 90 | ✅ |
-| Firefox | >= 88 | ✅ |
-| Safari | >= 14 | ✅ |
-| Edge | >= 90 | ✅ |
-| Opera | >= 76 | ✅ |
+| ------- | ------- | ------ |
+| Chrome  | >= 90   | ✅     |
+| Firefox | >= 88   | ✅     |
+| Safari  | >= 14   | ✅     |
+| Edge    | >= 90   | ✅     |
+| Opera   | >= 76   | ✅     |
 
 ---
 
 ## Available Scripts
 
-| Script | Description |
-|--------|-------------|
-| `npm run dev` | Start development server with HMR |
-| `npm run build` | Build for production (outputs to `dist/`) |
-| `npm run preview` | Preview production build locally |
-| `npm run lint` | Run ESLint to check code quality |
-| `npm run type-check` | Run TypeScript compiler to check types |
-| `npm run format` | Format code with Prettier |
+| Script               | Description                               |
+| -------------------- | ----------------------------------------- |
+| `npm run dev`        | Start development server with HMR         |
+| `npm run build`      | Build for production (outputs to `dist/`) |
+| `npm run preview`    | Preview production build locally          |
+| `npm run lint`       | Run ESLint to check code quality          |
+| `npm run type-check` | Run TypeScript compiler to check types    |
+| `npm run format`     | Format code with Prettier                 |
 
 ### Script Details
 
 **Development Server**
+
 ```bash
 npm run dev
 # Starts Vite dev server at http://localhost:5173
@@ -647,6 +694,7 @@ npm run dev
 ```
 
 **Production Build**
+
 ```bash
 npm run build
 # Creates optimized production build in dist/
@@ -654,6 +702,7 @@ npm run build
 ```
 
 **Linting**
+
 ```bash
 npm run lint
 # Checks code for errors and warnings
@@ -661,6 +710,7 @@ npm run lint
 ```
 
 **Type Checking**
+
 ```bash
 npm run type-check
 # Validates TypeScript types without emitting files
@@ -668,6 +718,7 @@ npm run type-check
 ```
 
 **Formatting**
+
 ```bash
 npm run format
 # Formats all code with Prettier
@@ -676,42 +727,12 @@ npm run format
 
 ---
 
-## Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. **Fork the repository**
-2. **Create your feature branch** (`git checkout -b feature/AmazingFeature`)
-3. **Commit your changes** (`git commit -m 'feat: Add some AmazingFeature'`)
-4. **Push to the branch** (`git push origin feature/AmazingFeature`)
-5. **Open a Pull Request**
-
-### Contribution Guidelines
-
-- Follow the existing code style
-- Write meaningful commit messages
-- Add comments for complex logic
-- Update documentation as needed
-- Test your changes thoroughly
-
-### Commit Message Format
-
-Use conventional commits:
-- `feat:` New feature
-- `fix:` Bug fix
-- `docs:` Documentation changes
-- `style:` Code style changes (formatting, etc.)
-- `refactor:` Code refactoring
-- `test:` Adding or updating tests
-- `chore:` Maintenance tasks
-
----
-
 ## Troubleshooting
 
 ### Common Issues
 
 #### Port Already in Use
+
 ```bash
 # Error: Port 5173 is already in use
 # Solution: Use a different port
@@ -719,6 +740,7 @@ npm run dev -- --port 3000
 ```
 
 #### TypeScript Errors
+
 ```bash
 # Clear TypeScript cache
 rm -rf node_modules/.cache
@@ -726,6 +748,7 @@ npm run type-check
 ```
 
 #### Build Failures
+
 ```bash
 # Clear all caches and reinstall
 rm -rf node_modules dist .vite
@@ -734,16 +757,19 @@ npm run build
 ```
 
 #### i18n Not Loading
+
 - Check that translation files exist in `src/i18n/locales/`
 - Verify language codes match in `config.ts`
 - Clear browser localStorage
 
 #### 3D Background Not Rendering
+
 - Check browser WebGL support
 - Verify Three.js dependencies are installed
 - Check browser console for errors
 
 #### EmailJS Not Working
+
 - Verify environment variables are set
 - Check EmailJS service and template IDs
 - Ensure public key is correct
