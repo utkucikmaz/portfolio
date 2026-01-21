@@ -49,12 +49,12 @@ main section:first-of-type {
 /* Reduce spacing between email section and footer */
 main section#contact {
   padding-bottom: var(--spacing-2xl) !important;
-  padding-top: var(--spacing-5xl) !important;
 }
 
 @media (min-width: 1024px) {
   main section#contact {
     padding-bottom: var(--spacing-4xl) !important;
+    padding-top: var(--spacing-5xl) !important;
   }
 }
 

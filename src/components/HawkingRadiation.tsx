@@ -1,17 +1,17 @@
 /* eslint-disable react/no-unknown-property */
-import * as THREE from "three"
-import { Canvas, useFrame } from "@react-three/fiber"
-import { useEffect, useMemo, useRef, useState } from "react"
-import { useThree } from "@react-three/fiber"
+import * as THREE from 'three'
+import { Canvas, useFrame } from '@react-three/fiber'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { useThree } from '@react-three/fiber'
 
 let sharedGlowMap: THREE.Texture | null = null
 
 function createRadialGradientTexture(): THREE.Texture {
   const size = 64
-  const canvas = document.createElement("canvas")
+  const canvas = document.createElement('canvas')
   canvas.width = size
   canvas.height = size
-  const ctx = canvas.getContext("2d")
+  const ctx = canvas.getContext('2d')
   if (!ctx) {
     const fallback = new THREE.Texture()
     fallback.needsUpdate = true
@@ -19,11 +19,18 @@ function createRadialGradientTexture(): THREE.Texture {
   }
 
   const center = size / 2
-  const gradient = ctx.createRadialGradient(center, center, 0, center, center, center)
-  gradient.addColorStop(0, "rgba(255,255,255,1)")
-  gradient.addColorStop(0.25, "rgba(255,255,255,0.9)")
-  gradient.addColorStop(0.55, "rgba(255,255,255,0.35)")
-  gradient.addColorStop(1, "rgba(255,255,255,0)")
+  const gradient = ctx.createRadialGradient(
+    center,
+    center,
+    0,
+    center,
+    center,
+    center
+  )
+  gradient.addColorStop(0, 'rgba(255,255,255,1)')
+  gradient.addColorStop(0.25, 'rgba(255,255,255,0.9)')
+  gradient.addColorStop(0.55, 'rgba(255,255,255,0.35)')
+  gradient.addColorStop(1, 'rgba(255,255,255,0)')
 
   ctx.fillStyle = gradient
   ctx.fillRect(0, 0, size, size)
@@ -35,7 +42,7 @@ function createRadialGradientTexture(): THREE.Texture {
 }
 
 function getSharedGlowMap(): THREE.Texture | null {
-  if (typeof document === "undefined") return null
+  if (typeof document === 'undefined') return null
   if (!sharedGlowMap) sharedGlowMap = createRadialGradientTexture()
   return sharedGlowMap
 }
@@ -55,18 +62,18 @@ const BASIS_HELPER_Y = new THREE.Vector3(0, 1, 0)
 
 function useDocumentDarkMode(): boolean {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
-    if (typeof document === "undefined") return true
-    return document.documentElement.classList.contains("dark")
+    if (typeof document === 'undefined') return true
+    return document.documentElement.classList.contains('dark')
   })
 
   useEffect(() => {
     const root = document.documentElement
-    const update = () => setIsDarkMode(root.classList.contains("dark"))
+    const update = () => setIsDarkMode(root.classList.contains('dark'))
 
     update()
 
     const observer = new MutationObserver(update)
-    observer.observe(root, { attributes: true, attributeFilter: ["class"] })
+    observer.observe(root, { attributes: true, attributeFilter: ['class'] })
 
     return () => observer.disconnect()
   }, [])
@@ -74,7 +81,13 @@ function useDocumentDarkMode(): boolean {
   return isDarkMode
 }
 
-function StarField({ isDarkMode, count = 1200 }: { isDarkMode: boolean; count?: number }) {
+function StarField({
+  isDarkMode,
+  count = 1200,
+}: {
+  isDarkMode: boolean
+  count?: number
+}) {
   const { camera, gl } = useThree()
 
   const { positions, colors, sizes } = useMemo(() => {
@@ -83,16 +96,16 @@ function StarField({ isDarkMode, count = 1200 }: { isDarkMode: boolean; count?: 
     const siz = new Float32Array(count)
 
     const paletteDark = [
-      new THREE.Color("#f8fafc"),
-      new THREE.Color("#e0f2fe"),
-      new THREE.Color("#fef3c7"),
-      new THREE.Color("#ddd6fe"),
+      new THREE.Color('#f8fafc'),
+      new THREE.Color('#e0f2fe'),
+      new THREE.Color('#fef3c7'),
+      new THREE.Color('#ddd6fe'),
     ]
     const paletteLight = [
-      new THREE.Color("#000000"),
-      new THREE.Color("#1a1a1a"),
-      new THREE.Color("#87CEEB"),
-      new THREE.Color("#B0E0E6"),
+      new THREE.Color('#000000'),
+      new THREE.Color('#1a1a1a'),
+      new THREE.Color('#87CEEB'),
+      new THREE.Color('#B0E0E6'),
     ]
     const palette = isDarkMode ? paletteDark : paletteLight
 
@@ -114,7 +127,9 @@ function StarField({ isDarkMode, count = 1200 }: { isDarkMode: boolean; count?: 
       col[i * 3 + 1] = base.g * tint
       col[i * 3 + 2] = base.b * tint
 
-      siz[i] = isDarkMode ? 2.0 + Math.random() * 2.0 : 3.2 + Math.random() * 2.8
+      siz[i] = isDarkMode
+        ? 2.0 + Math.random() * 2.0
+        : 3.2 + Math.random() * 2.8
     }
 
     return { positions: pos, colors: col, sizes: siz }
@@ -248,12 +263,19 @@ function Pair({
   const prevLoopTimeRef = useRef(0)
   const hasCompletedRef = useRef(false)
   const spawnPositionRef = useRef(
-    initialSpawnPosition?.clone() ?? new THREE.Vector3((Math.random() - 0.5) * 2, (Math.random() - 0.5) * 2, 0)
+    initialSpawnPosition?.clone() ??
+      new THREE.Vector3((Math.random() - 0.5) * 2, (Math.random() - 0.5) * 2, 0)
   )
 
-  const baseNormalRef = useRef<THREE.Vector3>(randomUnitVectorInto(new THREE.Vector3()))
-  const precessionAxisRef = useRef<THREE.Vector3>(randomUnitVectorInto(new THREE.Vector3()))
-  const wobbleAxisRef = useRef<THREE.Vector3>(randomUnitVectorInto(new THREE.Vector3()))
+  const baseNormalRef = useRef<THREE.Vector3>(
+    randomUnitVectorInto(new THREE.Vector3())
+  )
+  const precessionAxisRef = useRef<THREE.Vector3>(
+    randomUnitVectorInto(new THREE.Vector3())
+  )
+  const wobbleAxisRef = useRef<THREE.Vector3>(
+    randomUnitVectorInto(new THREE.Vector3())
+  )
   const wobbleFreqRef = useRef<number>(2)
   const wobbleAmpRef = useRef<number>(0.12)
   const wobblePhaseRef = useRef<number>(Math.random() * Math.PI * 2)
@@ -274,20 +296,23 @@ function Pair({
   }, [])
 
   const matterColor = useMemo(
-    () => new THREE.Color(isDarkMode ? "#ffcc66" : "#b45309"),
+    () => new THREE.Color(isDarkMode ? '#ffcc66' : '#b45309'),
     [isDarkMode]
   )
   const antimatterColor = useMemo(
-    () => new THREE.Color(isDarkMode ? "#38e8d1" : "#0369a1"),
+    () => new THREE.Color(isDarkMode ? '#38e8d1' : '#0369a1'),
     [isDarkMode]
   )
 
   const whiteColor = useMemo(
-    () => new THREE.Color(isDarkMode ? "#ffffff" : "#0f172a"),
+    () => new THREE.Color(isDarkMode ? '#ffffff' : '#0f172a'),
     [isDarkMode]
   )
 
-  const flashColor = useMemo(() => new THREE.Color(isDarkMode ? "#ffffff" : "#0f172a"), [isDarkMode])
+  const flashColor = useMemo(
+    () => new THREE.Color(isDarkMode ? '#ffffff' : '#0f172a'),
+    [isDarkMode]
+  )
 
   const tmpVecA = useRef<THREE.Vector3>(new THREE.Vector3())
   const tmpVecB = useRef<THREE.Vector3>(new THREE.Vector3())
@@ -305,7 +330,9 @@ function Pair({
 
   useEffect(() => {
     if (!burst.current) return
-    burstPositionAttrRef.current = burst.current.geometry.getAttribute("position") as THREE.BufferAttribute
+    burstPositionAttrRef.current = burst.current.geometry.getAttribute(
+      'position'
+    ) as THREE.BufferAttribute
   }, [])
 
   useFrame((_, delta) => {
@@ -331,12 +358,12 @@ function Pair({
       const tmpA = tmpVecA.current
       const tmpB = tmpVecB.current
       const normal = tmpVecNormal.current.copy(baseNormalRef.current)
-      
+
       randomUnitVectorInto(tmpA)
       precessionAxisRef.current.copy(tmpA)
       tmpB.copy(normal).multiplyScalar(precessionAxisRef.current.dot(normal))
       precessionAxisRef.current.sub(tmpB).normalize()
-      
+
       randomUnitVectorInto(tmpB)
       wobbleAxisRef.current.copy(tmpB)
       tmpA.copy(normal).multiplyScalar(wobbleAxisRef.current.dot(normal))
@@ -361,11 +388,7 @@ function Pair({
 
         const pick = Math.random()
         const c =
-          pick < 0.42
-            ? matterColor
-            : pick < 0.84
-              ? antimatterColor
-              : whiteColor
+          pick < 0.42 ? matterColor : pick < 0.84 ? antimatterColor : whiteColor
         burstColors.current[i * 3 + 0] = c.r
         burstColors.current[i * 3 + 1] = c.g
         burstColors.current[i * 3 + 2] = c.b
@@ -377,18 +400,29 @@ function Pair({
 
     const splitDuration = 0.4
     const splitProgress = Math.min(loopTime / splitDuration, 1)
-    
+
     const spiralStart = splitDuration
     const spiralDuration = 3.5
-    const spiralProgress = Math.max(0, Math.min((loopTime - spiralStart) / spiralDuration, 1))
-    
+    const spiralProgress = Math.max(
+      0,
+      Math.min((loopTime - spiralStart) / spiralDuration, 1)
+    )
+
     const collisionStart = spiralStart + spiralDuration
     const collisionDuration = 0.3
-    const collisionProgress = Math.max(0, Math.min((loopTime - collisionStart) / collisionDuration, 1))
-    
+    const collisionProgress = Math.max(
+      0,
+      Math.min((loopTime - collisionStart) / collisionDuration, 1)
+    )
+
     const inPause = loopTime > collisionStart + collisionDuration
 
-    if (!isAutoSpawn && onComplete && collisionProgress >= 1 && !hasCompletedRef.current) {
+    if (
+      !isAutoSpawn &&
+      onComplete &&
+      collisionProgress >= 1 &&
+      !hasCompletedRef.current
+    ) {
       hasCompletedRef.current = true
       onComplete()
     }
@@ -406,16 +440,26 @@ function Pair({
     const baseSpeed = baseSpeedRef.current
     const maxSpeedMultiplier = maxSpeedMultiplierRef.current
     const normalizedRadius = radius / 0.8
-    const speedMultiplier = 1 + Math.pow(1 - normalizedRadius, 3) * (maxSpeedMultiplier - 1)
-    const speedWobble = 1 + 0.08 * Math.sin(timeRef.current * speedWobbleFreqRef.current + speedWobblePhaseRef.current)
+    const speedMultiplier =
+      1 + Math.pow(1 - normalizedRadius, 3) * (maxSpeedMultiplier - 1)
+    const speedWobble =
+      1 +
+      0.08 *
+        Math.sin(
+          timeRef.current * speedWobbleFreqRef.current +
+            speedWobblePhaseRef.current
+        )
     const angularVelocity = baseSpeed * speedMultiplier * speedWobble
-    
+
     angleRef.current += angularVelocity * delta
     const angle = angleRef.current
 
-    const precessionAngle = (loopTime - spiralStart) * precessionSpeedRef.current
+    const precessionAngle =
+      (loopTime - spiralStart) * precessionSpeedRef.current
     const wobbleAngle =
-      Math.sin(timeRef.current * wobbleFreqRef.current + wobblePhaseRef.current) * wobbleAmpRef.current
+      Math.sin(
+        timeRef.current * wobbleFreqRef.current + wobblePhaseRef.current
+      ) * wobbleAmpRef.current
 
     const n = tmpVecNormal.current.copy(baseNormalRef.current).normalize()
     n.applyAxisAngle(precessionAxisRef.current, precessionAngle)
@@ -436,28 +480,29 @@ function Pair({
     antimatter.current.position.copy(orbitOffset).multiplyScalar(-1)
 
     const matterMaterial = matter.current.material as THREE.MeshStandardMaterial
-    const antimatterMaterial = antimatter.current.material as THREE.MeshStandardMaterial
-    
+    const antimatterMaterial = antimatter.current
+      .material as THREE.MeshStandardMaterial
+
     let opacity = 0
     let dotScale = 1
-    
+
     if (inPause) {
       opacity = 0
       dotScale = 0
     } else if (collisionProgress > 0) {
       opacity = 1 - collisionProgress
       dotScale = 1 - collisionProgress * 0.8
-    } else if (splitProgress < 1) { 
+    } else if (splitProgress < 1) {
       opacity = splitProgress
       dotScale = splitProgress
     } else {
       opacity = 1
       dotScale = 1
     }
-    
+
     matterMaterial.opacity = opacity
     antimatterMaterial.opacity = opacity
-    
+
     matter.current.scale.setScalar(dotScale)
     antimatter.current.scale.setScalar(dotScale)
 
@@ -481,17 +526,23 @@ function Pair({
 
     if (matterGlow.current) {
       matterGlow.current.position.copy(matter.current.position)
-      matterGlow.current.scale.setScalar((isDarkMode ? 0.34 : 0.31) * (0.6 + dotScale))
+      matterGlow.current.scale.setScalar(
+        (isDarkMode ? 0.34 : 0.31) * (0.6 + dotScale)
+      )
       matterGlow.current.material.opacity = (isDarkMode ? 0.38 : 0.2) * opacity
     }
     if (antimatterGlow.current) {
       antimatterGlow.current.position.copy(antimatter.current.position)
-      antimatterGlow.current.scale.setScalar((isDarkMode ? 0.34 : 0.31) * (0.6 + dotScale))
-      antimatterGlow.current.material.opacity = (isDarkMode ? 0.38 : 0.2) * opacity
+      antimatterGlow.current.scale.setScalar(
+        (isDarkMode ? 0.34 : 0.31) * (0.6 + dotScale)
+      )
+      antimatterGlow.current.material.opacity =
+        (isDarkMode ? 0.38 : 0.2) * opacity
     }
 
     if (flashSprite.current) {
-      const intensity = collisionProgress > 0 ? Math.sin(collisionProgress * Math.PI) : 0
+      const intensity =
+        collisionProgress > 0 ? Math.sin(collisionProgress * Math.PI) : 0
       const flash = Math.pow(intensity, 1.6)
       flashSprite.current.visible = flash > 0.001
       flashSprite.current.scale.setScalar(0.12 + flash * 0.65)
@@ -499,7 +550,8 @@ function Pair({
     }
 
     if (burst.current) {
-      const intensity = collisionProgress > 0 ? Math.sin(collisionProgress * Math.PI) : 0
+      const intensity =
+        collisionProgress > 0 ? Math.sin(collisionProgress * Math.PI) : 0
       const t = collisionProgress
       const ease = 1 - Math.pow(1 - t, 3)
       const burstRadius = 0.05 + ease * 0.9
@@ -510,9 +562,12 @@ function Pair({
       const attr = burstPositionAttrRef.current ?? undefined
       if (attr) {
         for (let i = 0; i < burstCount; i++) {
-          burstPositions.current[i * 3 + 0] = burstDirs.current[i * 3 + 0]! * burstRadius
-          burstPositions.current[i * 3 + 1] = burstDirs.current[i * 3 + 1]! * burstRadius
-          burstPositions.current[i * 3 + 2] = burstDirs.current[i * 3 + 2]! * burstRadius
+          burstPositions.current[i * 3 + 0] =
+            burstDirs.current[i * 3 + 0]! * burstRadius
+          burstPositions.current[i * 3 + 1] =
+            burstDirs.current[i * 3 + 1]! * burstRadius
+          burstPositions.current[i * 3 + 2] =
+            burstDirs.current[i * 3 + 2]! * burstRadius
         }
         attr.needsUpdate = true
       }
@@ -577,7 +632,12 @@ function Pair({
           blending={THREE.AdditiveBlending}
         />
       </sprite>
-      <points ref={burst} visible={false} frustumCulled={false} renderOrder={10}>
+      <points
+        ref={burst}
+        visible={false}
+        frustumCulled={false}
+        renderOrder={10}
+      >
         <bufferGeometry>
           <bufferAttribute
             attach='attributes-position'
@@ -611,7 +671,9 @@ export default function HawkingRadiation() {
   const isDarkMode = useDocumentDarkMode()
   const collisionIntensityRef = useRef(0)
   const collisionPositionRef = useRef(new THREE.Vector3())
-  const [clickedPairs, setClickedPairs] = useState<Array<{ id: number; position: THREE.Vector3 }>>([])
+  const [clickedPairs, setClickedPairs] = useState<
+    Array<{ id: number; position: THREE.Vector3 }>
+  >([])
   const pairIdCounter = useRef(0)
   const canvasRef = useRef<HTMLDivElement>(null)
 
@@ -622,7 +684,11 @@ export default function HawkingRadiation() {
     const x = ((event.clientX - rect.left) / rect.width) * 2 - 1
     const y = -((event.clientY - rect.top) / rect.height) * 2 + 1
 
-    const clickPosition = new THREE.Vector3(x * 1.5, y * 1.5, (Math.random() - 0.5) * 0.35)
+    const clickPosition = new THREE.Vector3(
+      x * 1.5,
+      y * 1.5,
+      (Math.random() - 0.5) * 0.35
+    )
 
     setClickedPairs((prev) => [
       ...prev,
@@ -634,7 +700,11 @@ export default function HawkingRadiation() {
   }
 
   return (
-    <div ref={canvasRef} className="w-full h-full cursor-pointer" onClick={handleClick}>
+    <div
+      ref={canvasRef}
+      className='w-full h-full cursor-pointer min-h-[400px] sm:min-h-[400px]'
+      onClick={handleClick}
+    >
       <Canvas camera={{ position: [0, 0, 2], fov: 75 }} dpr={[1, 2]}>
         <StarField isDarkMode={isDarkMode} count={250} />
 

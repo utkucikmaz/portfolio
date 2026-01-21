@@ -132,7 +132,7 @@ const PersonalSection = (): JSX.Element => {
 
   return (
     <section id='personal'>
-      <div className='text-center mb-12'>
+      <div className='text-center lg:mb-12 md:mb-8'>
         <h2 className='text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-neutral-50 mb-4'>
           {t('personal.title')}
         </h2>
@@ -147,7 +147,7 @@ const PersonalSection = (): JSX.Element => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className='flex items-center justify-center w-full h-full max-h-[300px] md:max-h-none lg:min-h-[500px] lg:min-w-[600px] rounded-lg overflow-hidden'
+          className='flex items-center justify-center w-full h-full max-h-[300px] md:max-h-none sm:min-h-[400px] lg:min-h-[500px] lg:min-w-[600px] rounded-lg overflow-hidden'
         >
           <Suspense
             fallback={
