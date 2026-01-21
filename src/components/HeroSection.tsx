@@ -447,6 +447,47 @@ const HeroSection = ({ isDarkMode = true }: HeroSectionProps): JSX.Element => {
           <div
             ref={draggableRef}
             className='celestial-handle absolute cursor-grab active:cursor-grabbing pointer-events-auto'
+            role='button'
+            tabIndex={0}
+            aria-label={`Move celestial: ${isDarkMode ? (t('hero.moon') ?? 'Moon') : (t('hero.sun') ?? 'Sun')}`}
+            onKeyDown={(e) => {
+              const step = 12
+              let dx = 0
+              let dy = 0
+              switch (e.key) {
+                case 'ArrowLeft':
+                  dx = -step
+                  break
+                case 'ArrowRight':
+                  dx = step
+                  break
+                case 'ArrowUp':
+                  dy = -step
+                  break
+                case 'ArrowDown':
+                  dy = step
+                  break
+                case 'PageUp':
+                  dy = -step * 2
+                  break
+                case 'PageDown':
+                  dy = step * 2
+                  break
+                default:
+                  return
+              }
+              e.preventDefault()
+              const maxX =
+                containerWidth > 0
+                  ? containerWidth - celestialSize
+                  : window.innerWidth - celestialSize
+              const maxY = containerHeight - celestialSize
+              let newX = celestialPosition.x + dx
+              let newY = celestialPosition.y + dy
+              newX = Math.max(0, Math.min(newX, maxX))
+              newY = Math.max(0, Math.min(newY, maxY))
+              setCelestialPosition({ x: newX, y: newY })
+            }}
             style={{ zIndex: 2 }}
           >
             <AnimatePresence mode='wait'>
@@ -704,14 +745,14 @@ const HeroSection = ({ isDarkMode = true }: HeroSectionProps): JSX.Element => {
                 const openWidth = Math.max(120, 12 * tech.name.length)
 
                 return (
-              <motion.button
-                tabIndex={-1}
-                key={tech.name}
-                onMouseEnter={() => !isMobile && setHovered(index)}
-                onMouseLeave={() => !isMobile && setHovered(null)}
-                aria-expanded={isHover}
-                title={tech.name}
-                layout
+                  <motion.button
+                    tabIndex={-1}
+                    key={tech.name}
+                    onMouseEnter={() => !isMobile && setHovered(index)}
+                    onMouseLeave={() => !isMobile && setHovered(null)}
+                    aria-expanded={isHover}
+                    title={tech.name}
+                    layout
                     transition={{ type: 'spring', stiffness: 350, damping: 30 }}
                     style={{
                       width: isHover && !isMobile ? openWidth : closedWidth,
