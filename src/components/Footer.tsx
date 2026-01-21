@@ -28,6 +28,7 @@ const Footer = (): JSX.Element => {
               rel='noopener noreferrer'
               className='text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors'
               aria-label={t('footer.github')}
+              tabIndex={-1}
             >
               <img
                 src='/svg/github-icon.svg'
@@ -42,6 +43,7 @@ const Footer = (): JSX.Element => {
               rel='noopener noreferrer'
               className='text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors'
               aria-label={t('footer.linkedin')}
+              tabIndex={-1}
             >
               <img
                 src='/svg/linkedin-icon.svg'

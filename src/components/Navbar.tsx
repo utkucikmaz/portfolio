@@ -116,6 +116,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps): JSX.Element => {
         <div className='flex items-center justify-between h-20'>
           <a
             href='/#'
+            tabIndex={-1}
             onClick={(e) => {
               e.preventDefault()
               window.scrollTo({ top: 0, behavior: 'smooth' })

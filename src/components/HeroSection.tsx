@@ -53,9 +53,12 @@ const HeroSection = ({ isDarkMode = true }: HeroSectionProps): JSX.Element => {
     if (typeof window !== 'undefined') {
       const width = window.innerWidth
       let newSize = 128 // Default
-      if (width < 640) newSize = 64 // Mobile: 64px (w-16)
-      else if (width < 768) newSize = 80 // Small: 80px (w-20)
-      else if (width < 1024) newSize = 96 // Medium: 96px (w-24)
+      if (width < 640)
+        newSize = 64 // Mobile: 64px (w-16)
+      else if (width < 768)
+        newSize = 80 // Small: 80px (w-20)
+      else if (width < 1024)
+        newSize = 96 // Medium: 96px (w-24)
       else newSize = 128 // Large+: 128px (w-32)
       setCelestialSize(newSize)
     }
@@ -84,7 +87,8 @@ const HeroSection = ({ isDarkMode = true }: HeroSectionProps): JSX.Element => {
       if (heroSectionRef.current && dragContainerRef.current) {
         const sectionWidth = heroSectionRef.current.offsetWidth
         const currentContainerHeight = dragContainerRef.current.offsetHeight
-        const isMobile = typeof window !== 'undefined' && window.innerWidth < 640
+        const isMobile =
+          typeof window !== 'undefined' && window.innerWidth < 640
         setCelestialPosition((prev) => {
           if (prev.x === 0 && prev.y === 0) {
             if (isMobile) {
@@ -123,7 +127,10 @@ const HeroSection = ({ isDarkMode = true }: HeroSectionProps): JSX.Element => {
         const targetY =
           animationRect.top + animationRect.height / 2 - containerRect.top
         setLightTarget((prev) => {
-          if (Math.abs(prev.x - targetX) < EPS && Math.abs(prev.y - targetY) < EPS) {
+          if (
+            Math.abs(prev.x - targetX) < EPS &&
+            Math.abs(prev.y - targetY) < EPS
+          ) {
             return prev
           }
           return { x: targetX, y: targetY }
@@ -132,7 +139,10 @@ const HeroSection = ({ isDarkMode = true }: HeroSectionProps): JSX.Element => {
         const targetX = containerWidth * 0.3
         const targetY = containerHeight * 0.4
         setLightTarget((prev) => {
-          if (Math.abs(prev.x - targetX) < EPS && Math.abs(prev.y - targetY) < EPS) {
+          if (
+            Math.abs(prev.x - targetX) < EPS &&
+            Math.abs(prev.y - targetY) < EPS
+          ) {
             return prev
           }
           return { x: targetX, y: targetY }
@@ -141,7 +151,7 @@ const HeroSection = ({ isDarkMode = true }: HeroSectionProps): JSX.Element => {
     }
 
     updateLightTarget()
-    
+
     let updateRaf: number | null = null
     const throttledUpdate = () => {
       if (updateRaf !== null) return
@@ -150,7 +160,7 @@ const HeroSection = ({ isDarkMode = true }: HeroSectionProps): JSX.Element => {
         updateRaf = null
       })
     }
-    
+
     window.addEventListener('resize', throttledUpdate)
     window.addEventListener('scroll', throttledUpdate, { passive: true })
 
@@ -218,7 +228,9 @@ const HeroSection = ({ isDarkMode = true }: HeroSectionProps): JSX.Element => {
 
   const handleCelestialDrag = (_e: unknown, data: { x: number; y: number }) => {
     const maxX =
-      containerWidth > 0 ? containerWidth - celestialSize : window.innerWidth - celestialSize
+      containerWidth > 0
+        ? containerWidth - celestialSize
+        : window.innerWidth - celestialSize
     const maxY = containerHeight - celestialSize
     const constrainedX = Math.max(0, Math.min(data.x, maxX))
     const constrainedY = Math.max(0, Math.min(data.y, maxY))
@@ -227,7 +239,9 @@ const HeroSection = ({ isDarkMode = true }: HeroSectionProps): JSX.Element => {
 
   const getDragBounds = () => {
     const maxX =
-      containerWidth > 0 ? containerWidth - celestialSize : window.innerWidth - celestialSize
+      containerWidth > 0
+        ? containerWidth - celestialSize
+        : window.innerWidth - celestialSize
     const maxY = containerHeight - celestialSize
     return { left: 0, right: maxX, top: 0, bottom: maxY }
   }
@@ -683,22 +697,24 @@ const HeroSection = ({ isDarkMode = true }: HeroSectionProps): JSX.Element => {
             <div className='flex gap-2 md:gap-4 justify-center lg:justify-start'>
               {techStack.map((tech, index) => {
                 const isHover = hovered === index
-                const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
+                const isMobile =
+                  typeof window !== 'undefined' && window.innerWidth < 768
 
                 const closedWidth = 40
                 const openWidth = Math.max(120, 12 * tech.name.length)
 
                 return (
-                  <motion.button
-                    key={tech.name}
-                    onMouseEnter={() => !isMobile && setHovered(index)}
-                    onMouseLeave={() => !isMobile && setHovered(null)}
-                    aria-expanded={isHover}
-                    title={tech.name}
-                    layout
+              <motion.button
+                tabIndex={-1}
+                key={tech.name}
+                onMouseEnter={() => !isMobile && setHovered(index)}
+                onMouseLeave={() => !isMobile && setHovered(null)}
+                aria-expanded={isHover}
+                title={tech.name}
+                layout
                     transition={{ type: 'spring', stiffness: 350, damping: 30 }}
                     style={{
-                      width: (isHover && !isMobile) ? openWidth : closedWidth,
+                      width: isHover && !isMobile ? openWidth : closedWidth,
                       backgroundColor: 'var(--color-bg-card)',
                       border: '1px solid var(--color-border)',
                     }}
@@ -711,7 +727,7 @@ const HeroSection = ({ isDarkMode = true }: HeroSectionProps): JSX.Element => {
                       className='absolute inset-0 pointer-events-none rounded-lg'
                       style={{ transformOrigin: 'left center', zIndex: 0 }}
                       initial={{ scaleX: 0 }}
-                      animate={{ scaleX: (isHover && !isMobile) ? 1 : 0 }}
+                      animate={{ scaleX: isHover && !isMobile ? 1 : 0 }}
                       transition={{ duration: 0.28, ease: 'easeInOut' }}
                     >
                       {/* pick your overlay color here — uses Tailwind color tokens in inline style for compatibility */}
@@ -720,9 +736,10 @@ const HeroSection = ({ isDarkMode = true }: HeroSectionProps): JSX.Element => {
                           display: 'block',
                           width: '100%',
                           height: '100%',
-                          backgroundColor: (isHover && !isMobile)
-                            ? 'var(--color-bg-secondary)'
-                            : 'transparent',
+                          backgroundColor:
+                            isHover && !isMobile
+                              ? 'var(--color-bg-secondary)'
+                              : 'transparent',
                           opacity: 1,
                           borderRadius: '0.5rem',
                         }}
@@ -737,11 +754,12 @@ const HeroSection = ({ isDarkMode = true }: HeroSectionProps): JSX.Element => {
                         loading='lazy'
                         className='w-6 h-6 flex-shrink-0'
                         style={{
-                          filter: (isHover && !isMobile)
-                            ? isDarkMode
-                              ? 'brightness(0) invert(1)'
-                              : 'brightness(0)'
-                            : undefined,
+                          filter:
+                            isHover && !isMobile
+                              ? isDarkMode
+                                ? 'brightness(0) invert(1)'
+                                : 'brightness(0)'
+                              : undefined,
                         }}
                       />
 
@@ -750,14 +768,15 @@ const HeroSection = ({ isDarkMode = true }: HeroSectionProps): JSX.Element => {
                         className='text-sm font-medium select-none text-gray-600 dark:text-neutral-50'
                         initial={{ opacity: 0, x: -6 }}
                         animate={{
-                          opacity: (isHover && !isMobile) ? 1 : 0,
-                          x: (isHover && !isMobile) ? 0 : -6,
+                          opacity: isHover && !isMobile ? 1 : 0,
+                          x: isHover && !isMobile ? 0 : -6,
                         }}
                         transition={{ duration: 0.18 }}
                         style={{
-                          color: (isHover && !isMobile)
-                            ? 'var(--color-text-primary)'
-                            : 'var(--color-text-secondary)',
+                          color:
+                            isHover && !isMobile
+                              ? 'var(--color-text-primary)'
+                              : 'var(--color-text-secondary)',
                         }}
                       >
                         {tech.name}
@@ -832,6 +851,7 @@ const HeroSection = ({ isDarkMode = true }: HeroSectionProps): JSX.Element => {
             >
               <a
                 href='#craft'
+                tabIndex={-1}
                 className='flex flex-col items-center text-neutral-500 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors'
                 aria-label='Scroll to skills section'
               >

@@ -103,7 +103,7 @@ function App(): JSX.Element {
         <BackgroundThree isDarkMode={isDarkMode} />
       </Suspense>
       <ThemeCelestial isDarkMode={isDarkMode} />
-      <a href='#hero' className='skip-to-main'>
+      <a href='#hero' tabIndex={-1} className='skip-to-main'>
         {t('nav.skipToMain')}
       </a>
       <Navbar isDarkMode={isDarkMode} setIsDarkMode={handleSetIsDarkMode} />
