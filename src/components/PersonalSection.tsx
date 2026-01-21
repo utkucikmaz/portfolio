@@ -46,7 +46,7 @@ function calculateParagraphDuration(
 }
 
 const PersonalSection = (): JSX.Element => {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const [isUnformal, setIsUnformal] = useState(false)
   const [useScrambleAnimation, setUseScrambleAnimation] = useState(false)
   const hoverTimeoutRef = useRef<number | null>(null)
@@ -124,6 +124,11 @@ const PersonalSection = (): JSX.Element => {
 
     return delays
   }, [t, isUnformal, useScrambleAnimation])
+
+  const currentLang = i18n.language
+  const extraGapForLang =
+    isUnformal &&
+    ['tr', 'de', 'es', 'nl', 'ru', 'ko', 'zh', 'ja', 'pt'].includes(currentLang)
 
   return (
     <section id='personal'>
@@ -207,7 +212,10 @@ const PersonalSection = (): JSX.Element => {
                 </span>
               </span>
             </p>
-            <p className='text-justify relative'>
+            <p
+              className='text-justify relative'
+              style={extraGapForLang ? { paddingTop: '32px' } : undefined}
+            >
               <span
                 className='invisible block whitespace-pre-wrap'
                 aria-hidden='true'
