@@ -2,11 +2,11 @@
 
 <div align="center">
 
-![Portfolio Preview](https://img.shields.io/badge/Status-Live-brightgreen) ![React](https://img.shields.io/badge/React-18.2.0-61DAFB?logo=react&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178C6?logo=typescript&logoColor=white) ![Vite](https://img.shields.io/badge/Vite-5.1.4-646CFF?logo=vite&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.3.0-38B2AC?logo=tailwind-css&logoColor=white) ![License](https://img.shields.io/badge/License-MIT-blue.svg)
+![Portfolio Preview](https://img.shields.io/badge/Status-Live-brightgreen) ![React](https://img.shields.io/badge/React-18.2.0-61DAFB?logo=react&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178C6?logo=typescript&logoColor=white) ![Vite](https://img.shields.io/badge/Vite-6.4.1-646CFF?logo=vite&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.3.0-38B2AC?logo=tailwind-css&logoColor=white) ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 
 A modern, responsive portfolio website built with React, TypeScript, and cutting-edge web technologies. Features a beautiful 3D interactive background, multi-language support, dark/light theme, and smooth animations.
 
-**[🌐 Live Demo](https://utkucikmaz.com)** • **[📖 Documentation](#table-of-contents)** • **[🐛 Report Bug](https://github.com/utkucikmaz/portfolio/issues)** • **[💡 Request Feature](https://github.com/utkucikmaz/portfolio/issues)**
+**[🌐 Live Demo](https://utkucikmaz.com)** • **[🐛 Report Bug](https://github.com/utkucikmaz/portfolio/issues)** • **[💡 Request Feature](https://github.com/utkucikmaz/portfolio/issues)**
 
 </div>
 
@@ -120,7 +120,7 @@ A modern, responsive portfolio website built with React, TypeScript, and cutting
 | -------------- | ------- | ---------------------------------- |
 | **React**      | 18.2.0  | UI library for building components |
 | **TypeScript** | 5.9.3   | Type-safe JavaScript               |
-| **Vite**       | 5.1.4   | Build tool and dev server          |
+| **Vite**       | 6.4.1   | Build tool and dev server          |
 
 ### Styling & UI
 
@@ -135,7 +135,7 @@ A modern, responsive portfolio website built with React, TypeScript, and cutting
 
 | Technology             | Version | Purpose                              |
 | ---------------------- | ------- | ------------------------------------ |
-| **Three.js**           | 0.155.0 | 3D graphics library                  |
+| **Three.js**           | 0.182.0 | 3D graphics library                  |
 | **@react-three/fiber** | 8.18.0  | React renderer for Three.js          |
 | **@react-three/drei**  | 9.122.0 | Useful helpers for react-three-fiber |
 
@@ -173,7 +173,7 @@ A modern, responsive portfolio website built with React, TypeScript, and cutting
 
 ### Prerequisites
 
-- **Node.js** >= 18.0.0
+- **Node.js** >= 20.0.0
 - **npm** >= 9.0.0 (or **pnpm** / **yarn**)
 
 ### Installation
