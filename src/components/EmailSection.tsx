@@ -97,7 +97,7 @@ const EmailSection = (): JSX.Element => {
           viewport={{ once: true }}
           className='space-y-6'
         >
-          <div>
+          <div className='text-center lg:text-left'>
             <h2 className='text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-neutral-50 mb-4'>
               {t('contact.title')}
             </h2>
@@ -106,8 +106,7 @@ const EmailSection = (): JSX.Element => {
             </p>
           </div>
 
-          <div className='flex gap-6 pt-4'>
-
+          <div className='flex gap-6 pt-4 justify-center lg:justify-start'>
             <Tooltip.Provider>
               <Tooltip.Root>
                 <Tooltip.Trigger asChild>
@@ -138,7 +137,7 @@ const EmailSection = (): JSX.Element => {
                 </Tooltip.Portal>
               </Tooltip.Root>
             </Tooltip.Provider>
-                        <Tooltip.Provider>
+            <Tooltip.Provider>
               <Tooltip.Root>
                 <Tooltip.Trigger asChild>
                   <a
@@ -176,7 +175,12 @@ const EmailSection = (): JSX.Element => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
         >
-          <form className='space-y-6' ref={form} onSubmit={sendEmail} noValidate>
+          <form
+            className='space-y-6'
+            ref={form}
+            onSubmit={sendEmail}
+            noValidate
+          >
             {success && (
               <div className='p-4 rounded-lg bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-900 flex items-start gap-3'>
                 <CheckCircleIcon className='w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5' />

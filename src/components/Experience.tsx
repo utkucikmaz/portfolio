@@ -48,16 +48,10 @@ const TimelineItem = memo(
         }
       }
 
-      const handleScroll = () => {
-        setIsExpanded(false)
-      }
-
       document.addEventListener('mousedown', handleClick)
-      window.addEventListener('scroll', handleScroll, { passive: true })
 
       return () => {
         document.removeEventListener('mousedown', handleClick)
-        window.removeEventListener('scroll', handleScroll)
       }
     }, [isExpanded])
 
@@ -75,7 +69,14 @@ const TimelineItem = memo(
           }`}
         >
           <div ref={panelRef} className='relative'>
-            <motion.div className='gap-4 p-4 rounded-lg bg-neutral-200 dark:bg-neutral-800 hover:bg-neutral-300 dark:hover:bg-neutral-700 transition-colors text-left'>
+            <motion.div
+              className='gap-4 p-4 rounded-lg bg-neutral-200 dark:bg-neutral-800 hover:bg-neutral-300 dark:hover:bg-neutral-700 transition-colors text-left cursor-pointer'
+              onClick={(e) => {
+                if (!(e.target as Element).closest('button[aria-expanded]')) {
+                  setIsExpanded(false)
+                }
+              }}
+            >
               <h3 className='flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-3 text-lg font-semibold text-neutral-900 dark:text-neutral-50 mb-2'>
                 <span>{item.title}</span>
                 {isExperience ? (
@@ -225,14 +226,17 @@ TimelineItem.displayName = 'TimelineItem'
 const Experience = (): JSX.Element => {
   const { t } = useTranslation()
 
-  const getHighlights = useCallback((key: string): string[] => {
-    const value = t(key, { returnObjects: true }) as unknown
-    if (!Array.isArray(value)) {
-      return []
-    }
+  const getHighlights = useCallback(
+    (key: string): string[] => {
+      const value = t(key, { returnObjects: true }) as unknown
+      if (!Array.isArray(value)) {
+        return []
+      }
 
-    return value.filter((item): item is string => typeof item === 'string')
-  }, [t])
+      return value.filter((item): item is string => typeof item === 'string')
+    },
+    [t]
+  )
 
   const experiences: ExperienceItem[] = useMemo(
     () => [
@@ -269,7 +273,9 @@ const Experience = (): JSX.Element => {
         company: t('journey.experiences.turkishairlines.company'),
         location: t('journey.experiences.turkishairlines.location'),
         period: t('journey.experiences.turkishairlines.period'),
-        highlights: getHighlights('journey.experiences.turkishairlines.highlights'),
+        highlights: getHighlights(
+          'journey.experiences.turkishairlines.highlights'
+        ),
         type: 'experience',
       },
     ],

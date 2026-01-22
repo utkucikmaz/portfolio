@@ -97,6 +97,23 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps): JSX.Element => {
     }
   }, [])
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent): void => {
+      if (navbarOpen) {
+        const target = event.target as Element
+        const navbar = document.querySelector('nav')
+        if (navbar && !navbar.contains(target)) {
+          setNavbarOpen(false)
+        }
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [navbarOpen])
+
   const toggleTheme = (): void => {
     const newIsDarkMode = !isDarkMode
     setIsDarkMode(newIsDarkMode)
