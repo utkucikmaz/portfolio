@@ -134,7 +134,7 @@ const PersonalSection = (): JSX.Element => {
 
   return (
     <section id='personal'>
-      <div className='text-center lg:mb-12 md:mb-8 sm:mb-4'>
+      <div className='text-center lg:mb-12 mb-8'>
         <h2 className='text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-neutral-50 mb-4'>
           {t('personal.title')}
         </h2>
