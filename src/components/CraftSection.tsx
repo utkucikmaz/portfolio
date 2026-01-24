@@ -1,7 +1,11 @@
 import { useTransition, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
-import { CodeBracketIcon, TrophyIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline'
+import {
+  CodeBracketIcon,
+  TrophyIcon,
+  ChatBubbleLeftRightIcon,
+} from '@heroicons/react/24/outline'
 
 interface Skill {
   name: string
@@ -24,28 +28,26 @@ interface TabData {
 }
 
 const skills: Skill[] = [
-  { name: 'React', icon: '/svg/react.svg', category: 'Frontend' },
-  { name: 'Next.js', icon: '/svg/next.svg', category: 'Frontend' },
   { name: 'Vue', icon: '/svg/vue.svg', category: 'Frontend' },
+  { name: 'React', icon: '/svg/react.svg', category: 'Frontend' },
   { name: 'TypeScript', icon: '/svg/typescript.svg', category: 'Language' },
   { name: 'JavaScript', icon: '/svg/javascript.svg', category: 'Language' },
   { name: 'Python', icon: '/svg/python.svg', category: 'Language' },
   { name: 'Node.js', icon: '/svg/nodejs.svg', category: 'Backend' },
-  { name: 'Express', icon: '/svg/expressjs.svg', category: 'Backend' },
+  { name: 'Next.js', icon: '/svg/next.svg', category: 'Frontend' },
   { name: 'NestJS', icon: '/svg/nestjs.svg', category: 'Backend' },
   {
     name: 'Django REST Framework',
     icon: '/svg/django.svg',
     category: 'Backend',
   },
+  { name: 'Express', icon: '/svg/expressjs.svg', category: 'Backend' },
   { name: 'PostgreSQL', icon: '/svg/postgresql.svg', category: 'Database' },
   { name: 'MongoDB', icon: '/svg/mongodb.svg', category: 'Database' },
   { name: 'Redux', icon: '/svg/redux.svg', category: 'State Management' },
   { name: 'Tailwind CSS', icon: '/svg/tailwind.svg', category: 'Styling' },
   { name: 'Git', icon: '/svg/git.svg', category: 'Tools' },
 ]
-
-
 
 const CraftSection = (): JSX.Element => {
   const { t } = useTranslation()
@@ -218,9 +220,7 @@ const CraftSection = (): JSX.Element => {
                 aria-pressed={tab === 'skills'}
               >
                 <CodeBracketIcon className='w-5 h-5 flex-shrink-0' />
-                <span className='hidden sm:inline'>
-                  {t('craft.skills')}
-                </span>
+                <span className='hidden sm:inline'>{t('craft.skills')}</span>
                 <motion.div
                   className='sm:hidden overflow-hidden'
                   initial={false}
@@ -231,7 +231,7 @@ const CraftSection = (): JSX.Element => {
                   transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
                 >
                   <motion.span
-                    animate={{ 
+                    animate={{
                       x: tab === 'skills' ? 0 : -8,
                     }}
                     transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
@@ -265,7 +265,7 @@ const CraftSection = (): JSX.Element => {
                   transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
                 >
                   <motion.span
-                    animate={{ 
+                    animate={{
                       x: tab === 'positions' ? 0 : -8,
                     }}
                     transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
@@ -299,7 +299,7 @@ const CraftSection = (): JSX.Element => {
                   transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
                 >
                   <motion.span
-                    animate={{ 
+                    animate={{
                       x: tab === 'certifications' ? 0 : -8,
                     }}
                     transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}

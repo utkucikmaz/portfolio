@@ -191,7 +191,10 @@
 			"generic": "Failed to send message. Please try again.",
 			"rateLimit": "Too many requests. Please wait a moment and try again.",
 			"invalidData": "Invalid form data. Please check your input and try again.",
-			"auth": "Authentication failed. Please contact the administrator.",
+			"nameRequired": "Name is required.",
+			"emailInvalid": "Please enter a valid email address.",
+			"subjectRequired": "Subject is required.",
+			"messageRequired": "Message is required.",
 			"serviceUnavailable": "Service temporarily unavailable. Please try again later."
 		}
 	},

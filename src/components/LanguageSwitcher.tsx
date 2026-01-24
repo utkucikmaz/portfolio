@@ -1,5 +1,6 @@
-import { useState, useEffect, useRef } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion'
 import toast from 'react-hot-toast'
 
 interface Language {
@@ -8,99 +9,167 @@ interface Language {
   flag: string
 }
 
-const languages: Language[] = [
-  { code: 'en', name: 'English', flag: '🇬🇧' },
-  { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-  { code: 'tr', name: 'Türkçe', flag: '🇹🇷' },
-  { code: 'nl', name: 'Nederlands', flag: '🇳🇱' },
-  { code: 'zh', name: '中文', flag: '🇨🇳' },
-  { code: 'fr', name: 'Français', flag: '🇫🇷' },
-  { code: 'ja', name: '日本語', flag: '🇯🇵' },
-  { code: 'es', name: 'Español', flag: '🇪🇸' },
-  { code: 'pt', name: 'Português', flag: '🇵🇹' },
-  { code: 'ko', name: '한국어', flag: '🇰🇷' },
-  { code: 'ar', name: 'العربية', flag: '🇸🇦' },
-  { code: 'ru', name: 'Русский', flag: '🇷🇺' },
-]
+const LANGUAGE_COLUMNS: readonly [Language[], Language[]] = [
+  [
+    { code: 'en', name: 'English', flag: '🇬🇧' },
+    { code: 'fr', name: 'Français', flag: '🇫🇷' },
+    { code: 'zh', name: '中文', flag: '🇨🇳' },
+    { code: 'ar', name: 'العربية', flag: '🇸🇦' },
+    { code: 'es', name: 'Español', flag: '🇪🇸' },
+    { code: 'nl', name: 'Nederlands', flag: '🇳🇱' },
+  ],
+  [
+    { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
+    { code: 'tr', name: 'Türkçe', flag: '🇹🇷' },
+    { code: 'ja', name: '日本語', flag: '🇯🇵' },
+    { code: 'ko', name: '한국어', flag: '🇰🇷' },
+    { code: 'ru', name: 'Русский', flag: '🇷🇺' },
+    { code: 'pt', name: 'Português', flag: '🇵🇹' },
+  ],
+] as const
 
-const LanguageSwitcher = (): JSX.Element => {
+const dropdownVariants = {
+  hidden: { opacity: 0, y: -8, scale: 0.96 },
+  visible: { opacity: 1, y: 0, scale: 1 },
+  exit: { opacity: 0, y: -8, scale: 0.96 },
+}
+
+const buttonBase =
+  'w-full flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-xl transition-all duration-200'
+
+const activeStyles =
+  'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/40 shadow-sm'
+
+const idleStyles =
+  'text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800/50'
+
+export interface LanguageSwitcherProps {
+  onOpen?: () => void
+}
+
+export default function LanguageSwitcher({
+  onOpen,
+}: LanguageSwitcherProps): JSX.Element {
   const { i18n, t } = useTranslation()
-  const [isOpen, setIsOpen] = useState<boolean>(false)
+  const [isOpen, setIsOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
-  const foundLanguage = languages.find((lang) => lang.code === i18n.language)
-  const currentLanguage = (foundLanguage ?? languages[0]) as Language
+  const allLanguages = useMemo(() => LANGUAGE_COLUMNS.flat(), [])
 
-  const changeLanguage = (languageCode: string): void => {
-    i18n
-      .changeLanguage(languageCode)
-      .then(() => {
-        toast.success(t('toast.language.success'))
-      })
-      .catch((error) => {
-        console.error('Failed to change language:', error)
-        toast.error('Failed to change language')
-      })
-    setIsOpen(false)
+  const FALLBACK_LANGUAGE: Language = {
+    code: 'en',
+    name: 'English',
+    flag: '🇬🇧',
   }
 
+  const currentLanguage = useMemo<Language>(() => {
+    return (
+      allLanguages.find((l) => l.code === i18n.language) ?? FALLBACK_LANGUAGE
+    )
+  }, [i18n.language, allLanguages])
+
+  const { scrollY } = useScroll()
+  const bgOpacity = useTransform(scrollY, [0, 200], [0.65, 0.95])
+
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent | TouchEvent): void => {
+    if (!isOpen) return
+
+    const handleClickOutside = (event: MouseEvent) => {
       if (
         dropdownRef.current &&
-        event.target instanceof Node &&
-        !dropdownRef.current.contains(event.target)
+        !dropdownRef.current.contains(event.target as Node)
       ) {
         setIsOpen(false)
       }
     }
 
-    if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside)
-      document.addEventListener('touchstart', handleClickOutside)
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-      document.removeEventListener('touchstart', handleClickOutside)
-    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [isOpen])
 
+  const changeLanguage = async (code: string) => {
+    try {
+      await i18n.changeLanguage(code)
+      toast.success(t('toast.language.success'))
+    } catch {
+      toast.error('Failed to change language')
+    } finally {
+      setIsOpen(false)
+    }
+  }
+
+  const handleLanguageClick = (code: string) => {
+    void changeLanguage(code)
+  }
+
+  const [leftLanguages, rightLanguages] = LANGUAGE_COLUMNS
+
+  const renderColumn = (languages: readonly Language[], alignRight = false) => (
+    <div className='space-y-1'>
+      {languages.map((language) => {
+        const isActive = language.code === i18n.language
+
+        return (
+          <button
+            key={language.code}
+            onClick={() => handleLanguageClick(language.code)}
+            className={`${buttonBase} ${
+              isActive ? activeStyles : idleStyles
+            } ${alignRight ? 'justify-end text-right' : ''}`}
+          >
+            {!alignRight && (
+              <span className='text-lg flex-shrink-0'>{language.flag}</span>
+            )}
+            <span className='truncate'>{language.name}</span>
+            {alignRight && (
+              <span className='text-lg flex-shrink-0'>{language.flag}</span>
+            )}
+          </button>
+        )
+      })}
+    </div>
+  )
+
   return (
-    <div className='relative' ref={dropdownRef}>
+    <div ref={dropdownRef} className='relative'>
       <button
-        onClick={() => setIsOpen(!isOpen)}
-        className={`relative px-4 py-2 text-sm font-medium transition-colors duration-200 rounded-lg ${
-          isOpen
-            ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/30'
-            : 'text-neutral-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-neutral-100 dark:hover:bg-neutral-800/50'
-        }`}
-        aria-label={t('accessibility.changeLanguage')}
-        aria-expanded={isOpen}
+        onClick={() => {
+          setIsOpen((o) => !o)
+          onOpen?.()
+        }}
+        className='px-4 py-2 rounded-lg text-sm font-medium transition-colors
+          text-neutral-700 dark:text-neutral-300
+          hover:bg-neutral-100 dark:hover:bg-neutral-800/50'
       >
-        <span className='text-sm font-medium'>{currentLanguage.flag}</span>
+        {currentLanguage.flag}
       </button>
 
-      {isOpen && (
-        <div className='absolute right-0 mt-2 w-48 bg-white dark:bg-neutral-800 rounded-lg shadow-lg border border-neutral-200 dark:border-neutral-700 z-50'>
-          {languages.map((language) => (
-            <button
-              key={language.code}
-              onClick={() => changeLanguage(language.code)}
-              className={`w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors ${
-                i18n.language === language.code
-                  ? 'bg-primary-50 dark:bg-primary-950 text-primary-700 dark:text-primary-300'
-                  : 'text-neutral-700 dark:text-neutral-300'
-              }`}
-            >
-              <span className='text-lg'>{language.flag}</span>
-              <span className='text-sm font-medium'>{language.name}</span>
-            </button>
-          ))}
-        </div>
-      )}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            variants={dropdownVariants}
+            initial='hidden'
+            animate='visible'
+            exit='exit'
+            style={{ '--tw-bg-opacity': bgOpacity } as React.CSSProperties}
+            className='
+  fixed inset-x-0 top-18
+  mx-auto w-[92vw] max-w-[440px]
+  sm:absolute sm:inset-x-auto sm:right-0
+  sm:mx-0
+  rounded-2xl border
+  bg-white dark:bg-neutral-950 backdrop-blur-xl shadow-xl
+  border-neutral-200/50 dark:border-neutral-800/50
+  overflow-hidden z-50
+'
+          >
+            <div className='grid grid-cols-2 gap-3 p-4 max-h-[70vh] overflow-y-auto'>
+              {renderColumn(leftLanguages)}
+              {renderColumn(rightLanguages, true)}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }
-
-export default LanguageSwitcher

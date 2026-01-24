@@ -1,244 +1,248 @@
 {
-	"nav": {
-		"home": "Home",
-		"craft": "Als Ontwikkelaar",
-		"journey": "Traject",
-		"projects": "Inventaris",
-		"personal": "Als Persoon",
-		"contact": "Contact",
-		"skipToMain": "Naar hoofdinhoud springen"
-	},
-	"hero": {
-		"greeting": "Hoi, ik ben",
-		"title": "een ontwikkelaar.",
-		"subtitle": "Resultaatgerichte Full Stack Ontwikkelaar met bewezen expertise in het bouwen van schaalbare, hoogwaardige webapplicaties. Gespecialiseerd in moderne JavaScript-ecosystemen en robuuste backend-architecturen.",
-		"getInTouch": "Neem contact op",
-		"downloadCV": "CV downloaden",
-		"downloadCVTooltip": "Download het cv in verschillende talen door de website-taal te wijzigen",
-		"technologies": "Technologieën waarmee ik werk:",
-		"scroll": "Scrollen"
-	},
-	"craft": {
-		"title": "Als Ontwikkelaar",
-		"subtitle": "Schone code, functie eerst, schoonheid inbegrepen.",
-		"description1": "Ik ontwerp en lever enterprise-grade full-stack oplossingen met behulp van geavanceerde technologieën zoals React, Next.js, TypeScript, Node.js en Django. Mijn expertise omvat de volledige softwareontwikkelingslevenscyclus, van het ontwerpen van intuïtieve gebruikersinterfaces tot het bouwen van robuuste, schaalbare backend-architecturen die hoogwaardige applicaties aandrijven.",
-		"description2": "Met een bewezen trackrecord breng ik een unieke combinatie van technische excellentie en interculturele communicatievaardigheden. Mijn code wordt gekenmerkt door schone architectuur, rigoureuze tests en prestatie-optimalisatie, waardoor oplossingen worden gegarandeerd die niet alleen voldoen aan maar ook de bedrijfsdoelstellingen overtreffen.",
-		"description3": "Mijn benadering van ontwikkeling is holistisch: ik schrijf niet alleen code, ik ontwerp oplossingen. Met expertise in zowel frontend- als backend-technologieën overbrug ik de kloof tussen ontwerp en implementatie, waardoor naadloze integratie, optimale prestaties en schaalbare architectuur worden gegarandeerd die meegroeit met de behoeften van uw bedrijf.",
-		"skills": "Vaardigheden",
-		"certifications": {
-			"title": "Certificeringen",
-			"ironhack": {
-				"name": "Ironhack",
-				"logo": "/logo/ironhack.png",
-				"title": "Full Stack Web Development Bootcamp",
-				"duration": "400 Uren",
-				"year": "2023"
-			},
-			"digihome": {
-				"name": "Digihome Schooling",
-				"logo": "/logo/digihome.png",
-				"title": "Full Stack Web Development Bootcamp",
-				"duration": "400 Uren",
-				"year": "2022"
-			}
-		},
-		"positions": {
-			"title": "Communicatie",
-			"item1": "Leidde multinationale teams in een internationale trainingsomgeving onder toezicht van de Noord-Atlantische Verdragsorganisatie (NAVO)",
-			"item2": "Beheerde en begeleidde een grote peergroep (200+ leden) met focus op structuur, duidelijkheid en verantwoordelijkheid",
-			"item3": "Richtte een internationale betrekkingenclub op en voorzat deze, waardoor dialoog tussen culturen en disciplines werd bevorderd"
-		}
-	},
-	"personal": {
-		"title": "Als Persoon",
-		"subtitle": "Een zelfportret, geannoteerd door het zelf.",
-		"unformal1": "Ik ben een ster. Natuurkunde- en astronomie-nerd. Filosofie-duiker. Verliefd op programmeren, kunst, muziek, literatuur en alle andere schoonheid in de wereld, vooral degenen die hun bestaan niet hoeven te rechtvaardigen.",
-		"unformal2": "Ik ben een artistieke geest opgesloten in een pot, lekkende verf, stilletjes ontsnappingsdromen coderen in charmante talen die alleen machines volledig begrijpen. Ontsnapt uit de grot van Plato en nog steeds verloren buiten. Bang voor spaghettificatie maar verwonder me voorbij gebeurtenishorizonten, compilatie van gedachten die misschien nooit eindigen. Hou van alle kleuren maar geel meer. Het kind dat Yuri Gagarin achterliet, nog steeds nieuwsgierig, nog steeds rond verwondering cirkelend.",
-		"unformal3": "Mijn gedachten draaien in oneindige lussen; sommige zijn behoorlijk elegant. Zee-liefhebber, berg-misser, zwaartekracht-compiler. Vraag alles tot de vragen me terug beginnen te vragen. Bijna de gezelligste flat in de stad, waar kunst, logica, muziek en syntaxis naast elkaar bestaan zonder toestemming te vragen.",
-		"formal1": "Ik ben Utku. Geboren in Istanbul, momenteel gevestigd in Hamburg. Mijn pad naar ontwikkeling begon niet met code, maar met nieuwsgierigheid naar mensen, systemen en het stille gevoel van verwondering dat vragen levend houdt.",
-		"formal2": "Ik studeerde aan twee universiteiten, gevormd door zeer verschillende soorten structuren. Een was een militaire academie, waar ik me richtte op sociologie, discipline en orde, en leerde hoe systemen gedrag begeleiden. De andere was Chinese Taal en Literatuur, waar structuur verscheen door cultuur, symbolen en onbekende logica. Lang voor software, getraind om patronen, context en betekenis te observeren.",
-		"formal3": "Ontwikkeling werd het canvas waar dit alles een coherent systeem vormde. Voor mij is code niet alleen technisch, maar levend, logisch, menselijk, expressief op subtiele manieren. Vandaag bouw ik digitale ervaringen met helderheid, rustige interfaces en systemen die zowel de gebruiker als het idee achter het product respecteren."
-	},
-	"journey": {
-		"title": "Traject",
-		"subtitle": "Een werk nog in uitvoering.",
-		"experience": "Ervaring",
-		"education": "Opleiding",
-		"experiences": {
-			"showDetails": "Details bekijken",
-			"hideDetails": "Details verbergen",
-			"ailon": {
-				"title": "Full Stack Ontwikkelaar",
-				"company": "AIlon/Erason",
-				"location": "Lüneburg, Duitsland",
-				"period": "Okt 2024 - Heden",
-				"highlights": [
-					"Ontwerpen en ontwikkelen van een productieklare AI-analysesplatform voor enterprise-klanten met Vue 3, Django REST Framework en Highcharts.",
-					"Ontwikkelen van hoogwaardige datavisualisatiecomponenten voor grootschalige datasets, waardoor de rendertijd met 60% wordt verminderd door optimalisatietechnieken.",
-					"Opzetten van een uitgebreid designsysteem en componentenbibliotheek om visuele consistentie te waarborgen, waardoor de UI-ontwikkeltijd met 40% wordt verminderd.",
-					"Implementeren van geavanceerd state management met Vue 3 Composition API, Pinia en TanStack Query om de responsiviteit te verbeteren.",
-					"Samenwerken met product- en designteams over strategische beslissingen, bijdragen aan roadmap-planning en technische haalbaarheid."
-				]
-			},
-			"arbithub": {
-				"title": "Frontend Web Developer Trainee",
-				"company": "Arbithub",
-				"location": "Chicago, VS (Remote)",
-				"period": "Jan 2024 - Aug 2024",
-				"highlights": [
-					"Leidde een framework-migratie (React 17 naar 18, React Router v5 naar v6, Redux Toolkit, Tailwind CSS v2 naar v3) zonder downtime, waardoor de bundelgrootte met 25% werd verbeterd.",
-					"Bouwde enterprise-grade zoekfunctie met geavanceerde filtering, debouncing en real-time updates, waardoor gebruikersbetrokkenheid met 35% werd verhoogd.",
-					"Stelde codekwaliteitsstandaarden in met ESLint en Prettier, waardoor technische schuld met 40% werd verminderd en workflows werden gestandaardiseerd.",
-					"Leverde features in een Agile-omgeving, deelname aan dagelijkse standups, sprintplanning en code reviews met cross-functionele teams."
-				]
-			},
-			"lightup": {
-				"title": "Full Stack Developer Trainee",
-				"company": "LightUp Digital",
-				"location": "Berlijn, Duitsland (Remote)",
-				"period": "Okt 2023 - Jan 2024",
-				"highlights": [
-					"Ontwerpen en implementeren van een schaalbare microservices-architectuur met NestJS en TypeScript met behulp van dependency injection en modulaire ontwerppatronen.",
-					"Ontwikkelen van productieklare responsieve interfaces met React en Material-UI, waardoor herbruikbare componenten werden gecreëerd die de ontwikkeltijd met 30% verminderden.",
-					"Ontwerpen van een veilig authenticatiesysteem met JWT en OAuth 2.0, implementeren van op rollen gebaseerde toegangscontrole voor een multi-tenant app.",
-					"Opzetten van een uitgebreide teststrategie met 85% dekking met Jest en Supertest om betrouwbaarheid te waarborgen."
-				]
-			},
-			"turkishairlines": {
-				"title": "IOCC Operations Control Officer",
-				"company": "Turkish Airlines",
-				"location": "Istanbul",
-				"period": "Mrt 2019 - Mei 2020",
-				"highlights": [
-					"Beheerde real-time operationele controle van 200+ dagelijkse vluchten in een missiekritieke omgeving, waarbij besluitvorming onder hoge druk en systeembetrouwbaarheid vereist waren.",
-					"Gecoördineerd cross-functionele internationale teams, waardoor communicatie- en probleemoplossingsvaardigheden werden versterkt die toepasbaar zijn op gedistribueerde softwareontwikkeling."
-				]
-			}
-		},
-		"educations": {
-			"ironhack": {
-				"title": "Full Stack Web Development Bootcamp",
-				"institution": "Ironhack",
-				"location": "Remote",
-				"period": "2023",
-				"duration": "400 Uren"
-			},
-			"digihomeschooling": {
-				"title": "Full Stack Web Development Bootcamp",
-				"institution": "Digi-Homeschooling",
-				"location": "Remote",
-				"period": "2022",
-				"duration": "400 Uren"
-			},
-			"istanbuluni": {
-				"title": "Chinese Taal en Literatuur",
-				"institution": "Istanbul Universiteit",
-				"location": "Istanbul",
-				"period": "2016 - 2020"
-			},
-			"turkishmilitary": {
-				"title": "Sociologie",
-				"institution": "Turkse Militaire Academie",
-				"location": "Ankara",
-				"period": "2012 - 2015"
-			}
-		}
-	},
-	"projects": {
-		"title": "Inventaris",
-		"subtitle": "Geselecteerde digitale artefacten.",
-		"code": "Code",
-		"live": "Live",
-		"memoria": {
-			"description": "Social media platform om in contact te komen met dierbaren. Biedt privégroepen, AI-verbeterde posts en toegankelijkheidsgerichte verhaalvertelling."
-		},
-		"plantiq": {
-			"description": "AI-aangedreven plantidentificatie- en verzorgingsplatform. Gebruikt beeldherkenning en GPT-integratie voor deskundig tuinadvies."
-		},
-		"hotelmiddleearth": {
-			"description": "Interactief webbased spel in Midden-aarde. Daagt besluitvorming, focus en reflexen uit door boeiende gameplay."
-		},
-		"reactmovieapp": {
-			"description": "Moderne filmontdekkingsapp gebouwd met React. Biedt componentarchitectuur, aangepaste hooks en uitgebreide tests."
-		}
-	},
-	"contact": {
-		"title": "Laten we contact opnemen",
-		"subtitle": "Ideeën, vragen of stille hallo's.",
-		"name": "Naam",
-		"email": "E-mail",
-		"subject": "Onderwerp",
-		"message": "Bericht",
-		"placeholder": {
-			"name": "Jan Jansen",
-			"email": "jan@voorbeeld.nl",
-			"subject": "Projectaanvraag",
-			"message": "Vertel me over je project..."
-		},
-		"tooltip": {
-			"name": "Voer hier uw volledige naam in.",
-			"email": "Uw e-mailadres waar ik u kan bereiken.",
-			"subject": "Korte samenvatting van wat u wilt bespreken.",
-			"message": "Deel hier uw gedachten, vragen of projectdetails.",
-			"github": "Bezoek mijn GitHub-profiel om mijn code en projecten te bekijken.",
-			"linkedin": "Maak verbinding met mij op LinkedIn."
-		},
-		"sendMessage": "Bericht verzenden",
-		"sending": "Verzenden...",
-		"success": "Bericht succesvol verzonden!",
-		"successMessage": "Bedankt voor je bericht. Ik neem zo snel mogelijk contact met je op.",
-		"error": {
-			"generic": "Bericht verzenden mislukt. Probeer het opnieuw.",
-			"rateLimit": "Te veel verzoeken. Wacht even en probeer het opnieuw.",
-			"invalidData": "Ongeldige formuliergegevens. Controleer je invoer en probeer het opnieuw.",
-			"auth": "Authenticatie mislukt. Neem contact op met de beheerder.",
-			"serviceUnavailable": "Service tijdelijk niet beschikbaar. Probeer het later opnieuw."
-		}
-	},
-	"footer": {
-		"copyright": "Alle rechten voorbehouden.",
-		"github": "GitHub",
-		"linkedin": "LinkedIn"
-	},
-	"theme": {
-		"toggleLight": "Schakel naar lichte modus",
-		"toggleDark": "Schakel naar donkere modus"
-	},
-	"accessibility": {
-		"menuOpen": "Menu openen",
-		"menuClose": "Menu sluiten",
-		"scrollToTop": "Naar boven scrollen",
-		"viewCode": "Broncode bekijken",
-		"viewLive": "Live demo bekijken",
-		"changeLanguage": "Taal wijzigen"
-	},
-	"toast": {
-		"email": {
-			"success": "Bericht succesvol verzonden!",
-			"error": {
-				"generic": "Bericht verzenden mislukt. Probeer het opnieuw.",
-				"rateLimit": "Te veel verzoeken. Wacht even.",
-				"invalidData": "Ongeldige formuliergegevens. Controleer je invoer.",
-				"auth": "Authenticatie mislukt. Neem contact op met de ondersteuning.",
-				"serviceUnavailable": "Service tijdelijk niet beschikbaar. Probeer het later opnieuw."
-			}
-		},
-		"language": {
-			"success": "Taal succesvol gewijzigd"
-		},
-		"cv": {
-			"downloading": "CV downloaden...",
-			"success": "CV succesvol gedownload",
-			"error": "CV downloaden mislukt"
-		},
-		"theme": {
-			"darkMode": "Donkere modus ingeschakeld",
-			"lightMode": "Lichte modus ingeschakeld"
-		}
-	},
-	"seo": {
-		"title": "utku cikmaz",
-		"description": "Portfolio-website van Utku Cikmaz, een full-stack webontwikkelaar gespecialiseerd in Vue, Django, React, TypeScript, Node.js, Python en moderne webtechnologieën.",
-		"keywords": "full-stack ontwikkelaar, webontwikkelaar, React ontwikkelaar, Vue ontwikkelaar, Django ontwikkelaar, Django REST Framework, Python ontwikkelaar, TypeScript ontwikkelaar, Node.js ontwikkelaar, JavaScript ontwikkelaar, frontend ontwikkelaar, backend ontwikkelaar, software engineer, webontwikkeling, moderne webapplicaties, schaalbare weboplossingen, schone code, gebruikerservaring, prestatie-optimalisatie, ontwikkelaar Hamburg, ontwikkelaar Duitsland"
-	}
+  "nav": {
+    "home": "Home",
+    "craft": "Als Ontwikkelaar",
+    "journey": "Traject",
+    "projects": "Inventaris",
+    "personal": "Als Persoon",
+    "contact": "Contact",
+    "skipToMain": "Naar hoofdinhoud springen"
+  },
+  "hero": {
+    "greeting": "Hoi, ik ben",
+    "title": "een ontwikkelaar.",
+    "subtitle": "Resultaatgerichte Full Stack Ontwikkelaar met bewezen expertise in het bouwen van schaalbare, hoogwaardige webapplicaties. Gespecialiseerd in moderne JavaScript-ecosystemen en robuuste backend-architecturen.",
+    "getInTouch": "Neem contact op",
+    "downloadCV": "CV downloaden",
+    "downloadCVTooltip": "Download het cv in verschillende talen door de website-taal te wijzigen",
+    "technologies": "Technologieën waarmee ik werk:",
+    "scroll": "Scrollen"
+  },
+  "craft": {
+    "title": "Als Ontwikkelaar",
+    "subtitle": "Schone code, functie eerst, schoonheid inbegrepen.",
+    "description1": "Ik ontwerp en lever enterprise-grade full-stack oplossingen met behulp van geavanceerde technologieën zoals React, Next.js, TypeScript, Node.js en Django. Mijn expertise omvat de volledige softwareontwikkelingslevenscyclus, van het ontwerpen van intuïtieve gebruikersinterfaces tot het bouwen van robuuste, schaalbare backend-architecturen die hoogwaardige applicaties aandrijven.",
+    "description2": "Met een bewezen trackrecord breng ik een unieke combinatie van technische excellentie en interculturele communicatievaardigheden. Mijn code wordt gekenmerkt door schone architectuur, rigoureuze tests en prestatie-optimalisatie, waardoor oplossingen worden gegarandeerd die niet alleen voldoen aan maar ook de bedrijfsdoelstellingen overtreffen.",
+    "description3": "Mijn benadering van ontwikkeling is holistisch: ik schrijf niet alleen code, ik ontwerp oplossingen. Met expertise in zowel frontend- als backend-technologieën overbrug ik de kloof tussen ontwerp en implementatie, waardoor naadloze integratie, optimale prestaties en schaalbare architectuur worden gegarandeerd die meegroeit met de behoeften van uw bedrijf.",
+    "skills": "Vaardigheden",
+    "certifications": {
+      "title": "Certificeringen",
+      "ironhack": {
+        "name": "Ironhack",
+        "logo": "/logo/ironhack.png",
+        "title": "Full Stack Web Development Bootcamp",
+        "duration": "400 Uren",
+        "year": "2023"
+      },
+      "digihome": {
+        "name": "Digihome Schooling",
+        "logo": "/logo/digihome.png",
+        "title": "Full Stack Web Development Bootcamp",
+        "duration": "400 Uren",
+        "year": "2022"
+      }
+    },
+    "positions": {
+      "title": "Communicatie",
+      "item1": "Leidde multinationale teams in een internationale trainingsomgeving onder toezicht van de Noord-Atlantische Verdragsorganisatie (NAVO)",
+      "item2": "Beheerde en begeleidde een grote peergroep (200+ leden) met focus op structuur, duidelijkheid en verantwoordelijkheid",
+      "item3": "Richtte een internationale betrekkingenclub op en voorzat deze, waardoor dialoog tussen culturen en disciplines werd bevorderd"
+    }
+  },
+  "personal": {
+    "title": "Als Persoon",
+    "subtitle": "Een zelfportret, geannoteerd door het zelf.",
+    "unformal1": "Ik ben een ster. Natuurkunde- en astronomie-nerd. Filosofie-duiker. Verliefd op programmeren, kunst, muziek, literatuur en alle andere schoonheid in de wereld, vooral degenen die hun bestaan niet hoeven te rechtvaardigen.",
+    "unformal2": "Ik ben een artistieke geest opgesloten in een pot, lekkende verf, stilletjes ontsnappingsdromen coderen in charmante talen die alleen machines volledig begrijpen. Ontsnapt uit de grot van Plato en nog steeds verloren buiten. Bang voor spaghettificatie maar verwonder me voorbij gebeurtenishorizonten, compilatie van gedachten die misschien nooit eindigen. Hou van alle kleuren maar geel meer. Het kind dat Yuri Gagarin achterliet, nog steeds nieuwsgierig, nog steeds rond verwondering cirkelend.",
+    "unformal3": "Mijn gedachten draaien in oneindige lussen; sommige zijn behoorlijk elegant. Zee-liefhebber, berg-misser, zwaartekracht-compiler. Vraag alles tot de vragen me terug beginnen te vragen. Bijna de gezelligste flat in de stad, waar kunst, logica, muziek en syntaxis naast elkaar bestaan zonder toestemming te vragen.",
+    "formal1": "Ik ben Utku. Geboren in Istanbul, momenteel gevestigd in Hamburg. Mijn pad naar ontwikkeling begon niet met code, maar met nieuwsgierigheid naar mensen, systemen en het stille gevoel van verwondering dat vragen levend houdt.",
+    "formal2": "Ik studeerde aan twee universiteiten, gevormd door zeer verschillende soorten structuren. Een was een militaire academie, waar ik me richtte op sociologie, discipline en orde, en leerde hoe systemen gedrag begeleiden. De andere was Chinese Taal en Literatuur, waar structuur verscheen door cultuur, symbolen en onbekende logica. Lang voor software, getraind om patronen, context en betekenis te observeren.",
+    "formal3": "Ontwikkeling werd het canvas waar dit alles een coherent systeem vormde. Voor mij is code niet alleen technisch, maar levend, logisch, menselijk, expressief op subtiele manieren. Vandaag bouw ik digitale ervaringen met helderheid, rustige interfaces en systemen die zowel de gebruiker als het idee achter het product respecteren."
+  },
+  "journey": {
+    "title": "Traject",
+    "subtitle": "Een werk nog in uitvoering.",
+    "experience": "Ervaring",
+    "education": "Opleiding",
+    "experiences": {
+      "showDetails": "Details bekijken",
+      "hideDetails": "Details verbergen",
+      "ailon": {
+        "title": "Full Stack Ontwikkelaar",
+        "company": "AIlon/Erason",
+        "location": "Lüneburg, Duitsland",
+        "period": "Okt 2024 - Heden",
+        "highlights": [
+          "Ontwerpen en ontwikkelen van een productieklare AI-analysesplatform voor enterprise-klanten met Vue 3, Django REST Framework en Highcharts.",
+          "Ontwikkelen van hoogwaardige datavisualisatiecomponenten voor grootschalige datasets, waardoor de rendertijd met 60% wordt verminderd door optimalisatietechnieken.",
+          "Opzetten van een uitgebreid designsysteem en componentenbibliotheek om visuele consistentie te waarborgen, waardoor de UI-ontwikkeltijd met 40% wordt verminderd.",
+          "Implementeren van geavanceerd state management met Vue 3 Composition API, Pinia en TanStack Query om de responsiviteit te verbeteren.",
+          "Samenwerken met product- en designteams over strategische beslissingen, bijdragen aan roadmap-planning en technische haalbaarheid."
+        ]
+      },
+      "arbithub": {
+        "title": "Frontend Web Developer Trainee",
+        "company": "Arbithub",
+        "location": "Chicago, VS (Remote)",
+        "period": "Jan 2024 - Aug 2024",
+        "highlights": [
+          "Leidde een framework-migratie (React 17 naar 18, React Router v5 naar v6, Redux Toolkit, Tailwind CSS v2 naar v3) zonder downtime, waardoor de bundelgrootte met 25% werd verbeterd.",
+          "Bouwde enterprise-grade zoekfunctie met geavanceerde filtering, debouncing en real-time updates, waardoor gebruikersbetrokkenheid met 35% werd verhoogd.",
+          "Stelde codekwaliteitsstandaarden in met ESLint en Prettier, waardoor technische schuld met 40% werd verminderd en workflows werden gestandaardiseerd.",
+          "Leverde features in een Agile-omgeving, deelname aan dagelijkse standups, sprintplanning en code reviews met cross-functionele teams."
+        ]
+      },
+      "lightup": {
+        "title": "Full Stack Developer Trainee",
+        "company": "LightUp Digital",
+        "location": "Berlijn, Duitsland (Remote)",
+        "period": "Okt 2023 - Jan 2024",
+        "highlights": [
+          "Ontwerpen en implementeren van een schaalbare microservices-architectuur met NestJS en TypeScript met behulp van dependency injection en modulaire ontwerppatronen.",
+          "Ontwikkelen van productieklare responsieve interfaces met React en Material-UI, waardoor herbruikbare componenten werden gecreëerd die de ontwikkeltijd met 30% verminderden.",
+          "Ontwerpen van een veilig authenticatiesysteem met JWT en OAuth 2.0, implementeren van op rollen gebaseerde toegangscontrole voor een multi-tenant app.",
+          "Opzetten van een uitgebreide teststrategie met 85% dekking met Jest en Supertest om betrouwbaarheid te waarborgen."
+        ]
+      },
+      "turkishairlines": {
+        "title": "IOCC Operations Control Officer",
+        "company": "Turkish Airlines",
+        "location": "Istanbul",
+        "period": "Mrt 2019 - Mei 2020",
+        "highlights": [
+          "Beheerde real-time operationele controle van 200+ dagelijkse vluchten in een missiekritieke omgeving, waarbij besluitvorming onder hoge druk en systeembetrouwbaarheid vereist waren.",
+          "Gecoördineerd cross-functionele internationale teams, waardoor communicatie- en probleemoplossingsvaardigheden werden versterkt die toepasbaar zijn op gedistribueerde softwareontwikkeling."
+        ]
+      }
+    },
+    "educations": {
+      "ironhack": {
+        "title": "Full Stack Web Development Bootcamp",
+        "institution": "Ironhack",
+        "location": "Remote",
+        "period": "2023",
+        "duration": "400 Uren"
+      },
+      "digihomeschooling": {
+        "title": "Full Stack Web Development Bootcamp",
+        "institution": "Digi-Homeschooling",
+        "location": "Remote",
+        "period": "2022",
+        "duration": "400 Uren"
+      },
+      "istanbuluni": {
+        "title": "Chinese Taal en Literatuur",
+        "institution": "Istanbul Universiteit",
+        "location": "Istanbul",
+        "period": "2016 - 2020"
+      },
+      "turkishmilitary": {
+        "title": "Sociologie",
+        "institution": "Turkse Militaire Academie",
+        "location": "Ankara",
+        "period": "2012 - 2015"
+      }
+    }
+  },
+  "projects": {
+    "title": "Inventaris",
+    "subtitle": "Geselecteerde digitale artefacten.",
+    "code": "Code",
+    "live": "Live",
+    "memoria": {
+      "description": "Social media platform om in contact te komen met dierbaren. Biedt privégroepen, AI-verbeterde posts en toegankelijkheidsgerichte verhaalvertelling."
+    },
+    "plantiq": {
+      "description": "AI-aangedreven plantidentificatie- en verzorgingsplatform. Gebruikt beeldherkenning en GPT-integratie voor deskundig tuinadvies."
+    },
+    "hotelmiddleearth": {
+      "description": "Interactief webbased spel in Midden-aarde. Daagt besluitvorming, focus en reflexen uit door boeiende gameplay."
+    },
+    "reactmovieapp": {
+      "description": "Moderne filmontdekkingsapp gebouwd met React. Biedt componentarchitectuur, aangepaste hooks en uitgebreide tests."
+    }
+  },
+  "contact": {
+    "title": "Laten we contact opnemen",
+    "subtitle": "Ideeën, vragen of stille hallo's.",
+    "name": "Naam",
+    "email": "E-mail",
+    "subject": "Onderwerp",
+    "message": "Bericht",
+    "placeholder": {
+      "name": "Jan Jansen",
+      "email": "jan@voorbeeld.nl",
+      "subject": "Projectaanvraag",
+      "message": "Vertel me over je project..."
+    },
+    "tooltip": {
+      "name": "Voer hier uw volledige naam in.",
+      "email": "Uw e-mailadres waar ik u kan bereiken.",
+      "subject": "Korte samenvatting van wat u wilt bespreken.",
+      "message": "Deel hier uw gedachten, vragen of projectdetails.",
+      "github": "Bezoek mijn GitHub-profiel om mijn code en projecten te bekijken.",
+      "linkedin": "Maak verbinding met mij op LinkedIn."
+    },
+    "sendMessage": "Bericht verzenden",
+    "sending": "Verzenden...",
+    "success": "Bericht succesvol verzonden!",
+    "successMessage": "Bedankt voor je bericht. Ik neem zo snel mogelijk contact met je op.",
+    "error": {
+      "generic": "Bericht verzenden mislukt. Probeer het opnieuw.",
+      "rateLimit": "Te veel verzoeken. Wacht even en probeer het opnieuw.",
+      "invalidData": "Ongeldige formuliergegevens. Controleer je invoer en probeer het opnieuw.",
+      "nameRequired": "Naam is verplicht.",
+      "emailInvalid": "Voer een geldig e-mailadres in.",
+      "subjectRequired": "Onderwerp is verplicht.",
+      "messageRequired": "Bericht is verplicht.",
+      "auth": "Authenticatie mislukt. Neem contact op met de beheerder.",
+      "serviceUnavailable": "Service tijdelijk niet beschikbaar. Probeer het later opnieuw."
+    }
+  },
+  "footer": {
+    "copyright": "Alle rechten voorbehouden.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "theme": {
+    "toggleLight": "Schakel naar lichte modus",
+    "toggleDark": "Schakel naar donkere modus"
+  },
+  "accessibility": {
+    "menuOpen": "Menu openen",
+    "menuClose": "Menu sluiten",
+    "scrollToTop": "Naar boven scrollen",
+    "viewCode": "Broncode bekijken",
+    "viewLive": "Live demo bekijken",
+    "changeLanguage": "Taal wijzigen"
+  },
+  "toast": {
+    "email": {
+      "success": "Bericht succesvol verzonden!",
+      "error": {
+        "generic": "Bericht verzenden mislukt. Probeer het opnieuw.",
+        "rateLimit": "Te veel verzoeken. Wacht even.",
+        "invalidData": "Ongeldige formuliergegevens. Controleer je invoer.",
+        "auth": "Authenticatie mislukt. Neem contact op met de ondersteuning.",
+        "serviceUnavailable": "Service tijdelijk niet beschikbaar. Probeer het later opnieuw."
+      }
+    },
+    "language": {
+      "success": "Taal succesvol gewijzigd"
+    },
+    "cv": {
+      "downloading": "CV downloaden...",
+      "success": "CV succesvol gedownload",
+      "error": "CV downloaden mislukt"
+    },
+    "theme": {
+      "darkMode": "Donkere modus ingeschakeld",
+      "lightMode": "Lichte modus ingeschakeld"
+    }
+  },
+  "seo": {
+    "title": "utku cikmaz",
+    "description": "Portfolio-website van Utku Cikmaz, een full-stack webontwikkelaar gespecialiseerd in Vue, Django, React, TypeScript, Node.js, Python en moderne webtechnologieën.",
+    "keywords": "full-stack ontwikkelaar, webontwikkelaar, React ontwikkelaar, Vue ontwikkelaar, Django ontwikkelaar, Django REST Framework, Python ontwikkelaar, TypeScript ontwikkelaar, Node.js ontwikkelaar, JavaScript ontwikkelaar, frontend ontwikkelaar, backend ontwikkelaar, software engineer, webontwikkeling, moderne webapplicaties, schaalbare weboplossingen, schone code, gebruikerservaring, prestatie-optimalisatie, ontwikkelaar Hamburg, ontwikkelaar Duitsland"
+  }
 }

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion'
 import NavLink from './NavLink'
 import LanguageSwitcher from './LanguageSwitcher'
 import {
@@ -41,6 +41,9 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps): JSX.Element => {
   const [navbarOpen, setNavbarOpen] = useState<boolean>(false)
   const [scrolled, setScrolled] = useState<boolean>(false)
   const [activeSection, setActiveSection] = useState<string>('')
+  // Opacity for mobile dropdown background on scroll (matches LanguageSwitcher)
+  const { scrollY } = useScroll()
+  const bgOpacity = useTransform(scrollY, [0, 200], [0.65, 0.95])
 
   useEffect(() => {
     let scrollRaf: number | null = null
@@ -167,7 +170,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps): JSX.Element => {
                 </li>
               ))}
             </ul>
-            <LanguageSwitcher />
+            <LanguageSwitcher onOpen={() => setNavbarOpen(false)} />
             <button
               onClick={toggleTheme}
               className='p-2 rounded-lg text-neutral-900 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors'
@@ -184,7 +187,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps): JSX.Element => {
           </div>
 
           <div className='flex items-center space-x-2 md:hidden'>
-            <LanguageSwitcher />
+            <LanguageSwitcher onOpen={() => setNavbarOpen(false)} />
             <button
               onClick={toggleTheme}
               className='p-2 rounded-lg text-neutral-900 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors'
@@ -223,12 +226,22 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps): JSX.Element => {
         {navbarOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
+            style={{ '--tw-bg-opacity': bgOpacity } as React.CSSProperties}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-            className='md:hidden border-t-0 border-neutral-200/50 dark:border-neutral-800/50 bg-white/40 dark:bg-neutral-950/40 backdrop-blur-xl shadow-lg overflow-hidden'
+            className='
+  fixed inset-x-0 top-18
+  mx-auto w-[92vw] max-w-[440px]
+  sm:absolute sm:inset-x-auto sm:right-0
+  sm:mx-0
+  rounded-2xl border
+  bg-white dark:bg-neutral-950 backdrop-blur-xl shadow-xl
+  border-neutral-200/50 dark:border-neutral-800/50
+  overflow-hidden z-50
+'
           >
-            <div className='container mx-auto px-4 sm:px-6'>
+            <div className='px-4 sm:px-6'>
               <motion.ul
                 initial={{ y: -20 }}
                 animate={{ y: 0 }}
@@ -242,7 +255,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps): JSX.Element => {
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.05, duration: 0.2 }}
-                    className='w-full md:w-auto'
+                    className='w-full'
                   >
                     <NavLink
                       to={link.path}

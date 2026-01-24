@@ -142,7 +142,7 @@ function App(): JSX.Element {
             background: 'var(--toast-bg)',
             color: 'var(--toast-text)',
             border: '1px solid var(--toast-border)',
-            marginBottom: '80px',
+            marginBottom: '20px',
             marginRight: '20px',
           },
         }}

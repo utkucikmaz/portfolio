@@ -27,22 +27,22 @@ const EmailSection = (): JSX.Element => {
     const message = formData.get('message') as string
 
     if (!name || !name.trim()) {
-      setError(t('contact.error.invalidData'))
+      setError(t('contact.error.nameRequired'))
       return
     }
 
     if (!email || !email.trim() || !email.includes('@')) {
-      setError(t('contact.error.invalidData'))
+      setError(t('contact.error.emailInvalid'))
       return
     }
 
     if (!subject || !subject.trim()) {
-      setError(t('contact.error.invalidData'))
+      setError(t('contact.error.subjectRequired'))
       return
     }
 
     if (!message || !message.trim()) {
-      setError(t('contact.error.invalidData'))
+      setError(t('contact.error.messageRequired'))
       return
     }
 
@@ -235,6 +235,10 @@ const EmailSection = (): JSX.Element => {
                       id='name'
                       className='w-full px-3 py-2 border-0 border-b border-neutral-300 dark:border-neutral-700 bg-transparent text-neutral-900 dark:text-neutral-50 placeholder-neutral-400 dark:placeholder-neutral-500 focus:outline-none focus:border-primary-500 focus:ring-0 transition-colors cursor-text'
                       placeholder={t('contact.placeholder.name')}
+                      onFocus={() => {
+                        setError(null)
+                        setSuccess(false)
+                      }}
                     />
                   </Tooltip.Trigger>
                   <Tooltip.Portal>
@@ -281,6 +285,10 @@ const EmailSection = (): JSX.Element => {
                       id='email'
                       className='w-full px-3 py-2 border-0 border-b border-neutral-300 dark:border-neutral-700 bg-transparent text-neutral-900 dark:text-neutral-50 placeholder-neutral-400 dark:placeholder-neutral-500 focus:outline-none focus:border-primary-500 focus:ring-0 transition-colors cursor-text'
                       placeholder={t('contact.placeholder.email')}
+                      onFocus={() => {
+                        setError(null)
+                        setSuccess(false)
+                      }}
                     />
                   </Tooltip.Trigger>
                   <Tooltip.Portal>
@@ -327,6 +335,10 @@ const EmailSection = (): JSX.Element => {
                       id='subject'
                       className='w-full px-3 py-2 border-0 border-b border-neutral-300 dark:border-neutral-700 bg-transparent text-neutral-900 dark:text-neutral-50 placeholder-neutral-400 dark:placeholder-neutral-500 focus:outline-none focus:border-primary-500 focus:ring-0 transition-colors cursor-text'
                       placeholder={t('contact.placeholder.subject')}
+                      onFocus={() => {
+                        setError(null)
+                        setSuccess(false)
+                      }}
                     />
                   </Tooltip.Trigger>
                   <Tooltip.Portal>
@@ -373,6 +385,10 @@ const EmailSection = (): JSX.Element => {
                       rows={4}
                       className='w-full px-3 py-2 border-0 border-b border-neutral-300 dark:border-neutral-700 bg-transparent text-neutral-900 dark:text-neutral-50 placeholder-neutral-400 dark:placeholder-neutral-500 focus:outline-none focus:border-primary-500 focus:ring-0 transition-colors resize-none cursor-text'
                       placeholder={t('contact.placeholder.message')}
+                      onFocus={() => {
+                        setError(null)
+                        setSuccess(false)
+                      }}
                     />
                   </Tooltip.Trigger>
                   <Tooltip.Portal>

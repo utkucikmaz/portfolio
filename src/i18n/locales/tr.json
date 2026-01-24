@@ -1,244 +1,248 @@
 {
-	"nav": {
-		"home": "Ana Sayfa",
-		"craft": "Geliştirici Olarak",
-		"journey": "Yörünge",
-		"projects": "Envanter",
-		"personal": "Insan Olarak",
-		"contact": "İletişim",
-		"skipToMain": "Ana içeriğe geç"
-	},
-	"hero": {
-		"greeting": "Merhaba, ben",
-		"title": "bir yazılımcıyım.",
-		"subtitle": "Ölçeklenebilir, yüksek performanslı web uygulamaları oluşturmada kanıtlanmış uzmanlığa sahip sonuç odaklı Full Stack Geliştirici. Modern JavaScript ekosistemleri ve sağlam backend mimarilerinde bilgili bir yazılımcıyım.",
-		"getInTouch": "İletişime geç",
-		"downloadCV": "CV İndir",
-		"downloadCVTooltip": "Web sitesi dilini değiştirerek özgeçmişi farklı dillerde indirebilirsiniz.",
-		"technologies": "Çalıştığım teknolojiler:",
-		"scroll": "Kaydır"
-	},
-	"craft": {
-		"title": "Geliştirici Olarak",
-		"subtitle": "Temiz kod, önce işlev, güzellik dahil.",
-		"description1": "React, Next.js, TypeScript, Node.js ve Django gibi son teknoloji teknolojileri kullanarak kurumsal düzeyde full-stack çözümler tasarlıyor ve sunuyorum. Uzmanlığım, sezgisel kullanıcı arayüzleri tasarlamaktan yüksek performanslı uygulamaları destekleyen sağlam, ölçeklenebilir backend mimarileri oluşturmaya kadar yazılım geliştirme yaşam döngüsünün tamamını kapsar.",
-		"description2": "Kanıtlanmış bir geçmişe sahip olarak, teknik mükemmellik ve kültürler arası iletişim becerilerinin benzersiz bir karışımını getiriyorum. Kodum temiz mimari, titiz testler ve performans optimizasyonu ile karakterize edilir - yalnızca iş hedeflerini karşılamakla kalmayıp aşan çözümler sağlar.",
-		"description3": "Geliştirme yaklaşımım bütünseldir: sadece kod yazmıyorum - çözümler tasarlıyorum. Hem frontend hem de backend teknolojilerinde uzmanlıkla, tasarım ve uygulama arasındaki boşluğu kapatarak, sorunsuz entegrasyon, optimal performans ve işletmenizin ihtiyaçlarıyla büyüyen ölçeklenebilir mimari sağlıyorum.",
-		"skills": "Yetenekler",
-		"certifications": {
-			"title": "Sertifikalar",
-			"ironhack": {
-				"name": "Ironhack",
-				"logo": "/logo/ironhack.png",
-				"title": "Full Stack Web Geliştirme Bootcamp",
-				"duration": "400 Saat",
-				"year": "2023"
-			},
-			"digihome": {
-				"name": "Digihome Schooling",
-				"logo": "/logo/digihome.png",
-				"title": "Full Stack Web Geliştirme Bootcamp",
-				"duration": "400 Saat",
-				"year": "2022"
-			}
-		},
-		"positions": {
-			"title": "İletişim",
-			"item1": "Kuzey Atlantik Antlaşması Örgütü (NATO) gözetiminde uluslararası bir eğitim ortamında çok uluslu ekiplere liderlik ettim",
-			"item2": "Yapı, netlik ve sorumluluğa odaklanarak büyük bir akran grubunu (200+ üye) yönettim ve mentörlük yaptım",
-			"item3": "Kültürler ve disiplinler arasında diyalog teşvik eden bir uluslararası ilişkiler kulübü kurdum ve başkanlığını yaptım"
-		}
-	},
-	"personal": {
-		"title": "Insan Olarak",
-		"subtitle": "Kendisi tarafından açıklanmış bir otoportre.",
-		"unformal1": "Ben bir yıldızım. Fizik ve astronomi tutkunu. Felsefe dalgıcı. Programlamaya, sanata, müziğe, edebiyata ve dünyadaki diğer tüm güzelliklere, özellikle de varlıklarını haklı çıkarmaları gerekmeyenleri seviyorum.",
-		"unformal2": "Ben bir kavanozun içinde sıkışmış sanatsal bir zihnim, boyalarım sızıyor, sadece makinelerin tam olarak anladığı büyüleyici dillerde sessizce kaçış rüyalarını kodluyorum. Platon'un mağarasından kaçtım ve hala dışarıda kaybolmuş durumdayım. Spagettileşmeden korkuyorum ama olay ufuklarının ötesini merak ediyorum, asla bitmeyebilecek düşünceler derliyorum. Tüm renkleri seviyorum ama sarıyı hepsinden daha çok. Yuri Gagarin'in geride bıraktığı çocuğum, hala merakın etrafında dönüyorum.",
-		"unformal3": "Düşüncelerim sonsuz döngülerde çalışıyor; bazıları oldukça zarif bir şekilde. Deniz aşığı, dağ özleyicisi, yerçekimi derleyicisiyim. Sorular bana geri sormaya başlayana kadar her şeyi sorguluyorum. Neredeyse şehirdeki en rahat daire, sanatın, mantığın, müziğin ve sözdiziminin izin istemeden bir arada var olduğu yerdeyim.",
-		"formal1": "Ben Utku. İstanbul'da doğdum, şu anda Hamburg'da yaşıyorum. Geliştirmeye giden yolum kodla değil, insanlara, sistemlere ve soruları canlı tutan sessiz merak duygusuna olan merakla başladı.",
-		"formal2": "İki üniversitede okudum, çok farklı türde yapılarla şekillendim. Biri askeri akademi, orada sosyoloji, disiplin ve düzene odaklandım, sistemlerin davranışı nasıl yönlendirdiğini öğrendim. Diğeri Çin Dili ve Edebiyatı, yapı kültür, semboller ve tanıdık olmayan mantıkları anladım. Yazılımdan çok daha önce, desenleri, bağlamı ve anlamı gözlemlemek için eğitildim.",
-		"formal3": "Geliştirme, tüm bunların tutarlı bir sistem oluşturduğu tuval oldu. Benim için kod sadece teknik değil, aynı zamanda canlı, mantıklı, insani, ince yollarla ifade edici bir olgudur. Bugün, netlik, sakin arayüzler ve hem kullanıcıyı hem de ürünün arkasındaki fikre saygı duyarak, dijital deneyimler inşa ediyorum."
-	},
-	"journey": {
-		"title": "Yörünge",
-		"subtitle": "Hala devam eden bir çalışma.",
-		"experience": "Deneyim",
-		"education": "Eğitim",
-		"experiences": {
-			"showDetails": "Detayları göster",
-			"hideDetails": "Detayları gizle",
-			"ailon": {
-				"title": "Full Stack Geliştirici",
-				"company": "AIlon/Erason",
-				"location": "Lüneburg, Almanya",
-				"period": "Eki 2024 - Şu an",
-				"highlights": [
-					"Vue 3, Django REST Framework ve Highcharts kullanarak kurumsal müşteriler için üretim düzeyinde bir AI analitik platformu tasarlama ve geliştirme.",
-					"Büyük ölçekli veri setleri için yüksek performanslı veri görselleştirme bileşenleri geliştirme, optimizasyon teknikleriyle render süresini %60 azaltma.",
-					"Görsel tutarlılığı sağlamak için kapsamlı bir tasarım sistemi ve bileşen kütüphanesi oluşturma, UI geliştirme süresini %40 azaltma.",
-					"Yanıt hızını artırmak için Vue 3 Composition API, Pinia ve TanStack Query ile gelişmiş durum yönetimi uygulama.",
-					"Yol haritası planlaması ve teknik fizibiliteye katkıda bulunarak ürün ve tasarım ekipleriyle stratejik kararlarda işbirliği yapma."
-				]
-			},
-			"arbithub": {
-				"title": "Frontend Web Developer Stajyeri",
-				"company": "Arbithub",
-				"location": "Chicago, ABD (Uzaktan)",
-				"period": "Oca 2024 - Ağu 2024",
-				"highlights": [
-					"Kesintisiz bir framework geçişi (React 17'den 18'e, React Router v5'ten v6'ya, Redux Toolkit, Tailwind CSS v2'den v3'e) yönetme, paket boyutunu %25 iyileştirme.",
-					"Gelişmiş filtreleme, debouncing ve gerçek zamanlı güncellemelerle kurumsal düzeyde arama oluşturma, kullanıcı katılımını %35 artırma.",
-					"ESLint ve Prettier ile kod kalite standartları oluşturma, teknik borcu %40 azaltma ve iş akışlarını standartlaştırma.",
-					"Agile ortamda özellikler sunma, çapraz fonksiyonel ekiplerle günlük standuplar, sprint planlaması ve kod incelemelerine katılma."
-				]
-			},
-			"lightup": {
-				"title": "Full Stack Developer Stajyeri",
-				"company": "LightUp Digital",
-				"location": "Berlin, Almanya (Uzaktan)",
-				"period": "Eki 2023 - Oca 2024",
-				"highlights": [
-					"Bağımlılık enjeksiyonu ve modüler tasarım desenleri kullanarak NestJS ve TypeScript ile ölçeklenebilir bir mikroservis mimarisi tasarlama ve uygulama.",
-					"React ve Material-UI ile üretime hazır duyarlı arayüzler geliştirme, geliştirme süresini %30 azaltan yeniden kullanılabilir bileşenler oluşturma.",
-					"JWT ve OAuth 2.0 ile güvenli bir kimlik doğrulama sistemi tasarlama, çok kiracılı bir uygulama için rol tabanlı erişim kontrolü uygulama.",
-					"Güvenilirliği sağlamak için Jest ve Supertest ile %85 kapsama sağlayan kapsamlı bir test stratejisi oluşturma."
-				]
-			},
-			"turkishairlines": {
-				"title": "IOCC Operasyon Kontrol Memuru",
-				"company": "Türk Hava Yolları",
-				"location": "İstanbul",
-				"period": "Mar 2019 - May 2020",
-				"highlights": [
-					"Görev kritik bir ortamda günde 200'den fazla uçuşun gerçek zamanlı operasyon kontrolünü yönetme, yüksek basınçlı karar verme ve sistem güvenilirliği gerektirme.",
-					"Dağıtılmış yazılım geliştirmeye uygulanabilir iletişim ve problem çözme becerilerini güçlendiren çapraz fonksiyonel uluslararası ekipleri koordine etme."
-				]
-			}
-		},
-		"educations": {
-			"ironhack": {
-				"title": "Full Stack Web Geliştirme Bootcamp",
-				"institution": "Ironhack",
-				"location": "Uzaktan",
-				"period": "2023",
-				"duration": "400 Saat"
-			},
-			"digihomeschooling": {
-				"title": "Full Stack Web Geliştirme Bootcamp",
-				"institution": "Digi-Homeschooling",
-				"location": "Uzaktan",
-				"period": "2022",
-				"duration": "400 Saat"
-			},
-			"istanbuluni": {
-				"title": "Çin Dili ve Edebiyatı",
-				"institution": "İstanbul Üniversitesi",
-				"location": "İstanbul",
-				"period": "2016 - 2020"
-			},
-			"turkishmilitary": {
-				"title": "Sosyoloji",
-				"institution": "Türkiye Kara Harp Okulu",
-				"location": "Ankara",
-				"period": "2012 - 2015"
-			}
-		}
-	},
-	"projects": {
-		"title": "Envanter",
-		"subtitle": "Seçilmiş dijital eserler.",
-		"code": "Kod",
-		"live": "Canlı",
-		"memoria": {
-			"description": "Sevdiklerinizle bağlantı kurmak için sosyal medya platformu. Özel gruplar, AI ile geliştirilmiş gönderiler ve erişilebilirlik odaklı hikaye anlatımı özelliklerine sahiptir."
-		},
-		"plantiq": {
-			"description": "AI destekli bitki tanımlama ve bakım platformu. Uzman bahçıvanlık tavsiyeleri için görüntü tanıma ve GPT entegrasyonu kullanır."
-		},
-		"hotelmiddleearth": {
-			"description": "Orta Dünya'da geçen interaktif web tabanlı oyun. Etkileyici oynanış yoluyla karar verme, odaklanma ve refleksleri zorlar."
-		},
-		"reactmovieapp": {
-			"description": "React ile oluşturulmuş modern film keşif uygulaması. Bileşen mimarisi, özel hook'lar ve kapsamlı test özelliklerine sahiptir."
-		}
-	},
-	"contact": {
-		"title": "Bağlantı Kur",
-		"subtitle": "Fikirler, sorular veya sessiz merhabalar.",
-		"name": "İsim",
-		"email": "E-posta",
-		"subject": "Konu",
-		"message": "Mesaj",
-		"placeholder": {
-			"name": "Ahmet Yılmaz",
-			"email": "ahmet@ornek.com",
-			"subject": "Proje sorusu",
-			"message": "Projenizden bahsedin..."
-		},
-		"tooltip": {
-			"name": "Lütfen tam adınızı buraya girin.",
-			"email": "Size ulaşabileceğim e-posta adresiniz.",
-			"subject": "Tartışmak istediğiniz konunun kısa özeti.",
-			"message": "Düşüncelerinizi, sorularınızı veya proje detaylarınızı buraya paylaşın.",
-			"github": "Kodlarımı ve projelerimi görmek için GitHub profilimi ziyaret edin.",
-			"linkedin": "LinkedIn'de benimle bağlantı kurun."
-		},
-		"sendMessage": "Mesaj Gönder",
-		"sending": "Gönderiliyor...",
-		"success": "Mesaj başarıyla gönderildi!",
-		"successMessage": "Mesajınız için teşekkürler. En kısa sürede size geri döneceğim.",
-		"error": {
-			"generic": "Mesaj gönderilemedi. Lütfen tekrar deneyin.",
-			"rateLimit": "Çok fazla istek. Lütfen biraz bekleyin ve tekrar deneyin.",
-			"invalidData": "Geçersiz form verisi. Lütfen girişlerinizi kontrol edin ve tekrar deneyin.",
-			"auth": "Kimlik doğrulama başarısız. Lütfen yönetici ile iletişime geçin.",
-			"serviceUnavailable": "Hizmet geçici olarak kullanılamıyor. Lütfen daha sonra tekrar deneyin."
-		}
-	},
-	"footer": {
-		"copyright": "Tüm hakları saklıdır.",
-		"github": "GitHub",
-		"linkedin": "LinkedIn"
-	},
-	"theme": {
-		"toggleLight": "Açık moda geç",
-		"toggleDark": "Koyu moda geç"
-	},
-	"accessibility": {
-		"menuOpen": "Menü aç",
-		"menuClose": "Menü kapat",
-		"scrollToTop": "Yukarı kaydır",
-		"viewCode": "Kaynak kodunu görüntüle",
-		"viewLive": "Canlı demoyu görüntüle",
-		"changeLanguage": "Dili değiştir"
-	},
-	"toast": {
-		"email": {
-			"success": "Mesaj başarıyla gönderildi!",
-			"error": {
-				"generic": "Mesaj gönderilemedi. Lütfen tekrar deneyin.",
-				"rateLimit": "Çok fazla istek. Lütfen biraz bekleyin.",
-				"invalidData": "Geçersiz form verisi. Lütfen girişlerinizi kontrol edin.",
-				"auth": "Kimlik doğrulama başarısız. Lütfen destek ile iletişime geçin.",
-				"serviceUnavailable": "Hizmet geçici olarak kullanılamıyor. Lütfen daha sonra tekrar deneyin."
-			}
-		},
-		"language": {
-			"success": "Dil başarıyla değiştirildi"
-		},
-		"cv": {
-			"downloading": "CV indiriliyor...",
-			"success": "CV başarıyla indirildi",
-			"error": "CV indirilemedi"
-		},
-		"theme": {
-			"darkMode": "Koyu mod aktif",
-			"lightMode": "Açık mod aktif"
-		}
-	},
-	"seo": {
-		"title": "utku cikmaz",
-		"description": "Vue, Django, React, TypeScript, Node.js, Python ve modern web teknolojileri konusunda uzmanlaşmış full stack web geliştiricisi Utku Cikmaz’ın portföy web sitesi.",
-		"keywords": "full stack geliştirici, web geliştirici, React geliştirici, Vue geliştirici, Django geliştirici, Django REST Framework, Python geliştirici, TypeScript geliştirici, Node.js geliştirici, JavaScript geliştirici, frontend geliştirici, backend geliştirici, yazılım mühendisi, web geliştirme, modern web uygulamaları, ölçeklenebilir web çözümleri, temiz kod, kullanıcı deneyimi, performans optimizasyonu, Hamburg geliştirici, Almanya geliştirici"
-	}
+  "nav": {
+    "home": "Ana Sayfa",
+    "craft": "Geliştirici Olarak",
+    "journey": "Yörünge",
+    "projects": "Envanter",
+    "personal": "Insan Olarak",
+    "contact": "İletişim",
+    "skipToMain": "Ana içeriğe geç"
+  },
+  "hero": {
+    "greeting": "Merhaba, ben",
+    "title": "bir yazılımcıyım.",
+    "subtitle": "Ölçeklenebilir, yüksek performanslı web uygulamaları oluşturmada kanıtlanmış uzmanlığa sahip sonuç odaklı Full Stack Geliştirici. Modern JavaScript ekosistemleri ve sağlam backend mimarilerinde bilgili bir yazılımcıyım.",
+    "getInTouch": "İletişime geç",
+    "downloadCV": "CV İndir",
+    "downloadCVTooltip": "Web sitesi dilini değiştirerek özgeçmişi farklı dillerde indirebilirsiniz.",
+    "technologies": "Çalıştığım teknolojiler:",
+    "scroll": "Kaydır"
+  },
+  "craft": {
+    "title": "Geliştirici Olarak",
+    "subtitle": "Temiz kod, önce işlev, güzellik dahil.",
+    "description1": "React, Next.js, TypeScript, Node.js ve Django gibi son teknoloji teknolojileri kullanarak kurumsal düzeyde full-stack çözümler tasarlıyor ve sunuyorum. Uzmanlığım, sezgisel kullanıcı arayüzleri tasarlamaktan yüksek performanslı uygulamaları destekleyen sağlam, ölçeklenebilir backend mimarileri oluşturmaya kadar yazılım geliştirme yaşam döngüsünün tamamını kapsar.",
+    "description2": "Kanıtlanmış bir geçmişe sahip olarak, teknik mükemmellik ve kültürler arası iletişim becerilerinin benzersiz bir karışımını getiriyorum. Kodum temiz mimari, titiz testler ve performans optimizasyonu ile karakterize edilir - yalnızca iş hedeflerini karşılamakla kalmayıp aşan çözümler sağlar.",
+    "description3": "Geliştirme yaklaşımım bütünseldir: sadece kod yazmıyorum - çözümler tasarlıyorum. Hem frontend hem de backend teknolojilerinde uzmanlıkla, tasarım ve uygulama arasındaki boşluğu kapatarak, sorunsuz entegrasyon, optimal performans ve işletmenizin ihtiyaçlarıyla büyüyen ölçeklenebilir mimari sağlıyorum.",
+    "skills": "Yetenekler",
+    "certifications": {
+      "title": "Sertifikalar",
+      "ironhack": {
+        "name": "Ironhack",
+        "logo": "/logo/ironhack.png",
+        "title": "Full Stack Web Geliştirme Bootcamp",
+        "duration": "400 Saat",
+        "year": "2023"
+      },
+      "digihome": {
+        "name": "Digihome Schooling",
+        "logo": "/logo/digihome.png",
+        "title": "Full Stack Web Geliştirme Bootcamp",
+        "duration": "400 Saat",
+        "year": "2022"
+      }
+    },
+    "positions": {
+      "title": "İletişim",
+      "item1": "Kuzey Atlantik Antlaşması Örgütü (NATO) gözetiminde uluslararası bir eğitim ortamında çok uluslu ekiplere liderlik ettim",
+      "item2": "Yapı, netlik ve sorumluluğa odaklanarak büyük bir akran grubunu (200+ üye) yönettim ve mentörlük yaptım",
+      "item3": "Kültürler ve disiplinler arasında diyalog teşvik eden bir uluslararası ilişkiler kulübü kurdum ve başkanlığını yaptım"
+    }
+  },
+  "personal": {
+    "title": "Insan Olarak",
+    "subtitle": "Kendisi tarafından açıklanmış bir otoportre.",
+    "unformal1": "Ben bir yıldızım. Fizik ve astronomi tutkunu. Felsefe dalgıcı. Programlamaya, sanata, müziğe, edebiyata ve dünyadaki diğer tüm güzelliklere, özellikle de varlıklarını haklı çıkarmaları gerekmeyenleri seviyorum.",
+    "unformal2": "Ben bir kavanozun içinde sıkışmış sanatsal bir zihnim, boyalarım sızıyor, sadece makinelerin tam olarak anladığı büyüleyici dillerde sessizce kaçış rüyalarını kodluyorum. Platon'un mağarasından kaçtım ve hala dışarıda kaybolmuş durumdayım. Spagettileşmeden korkuyorum ama olay ufuklarının ötesini merak ediyorum, asla bitmeyebilecek düşünceler derliyorum. Tüm renkleri seviyorum ama sarıyı hepsinden daha çok. Yuri Gagarin'in geride bıraktığı çocuğum, hala merakın etrafında dönüyorum.",
+    "unformal3": "Düşüncelerim sonsuz döngülerde çalışıyor; bazıları oldukça zarif bir şekilde. Deniz aşığı, dağ özleyicisi, yerçekimi derleyicisiyim. Sorular bana geri sormaya başlayana kadar her şeyi sorguluyorum. Neredeyse şehirdeki en rahat daire, sanatın, mantığın, müziğin ve sözdiziminin izin istemeden bir arada var olduğu yerdeyim.",
+    "formal1": "Ben Utku. İstanbul'da doğdum, şu anda Hamburg'da yaşıyorum. Geliştirmeye giden yolum kodla değil, insanlara, sistemlere ve soruları canlı tutan sessiz merak duygusuna olan merakla başladı.",
+    "formal2": "İki üniversitede okudum, çok farklı türde yapılarla şekillendim. Biri askeri akademi, orada sosyoloji, disiplin ve düzene odaklandım, sistemlerin davranışı nasıl yönlendirdiğini öğrendim. Diğeri Çin Dili ve Edebiyatı, yapı kültür, semboller ve tanıdık olmayan mantıkları anladım. Yazılımdan çok daha önce, desenleri, bağlamı ve anlamı gözlemlemek için eğitildim.",
+    "formal3": "Geliştirme, tüm bunların tutarlı bir sistem oluşturduğu tuval oldu. Benim için kod sadece teknik değil, aynı zamanda canlı, mantıklı, insani, ince yollarla ifade edici bir olgudur. Bugün, netlik, sakin arayüzler ve hem kullanıcıyı hem de ürünün arkasındaki fikre saygı duyarak, dijital deneyimler inşa ediyorum."
+  },
+  "journey": {
+    "title": "Yörünge",
+    "subtitle": "Hala devam eden bir çalışma.",
+    "experience": "Deneyim",
+    "education": "Eğitim",
+    "experiences": {
+      "showDetails": "Detayları göster",
+      "hideDetails": "Detayları gizle",
+      "ailon": {
+        "title": "Full Stack Geliştirici",
+        "company": "AIlon/Erason",
+        "location": "Lüneburg, Almanya",
+        "period": "Eki 2024 - Şu an",
+        "highlights": [
+          "Vue 3, Django REST Framework ve Highcharts kullanarak kurumsal müşteriler için üretim düzeyinde bir AI analitik platformu tasarlama ve geliştirme.",
+          "Büyük ölçekli veri setleri için yüksek performanslı veri görselleştirme bileşenleri geliştirme, optimizasyon teknikleriyle render süresini %60 azaltma.",
+          "Görsel tutarlılığı sağlamak için kapsamlı bir tasarım sistemi ve bileşen kütüphanesi oluşturma, UI geliştirme süresini %40 azaltma.",
+          "Yanıt hızını artırmak için Vue 3 Composition API, Pinia ve TanStack Query ile gelişmiş durum yönetimi uygulama.",
+          "Yol haritası planlaması ve teknik fizibiliteye katkıda bulunarak ürün ve tasarım ekipleriyle stratejik kararlarda işbirliği yapma."
+        ]
+      },
+      "arbithub": {
+        "title": "Frontend Web Developer Stajyeri",
+        "company": "Arbithub",
+        "location": "Chicago, ABD (Uzaktan)",
+        "period": "Oca 2024 - Ağu 2024",
+        "highlights": [
+          "Kesintisiz bir framework geçişi (React 17'den 18'e, React Router v5'ten v6'ya, Redux Toolkit, Tailwind CSS v2'den v3'e) yönetme, paket boyutunu %25 iyileştirme.",
+          "Gelişmiş filtreleme, debouncing ve gerçek zamanlı güncellemelerle kurumsal düzeyde arama oluşturma, kullanıcı katılımını %35 artırma.",
+          "ESLint ve Prettier ile kod kalite standartları oluşturma, teknik borcu %40 azaltma ve iş akışlarını standartlaştırma.",
+          "Agile ortamda özellikler sunma, çapraz fonksiyonel ekiplerle günlük standuplar, sprint planlaması ve kod incelemelerine katılma."
+        ]
+      },
+      "lightup": {
+        "title": "Full Stack Developer Stajyeri",
+        "company": "LightUp Digital",
+        "location": "Berlin, Almanya (Uzaktan)",
+        "period": "Eki 2023 - Oca 2024",
+        "highlights": [
+          "Bağımlılık enjeksiyonu ve modüler tasarım desenleri kullanarak NestJS ve TypeScript ile ölçeklenebilir bir mikroservis mimarisi tasarlama ve uygulama.",
+          "React ve Material-UI ile üretime hazır duyarlı arayüzler geliştirme, geliştirme süresini %30 azaltan yeniden kullanılabilir bileşenler oluşturma.",
+          "JWT ve OAuth 2.0 ile güvenli bir kimlik doğrulama sistemi tasarlama, çok kiracılı bir uygulama için rol tabanlı erişim kontrolü uygulama.",
+          "Güvenilirliği sağlamak için Jest ve Supertest ile %85 kapsama sağlayan kapsamlı bir test stratejisi oluşturma."
+        ]
+      },
+      "turkishairlines": {
+        "title": "IOCC Operasyon Kontrol Memuru",
+        "company": "Türk Hava Yolları",
+        "location": "İstanbul",
+        "period": "Mar 2019 - May 2020",
+        "highlights": [
+          "Görev kritik bir ortamda günde 200'den fazla uçuşun gerçek zamanlı operasyon kontrolünü yönetme, yüksek basınçlı karar verme ve sistem güvenilirliği gerektirme.",
+          "Dağıtılmış yazılım geliştirmeye uygulanabilir iletişim ve problem çözme becerilerini güçlendiren çapraz fonksiyonel uluslararası ekipleri koordine etme."
+        ]
+      }
+    },
+    "educations": {
+      "ironhack": {
+        "title": "Full Stack Web Geliştirme Bootcamp",
+        "institution": "Ironhack",
+        "location": "Uzaktan",
+        "period": "2023",
+        "duration": "400 Saat"
+      },
+      "digihomeschooling": {
+        "title": "Full Stack Web Geliştirme Bootcamp",
+        "institution": "Digi-Homeschooling",
+        "location": "Uzaktan",
+        "period": "2022",
+        "duration": "400 Saat"
+      },
+      "istanbuluni": {
+        "title": "Çin Dili ve Edebiyatı",
+        "institution": "İstanbul Üniversitesi",
+        "location": "İstanbul",
+        "period": "2016 - 2020"
+      },
+      "turkishmilitary": {
+        "title": "Sosyoloji",
+        "institution": "Türkiye Kara Harp Okulu",
+        "location": "Ankara",
+        "period": "2012 - 2015"
+      }
+    }
+  },
+  "projects": {
+    "title": "Envanter",
+    "subtitle": "Seçilmiş dijital eserler.",
+    "code": "Kod",
+    "live": "Canlı",
+    "memoria": {
+      "description": "Sevdiklerinizle bağlantı kurmak için sosyal medya platformu. Özel gruplar, AI ile geliştirilmiş gönderiler ve erişilebilirlik odaklı hikaye anlatımı özelliklerine sahiptir."
+    },
+    "plantiq": {
+      "description": "AI destekli bitki tanımlama ve bakım platformu. Uzman bahçıvanlık tavsiyeleri için görüntü tanıma ve GPT entegrasyonu kullanır."
+    },
+    "hotelmiddleearth": {
+      "description": "Orta Dünya'da geçen interaktif web tabanlı oyun. Etkileyici oynanış yoluyla karar verme, odaklanma ve refleksleri zorlar."
+    },
+    "reactmovieapp": {
+      "description": "React ile oluşturulmuş modern film keşif uygulaması. Bileşen mimarisi, özel hook'lar ve kapsamlı test özelliklerine sahiptir."
+    }
+  },
+  "contact": {
+    "title": "Bağlantı Kur",
+    "subtitle": "Fikirler, sorular veya sessiz merhabalar.",
+    "name": "İsim",
+    "email": "E-posta",
+    "subject": "Konu",
+    "message": "Mesaj",
+    "placeholder": {
+      "name": "Ahmet Yılmaz",
+      "email": "ahmet@ornek.com",
+      "subject": "Proje sorusu",
+      "message": "Projenizden bahsedin..."
+    },
+    "tooltip": {
+      "name": "Lütfen tam adınızı buraya girin.",
+      "email": "Size ulaşabileceğim e-posta adresiniz.",
+      "subject": "Tartışmak istediğiniz konunun kısa özeti.",
+      "message": "Düşüncelerinizi, sorularınızı veya proje detaylarınızı buraya paylaşın.",
+      "github": "Kodlarımı ve projelerimi görmek için GitHub profilimi ziyaret edin.",
+      "linkedin": "LinkedIn'de benimle bağlantı kurun."
+    },
+    "sendMessage": "Mesaj Gönder",
+    "sending": "Gönderiliyor...",
+    "success": "Mesaj başarıyla gönderildi!",
+    "successMessage": "Mesajınız için teşekkürler. En kısa sürede size geri döneceğim.",
+    "error": {
+      "generic": "Mesaj gönderilemedi. Lütfen tekrar deneyin.",
+      "rateLimit": "Çok fazla istek. Lütfen biraz bekleyin ve tekrar deneyin.",
+      "invalidData": "Geçersiz form verisi. Lütfen girişlerinizi kontrol edin ve tekrar deneyin.",
+      "nameRequired": "İsim gerekli.",
+      "emailInvalid": "Lütfen geçerli bir e-posta adresi girin.",
+      "subjectRequired": "Konu gerekli.",
+      "messageRequired": "Mesaj gerekli.",
+      "auth": "Kimlik doğrulama başarısız. Lütfen yönetici ile iletişime geçin.",
+      "serviceUnavailable": "Hizmet geçici olarak kullanılamıyor. Lütfen daha sonra tekrar deneyin."
+    }
+  },
+  "footer": {
+    "copyright": "Tüm hakları saklıdır.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "theme": {
+    "toggleLight": "Açık moda geç",
+    "toggleDark": "Koyu moda geç"
+  },
+  "accessibility": {
+    "menuOpen": "Menü aç",
+    "menuClose": "Menü kapat",
+    "scrollToTop": "Yukarı kaydır",
+    "viewCode": "Kaynak kodunu görüntüle",
+    "viewLive": "Canlı demoyu görüntüle",
+    "changeLanguage": "Dili değiştir"
+  },
+  "toast": {
+    "email": {
+      "success": "Mesaj başarıyla gönderildi!",
+      "error": {
+        "generic": "Mesaj gönderilemedi. Lütfen tekrar deneyin.",
+        "rateLimit": "Çok fazla istek. Lütfen biraz bekleyin.",
+        "invalidData": "Geçersiz form verisi. Lütfen girişlerinizi kontrol edin.",
+        "auth": "Kimlik doğrulama başarısız. Lütfen destek ile iletişime geçin.",
+        "serviceUnavailable": "Hizmet geçici olarak kullanılamıyor. Lütfen daha sonra tekrar deneyin."
+      }
+    },
+    "language": {
+      "success": "Dil başarıyla değiştirildi"
+    },
+    "cv": {
+      "downloading": "CV indiriliyor...",
+      "success": "CV başarıyla indirildi",
+      "error": "CV indirilemedi"
+    },
+    "theme": {
+      "darkMode": "Koyu mod aktif",
+      "lightMode": "Açık mod aktif"
+    }
+  },
+  "seo": {
+    "title": "utku cikmaz",
+    "description": "Vue, Django, React, TypeScript, Node.js, Python ve modern web teknolojileri konusunda uzmanlaşmış full stack web geliştiricisi Utku Cikmaz’ın portföy web sitesi.",
+    "keywords": "full stack geliştirici, web geliştirici, React geliştirici, Vue geliştirici, Django geliştirici, Django REST Framework, Python geliştirici, TypeScript geliştirici, Node.js geliştirici, JavaScript geliştirici, frontend geliştirici, backend geliştirici, yazılım mühendisi, web geliştirme, modern web uygulamaları, ölçeklenebilir web çözümleri, temiz kod, kullanıcı deneyimi, performans optimizasyonu, Hamburg geliştirici, Almanya geliştirici"
+  }
 }
