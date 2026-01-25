@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import { trackEvent } from '../utils/rybbit'
 import type { NavLinkProps } from '../types'
 
 const NavLink = ({
@@ -11,16 +12,18 @@ const NavLink = ({
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>): void => {
     e.preventDefault()
+
+    trackEvent('nav_link_click', { target: to })
     const sectionId = to.replace('#', '')
     const element = document.getElementById(sectionId)
-    
+
     if (setNavbarOpen) {
       setNavbarOpen(false)
     }
-    
+
     const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
     const delay = isMobile ? 350 : 0
-    
+
     setTimeout(() => {
       if (element) {
         const offset = 80

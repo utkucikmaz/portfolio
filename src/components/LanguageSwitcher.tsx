@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
+import { trackEvent } from '../utils/rybbit'
 import { useTranslation } from 'react-i18next'
 import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion'
 import toast from 'react-hot-toast'
@@ -91,6 +92,10 @@ export default function LanguageSwitcher({
     try {
       await i18n.changeLanguage(code)
       toast.success(t('toast.language.success'))
+      trackEvent('language_change', {
+        section: 'language_switcher',
+        lang: code,
+      })
     } catch {
       toast.error('Failed to change language')
     } finally {
@@ -134,6 +139,10 @@ export default function LanguageSwitcher({
     <div ref={dropdownRef} className='relative'>
       <button
         onClick={() => {
+          trackEvent('language_switcher_open', {
+            section: 'language_switcher',
+            open: !isOpen,
+          })
           setIsOpen((o) => !o)
           onOpen?.()
         }}

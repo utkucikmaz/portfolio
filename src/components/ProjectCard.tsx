@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import { trackEvent } from '../utils/rybbit'
 import { motion } from 'framer-motion'
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'
 import type { ProjectCardProps } from '../types'
@@ -23,6 +24,9 @@ const ProjectCard = ({
         href={previewUrl}
         target='_blank'
         rel='noopener noreferrer'
+        onClick={() => {
+          trackEvent('project_view_live_click', { title })
+        }}
         className='block mb-2 hover:cursor-pointer'
         aria-label={t('accessibility.viewLive')}
       >
@@ -36,6 +40,9 @@ const ProjectCard = ({
       </p>
       <a
         href={gitUrl}
+        onClick={() => {
+          trackEvent('project_view_code_click', { title })
+        }}
         target='_blank'
         rel='noopener noreferrer'
         className='absolute bottom-4 left-4 flex items-center gap-2 px-4 py-2 bg-neutral-400 dark:bg-neutral-600 text-neutral-100 dark:text-neutral-100 hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white transition-all rounded-md font-medium text-sm'

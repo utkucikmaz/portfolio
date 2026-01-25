@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react'
+import { trackEvent } from '../utils/rybbit'
 import { useTranslation } from 'react-i18next'
 import emailjs from '@emailjs/browser'
 import { motion } from 'framer-motion'
@@ -19,7 +20,6 @@ const EmailSection = (): JSX.Element => {
     e.preventDefault()
     if (!form.current) return
 
-    // Manual validation to prevent browser's default tooltip
     const formData = new FormData(form.current)
     const name = formData.get('name') as string
     const email = formData.get('email') as string
@@ -46,6 +46,7 @@ const EmailSection = (): JSX.Element => {
       return
     }
 
+    trackEvent('email_send_attempt', { subject, name, email })
     setIsSubmitting(true)
     setError(null)
 
@@ -64,6 +65,7 @@ const EmailSection = (): JSX.Element => {
           setError(null)
           form.current?.reset()
           setTimeout(() => setSuccess(false), 5000)
+          trackEvent('email_send_success', { subject, name })
         },
         (error: { status?: number; text?: string }) => {
           console.error('Email sending failed:', error)
@@ -82,7 +84,12 @@ const EmailSection = (): JSX.Element => {
           }
 
           setError(errorMessage)
-          setSuccess(false)
+          trackEvent('email_send_error', {
+            subject,
+            name,
+            status: error?.status,
+            text: error?.text,
+          })
           setIsSubmitting(false)
         }
       )
@@ -116,6 +123,9 @@ const EmailSection = (): JSX.Element => {
                     rel='noopener noreferrer'
                     className='transition-opacity hover:opacity-70 cursor-pointer'
                     aria-label='LinkedIn profile'
+                    onClick={() =>
+                      trackEvent('email_link_click', { platform: 'Linkedin' })
+                    }
                   >
                     <img
                       src='/svg/linkedin-icon.svg'
@@ -146,6 +156,9 @@ const EmailSection = (): JSX.Element => {
                     rel='noopener noreferrer'
                     className='transition-opacity hover:opacity-70 cursor-pointer'
                     aria-label='GitHub profile'
+                    onClick={() =>
+                      trackEvent('email_link_click', { platform: 'Github' })
+                    }
                   >
                     <img
                       src='/svg/github-icon.svg'

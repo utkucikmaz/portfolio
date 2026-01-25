@@ -1,6 +1,7 @@
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { AnimatePresence, motion } from 'framer-motion'
+import { trackEvent } from '../utils/rybbit'
 import { BriefcaseIcon, AcademicCapIcon } from '@heroicons/react/24/outline'
 import * as Tooltip from '@radix-ui/react-tooltip'
 
@@ -166,7 +167,20 @@ const TimelineItem = memo(
               {hasHighlights && (
                 <button
                   type='button'
-                  onClick={() => setIsExpanded((current) => !current)}
+                  onClick={() => {
+                    const next = !isExpanded
+                    setIsExpanded(next)
+                    trackEvent(
+                      next
+                        ? 'experience_item_expand'
+                        : 'experience_item_collapse',
+                      {
+                        id: item.id ?? index,
+                        title: item.title,
+                        type,
+                      }
+                    )
+                  }}
                   aria-expanded={isExpanded}
                   className='mt-3 inline-flex items-center gap-2 text-md font-semibold text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'
                 >

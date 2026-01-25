@@ -1,5 +1,6 @@
 import { useTransition, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { trackEvent } from '../utils/rybbit'
 import { motion } from 'framer-motion'
 import {
   CodeBracketIcon,
@@ -210,7 +211,10 @@ const CraftSection = (): JSX.Element => {
           <div className='pt-4'>
             <div className='flex flex-nowrap gap-3 mb-6 overflow-x-visible justify-center sm:justify-start'>
               <motion.button
-                onClick={() => handleTabChange('skills')}
+                onClick={() => {
+                  handleTabChange('skills')
+                  trackEvent('craft_tab_click', { tab: 'skills' })
+                }}
                 layout
                 className={`flex items-center justify-center gap-2 px-3 py-2 sm:px-6 sm:py-3 rounded-lg font-medium transition-colors whitespace-nowrap ${
                   tab === 'skills'
@@ -242,7 +246,10 @@ const CraftSection = (): JSX.Element => {
                 </motion.div>
               </motion.button>
               <motion.button
-                onClick={() => handleTabChange('positions')}
+                onClick={() => {
+                  handleTabChange('positions')
+                  trackEvent('craft_tab_click', { tab: 'positions' })
+                }}
                 layout
                 className={`flex items-center justify-center gap-2 px-3 py-2 sm:px-6 sm:py-3 rounded-lg font-medium transition-colors whitespace-nowrap ${
                   tab === 'positions'
@@ -276,7 +283,10 @@ const CraftSection = (): JSX.Element => {
                 </motion.div>
               </motion.button>
               <motion.button
-                onClick={() => handleTabChange('certifications')}
+                onClick={() => {
+                  handleTabChange('certifications')
+                  trackEvent('craft_tab_click', { tab: 'certifications' })
+                }}
                 layout
                 className={`flex items-center justify-center gap-2 px-3 py-2 sm:px-6 sm:py-3 rounded-lg font-medium transition-colors whitespace-nowrap ${
                   tab === 'certifications'

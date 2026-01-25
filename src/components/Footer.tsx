@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import { trackEvent } from '../utils/rybbit'
 
 const Footer = (): JSX.Element => {
   const { t } = useTranslation()
@@ -29,6 +30,9 @@ const Footer = (): JSX.Element => {
               className='text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors'
               aria-label={t('footer.linkedin')}
               tabIndex={-1}
+              onClick={() =>
+                trackEvent('footer_link_click', { platform: 'LinkedIn' })
+              }
             >
               <img
                 src='/svg/linkedin-icon.svg'
@@ -44,6 +48,9 @@ const Footer = (): JSX.Element => {
               className='text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors'
               aria-label={t('footer.github')}
               tabIndex={-1}
+              onClick={() =>
+                trackEvent('footer_link_click', { platform: 'GitHub' })
+              }
             >
               <img
                 src='/svg/github-icon.svg'

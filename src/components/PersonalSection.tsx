@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, useMemo, lazy, Suspense } from 'react'
+import { trackEvent } from '../utils/rybbit'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import ScrambleWords from './ScrambleWords'
@@ -143,7 +144,12 @@ const PersonalSection = (): JSX.Element => {
         </p>
       </div>
 
-      <div className='grid lg:grid-cols-2 gap-4 md:gap-8 lg:gap-16 max-w-6xl mx-auto'>
+      <div
+        className='grid lg:grid-cols-2 gap-4 md:gap-8 lg:gap-16 max-w-6xl mx-auto'
+        onClick={() => {
+          trackEvent('personal_section_click', { section: 'personal' })
+        }}
+      >
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}

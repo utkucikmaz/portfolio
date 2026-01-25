@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import { trackEvent } from '../utils/rybbit'
 import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion'
 import NavLink from './NavLink'
 import LanguageSwitcher from './LanguageSwitcher'
@@ -41,9 +42,14 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps): JSX.Element => {
   const [navbarOpen, setNavbarOpen] = useState<boolean>(false)
   const [scrolled, setScrolled] = useState<boolean>(false)
   const [activeSection, setActiveSection] = useState<string>('')
-  // Opacity for mobile dropdown background on scroll (matches LanguageSwitcher)
+
   const { scrollY } = useScroll()
   const bgOpacity = useTransform(scrollY, [0, 200], [0.65, 0.95])
+
+  useEffect(() => {
+    trackEvent('navbar_impression', { section: 'navbar' })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   useEffect(() => {
     let scrollRaf: number | null = null
@@ -172,7 +178,13 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps): JSX.Element => {
             </ul>
             <LanguageSwitcher onOpen={() => setNavbarOpen(false)} />
             <button
-              onClick={toggleTheme}
+              onClick={() => {
+                trackEvent('navbar_theme_toggle', {
+                  section: 'navbar',
+                  toDark: !isDarkMode,
+                })
+                toggleTheme()
+              }}
               className='p-2 rounded-lg text-neutral-900 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors'
               aria-label={
                 isDarkMode ? t('theme.toggleLight') : t('theme.toggleDark')
@@ -202,7 +214,13 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps): JSX.Element => {
               )}
             </button>
             <button
-              onClick={() => setNavbarOpen(!navbarOpen)}
+              onClick={() => {
+                trackEvent('navbar_mobile_toggle', {
+                  section: 'navbar',
+                  open: !navbarOpen,
+                })
+                setNavbarOpen(!navbarOpen)
+              }}
               className='p-2 rounded-lg text-neutral-900 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors'
               aria-label={
                 navbarOpen

@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { TypeAnimation } from 'react-type-animation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
+import { trackEvent } from '../utils/rybbit'
 import { ArrowDownIcon } from '@heroicons/react/24/outline'
 import toast from 'react-hot-toast'
 import axios from 'axios'
@@ -48,6 +49,10 @@ const HeroSection = ({ isDarkMode = true }: HeroSectionProps): JSX.Element => {
   const profileImageRef = useRef<HTMLDivElement>(null)
   const typeAnimationRef = useRef<HTMLHeadingElement>(null)
   const draggableRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    trackEvent('hero_impression', { section: 'hero' })
+  }, [])
 
   const updateCelestialSize = () => {
     if (typeof window !== 'undefined') {
@@ -696,7 +701,13 @@ const HeroSection = ({ isDarkMode = true }: HeroSectionProps): JSX.Element => {
               className='flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start'
             >
               <button
-                onClick={scrollToContact}
+                onClick={(_e) => {
+                  scrollToContact()
+                  trackEvent('hero_getInTouch_click', {
+                    section: 'hero',
+                    label: t('hero.getInTouch'),
+                  })
+                }}
                 className='px-6 py-3 bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 text-white rounded-lg font-medium transition-colors duration-200 shadow-lg shadow-primary-500/25'
               >
                 {t('hero.getInTouch')}
@@ -705,7 +716,12 @@ const HeroSection = ({ isDarkMode = true }: HeroSectionProps): JSX.Element => {
                 <Tooltip.Root>
                   <Tooltip.Trigger asChild>
                     <button
-                      onClick={() => void downloadCV()}
+                      onClick={() => {
+                        void downloadCV()
+                        trackEvent('hero_download_cv_click', {
+                          section: 'hero',
+                        })
+                      }}
                       className='download-cv-button px-6 py-3 text-neutral-700 dark:text-neutral-300 rounded-lg font-medium hover:bg-neutral-300 dark:hover:bg-neutral-700 transition-colors duration-200'
                     >
                       {t('hero.downloadCV')}
@@ -895,6 +911,9 @@ const HeroSection = ({ isDarkMode = true }: HeroSectionProps): JSX.Element => {
                 tabIndex={-1}
                 className='flex flex-col items-center text-neutral-500 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors'
                 aria-label='Scroll to skills section'
+                onClick={() =>
+                  trackEvent('hero_scroll_hint_click', { section: 'hero' })
+                }
               >
                 <span className='text-sm mb-2'>{t('hero.scroll')}</span>
                 <ArrowDownIcon className='h-6 w-6 animate-bounce' />

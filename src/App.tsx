@@ -4,6 +4,7 @@ import { AnimatePresence } from 'framer-motion'
 import { Toaster } from 'react-hot-toast'
 import i18n from './i18n/config'
 import SEO from './components/SEO'
+import { initScrollTracking } from './utils/rybbit-scroll'
 import HeroSection from './components/HeroSection'
 import Navbar from './components/Navbar'
 import CraftSection from './components/CraftSection'
@@ -34,6 +35,12 @@ function App(): JSX.Element {
     } else {
       setIsDarkMode(true)
     }
+  }, [])
+
+  // Initialize scroll tracking for rybbit analytics
+  useEffect(() => {
+    const cleanup = initScrollTracking()
+    return cleanup
   }, [])
 
   useEffect(() => {
