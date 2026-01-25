@@ -1,267 +1,361 @@
-import { useMemo } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
 
-interface ThemeCelestialProps {
+interface ThemeCelestialImprovedProps {
   isDarkMode: boolean
+  cloudCount?: number
 }
 
-function Star({
-  x,
-  y,
-  size,
-  delay,
-  type,
-  opacity,
-}: {
-  x: string
-  y: string
-  size: number
-  delay: number
-  type: number
+type Cloud = {
+  id: number
+  xPx: number
+  yPx: number
+  yPct: number
+  scale: number
   opacity: number
-}) {
-  switch (type) {
-    case 0:
-      // Simple white circle
-      return (
-        <circle
-          cx={x}
-          cy={y}
-          r={size}
-          fill='#fafafa'
-          opacity={opacity}
-          className='animate-twinkle'
-          style={{ animationDelay: `${delay}s` }}
-        />
-      )
-    case 1:
-      // Blue-white star
-      return (
-        <circle
-          cx={x}
-          cy={y}
-          r={size}
-          fill='#e0f2fe'
-          opacity={opacity}
-          className='animate-twinkle'
-          style={{ animationDelay: `${delay}s` }}
-        />
-      )
-    case 2:
-      // Yellow-white star
-      return (
-        <circle
-          cx={x}
-          cy={y}
-          r={size}
-          fill='#fef3c7'
-          opacity={opacity}
-          className='animate-twinkle'
-          style={{ animationDelay: `${delay}s` }}
-        />
-      )
-    case 3:
-      // Bright white star with glow
-      return (
-        <g>
-          <circle
-            cx={x}
-            cy={y}
-            r={size * 1.5}
-            fill='rgba(250, 250, 250, 0.2)'
-            className='animate-pulse'
-            style={{ animationDelay: `${delay}s` }}
-          />
-          <circle
-            cx={x}
-            cy={y}
-            r={size}
-            fill='#fafafa'
-            opacity={opacity}
-            className='animate-twinkle'
-            style={{ animationDelay: `${delay}s` }}
-          />
-        </g>
-      )
-    case 4:
-      // Small twinkling star
-      return (
-        <circle
-          cx={x}
-          cy={y}
-          r={size}
-          fill='#f8fafc'
-          opacity={opacity}
-          className='animate-twinkle'
-          style={{ animationDelay: `${delay}s`, animationDuration: '1.5s' }}
-        />
-      )
-    case 5: {
-      // Cross-shaped star
-      // Only parse numeric values when needed for line coordinates.
-      const xNum = parseFloat(x)
-      const yNum = parseFloat(y)
-      return (
-        <g className='animate-twinkle' style={{ animationDelay: `${delay}s` }}>
-          <line
-            x1={xNum - size}
-            y1={yNum}
-            x2={xNum + size}
-            y2={yNum}
-            stroke='#fafafa'
-            strokeWidth={size * 0.3}
-            opacity={opacity}
-          />
-          <line
-            x1={xNum}
-            y1={yNum - size}
-            x2={xNum}
-            y2={yNum + size}
-            stroke='#fafafa'
-            strokeWidth={size * 0.3}
-            opacity={opacity}
-          />
-        </g>
-      )
-    }
-    case 6: {
-      // Diamond-shaped star
-      // Only parse numeric values when needed for polygon coordinates.
-      const xNum = parseFloat(x)
-      const yNum = parseFloat(y)
-      return (
-        <polygon
-          points={`${xNum},${yNum - size} ${xNum + size * 0.7},${yNum} ${xNum},${yNum + size} ${xNum - size * 0.7},${yNum}`}
-          fill='#f1f5f9'
-          opacity={opacity}
-          className='animate-twinkle'
-          style={{ animationDelay: `${delay}s` }}
-        />
-      )
-    }
-    default:
-      return (
-        <circle
-          cx={x}
-          cy={y}
-          r={size}
-          fill='#fafafa'
-          opacity={opacity}
-          className='animate-twinkle'
-          style={{ animationDelay: `${delay}s` }}
-        />
-      )
-  }
+  speed: number
+  seed: number
+  isNight: boolean
 }
 
-// Cloud component
-function Cloud({ delay, scale }: { delay: number; scale: number }) {
-  return (
-    <g
-      className='animate-cloud-drift'
-      style={{
-        animationDelay: `${delay}s`,
-        transform: `scale(${scale})`,
-      }}
-    >
-      <circle cx='0' cy='0' r='15' fill='rgba(255, 255, 255, 0.8)' />
-      <circle cx='20' cy='-5' r='18' fill='rgba(255, 255, 255, 0.8)' />
-      <circle cx='40' cy='0' r='15' fill='rgba(255, 255, 255, 0.8)' />
-      <circle cx='15' cy='10' r='12' fill='rgba(255, 255, 255, 0.8)' />
-      <circle cx='35' cy='10' r='12' fill='rgba(255, 255, 255, 0.8)' />
-    </g>
-  )
-}
-
-export default function ThemeCelestial({ isDarkMode }: ThemeCelestialProps) {
-  const stars = useMemo(() => {
-    const starsLayer1 = Array.from({ length: 120 }, (_, i) => ({
-      id: `layer1-${i}`,
-      x: `${Math.random() * 100}%`,
-      y: `${Math.random() * 60}%`, // Upper 60% of screen
-      size: Math.random() * 2.5 + 0.3,
-      delay: Math.random() * 4,
-      type: Math.floor(Math.random() * 7),
-      opacity: 0.8,
-    }))
-
-    const starsLayer2 = Array.from({ length: 80 }, (_, i) => ({
-      id: `layer2-${i}`,
-      x: `${Math.random() * 100}%`,
-      y: `${Math.random() * 70}%`, // Upper 70% of screen
-      size: Math.random() * 1.8 + 0.2,
-      delay: Math.random() * 3,
-      type: Math.floor(Math.random() * 7),
-      opacity: 0.6,
-    }))
-
-    const starsLayer3 = Array.from({ length: 50 }, (_, i) => ({
-      id: `layer3-${i}`,
-      x: `${Math.random() * 100}%`,
-      y: `${Math.random() * 80}%`, // Upper 80% of screen
-      size: Math.random() * 1.2 + 0.1,
-      delay: Math.random() * 5,
-      type: Math.floor(Math.random() * 7),
-      opacity: 0.4,
-    }))
-
-    return [...starsLayer1, ...starsLayer2, ...starsLayer3]
-  }, [])
-
-  const clouds = useMemo(
-    () =>
-      Array.from({ length: 10 }, (_, i) => ({
+export default function ThemeCelestialImproved({
+  isDarkMode,
+  cloudCount = 28,
+}: ThemeCelestialImprovedProps) {
+  const containerRef = useRef<HTMLDivElement | null>(null)
+  const cloudsRef = useRef<Record<number, SVGGElement | null>>({})
+  const clouds = useMemo(() => {
+    return Array.from({ length: cloudCount }).map((_, i) => {
+      const layer = Math.random() < 0.5 ? 0.6 : 1 // deeper layer moves a bit slower
+      return {
         id: i,
-        x: `${Math.random() * 120 - 10}%`, // Spread across screen width (-10% to 110%)
-        y: `${Math.random() * 25 + 5}%`, // Upper 35% of screen
-        delay: Math.random() * 8, // Longer delay range for more natural timing
-        scale: Math.random() * 0.5 + 0.5, // Random size variation
-      })),
-    []
-  )
+        xPx: 0,
+        yPx: 0,
+        yPct: Math.random() * 30 + 3, // 3% .. 33% from top
+        scale: Math.random() * 0.9 + 0.5, // 0.5 .. 1.4
+        opacity: Math.random() * 0.4 + 0.35, // 0.35 .. 0.75
+        speed: (Math.random() * 18 + 6) * layer, // 6 .. 24 px/s scaled
+        seed: Math.random(),
+        isNight: Math.random() < 0.35,
+      } as Cloud
+    })
+  }, [cloudCount])
+
+  useEffect(() => {
+    const el = containerRef.current
+    if (!el) return
+    const rect = el.getBoundingClientRect()
+    const width = rect.width
+    clouds.forEach((c) => {
+      const startPct = Math.random() * 140 - 20 // -20% .. 120%
+      c.xPx = (startPct / 100) * width
+      c.yPx = (c.yPct / 100) * rect.height
+      const g = cloudsRef.current[c.id]
+      if (g) {
+        g.style.transform = `translate3d(${c.xPx}px, ${c.yPx}px, 0) scale(${c.scale})`
+        g.style.opacity = String(c.opacity)
+      }
+    })
+  }, [clouds])
+
+  useEffect(() => {
+    let raf = 0
+    let last = performance.now()
+    let mounted = true
+
+    const loop = (now: number) => {
+      if (!mounted) return
+      const dt = Math.min(0.06, (now - last) / 1000)
+      last = now
+
+      const el = containerRef.current
+      if (!el) return
+      const rect = el.getBoundingClientRect()
+      const width = rect.width
+      clouds.forEach((c) => {
+        c.xPx += c.speed * dt
+        const wobble =
+          Math.sin((now / 1000) * (0.2 + c.seed * 0.8) + c.seed * 10) * 6
+        const y = c.yPx + wobble * c.scale
+
+        if (c.xPx > width + 300) {
+          c.xPx = -200 - Math.random() * 300
+          c.yPx = (c.yPct / 100) * rect.height
+        }
+
+        const g = cloudsRef.current[c.id]
+        if (g) {
+          g.style.transform = `translate3d(${Math.round(c.xPx)}px, ${Math.round(y)}px, 0) scale(${c.scale})`
+        }
+      })
+
+      raf = requestAnimationFrame(loop)
+    }
+
+    raf = requestAnimationFrame(loop)
+    return () => {
+      mounted = false
+      cancelAnimationFrame(raf)
+    }
+  }, [clouds])
+
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
+    if (mq.matches) {
+      clouds.forEach((c) => {
+        const g = cloudsRef.current[c.id]
+        if (g) {
+          g.style.transform = `translate3d(${c.xPx}px, ${c.yPx}px, 0) scale(${c.scale})`
+          g.style.transition = 'none'
+        }
+      })
+    }
+  }, [clouds])
+
+  function CloudShape({ seed = 0 }: { seed?: number }) {
+    const offsets = [
+      { x: -10 + seed * 30, y: 0, r: 18 + seed * 8 },
+      { x: 12 - seed * 10, y: -6, r: 26 - seed * 6 },
+      { x: 34 - seed * 20, y: 3, r: 18 + seed * 4 },
+      { x: 8, y: 12, r: 14 },
+      { x: 28, y: 12, r: 12 },
+    ]
+
+    return (
+      <g>
+        {offsets.map((o, i) => (
+          <circle key={i} cx={o.x} cy={o.y} r={o.r} className='cloud-circle' />
+        ))}
+      </g>
+    )
+  }
 
   return (
-    <div className='w-full h-screen absolute inset-0 -z-10 overflow-hidden'>
-      {/* Sky background - upper 35% */}
+    <div
+      ref={containerRef}
+      className='w-full h-screen absolute inset-0 -z-10 overflow-hidden'
+    >
+      {/* Sky background */}
       <div
         className='absolute top-0 left-0 right-0'
         style={{
           height: '35%',
           background: isDarkMode
-            ? 'linear-gradient(to bottom, #0a0a0a, #171717, transparent)'
-            : 'linear-gradient(to bottom, #87ceeb, #87ceeb, transparent)',
-          transition: 'background 0.3s ease-in-out',
+            ? 'linear-gradient(to bottom, #020205, #0f1724, transparent)'
+            : 'linear-gradient(to bottom, #87ceeb, #bfe9ff, transparent)',
+          transition: 'background 0.4s ease-in-out',
         }}
       >
-        {/* Starry sky for dark mode */}
-        {isDarkMode && (
-          <svg className='absolute inset-0 w-full h-full'>
-            {stars.map((star) => (
-              <Star
-                key={star.id}
-                x={star.x}
-                y={star.y}
-                size={star.size}
-                delay={star.delay}
-                type={star.type}
-                opacity={star.opacity}
-              />
-            ))}
-          </svg>
-        )}
+        <svg
+          className='absolute inset-0 w-full h-full'
+          preserveAspectRatio='none'
+        >
+          <defs>
+            {/* subtle blur to soften cloud edges */}
+            <filter
+              id='cloud-soft'
+              x='-50%'
+              y='-50%'
+              width='200%'
+              height='200%'
+            >
+              <feGaussianBlur stdDeviation='6' />
+            </filter>
 
-        {/* Moving clouds for light mode */}
-        {!isDarkMode && (
-          <svg className='absolute inset-0 w-full h-full overflow-visible'>
-            {clouds.map((cloud) => (
-              <g
-                key={cloud.id}
-                style={{ transform: `translate(${cloud.x}, ${cloud.y})` }}
-              >
-                <Cloud delay={cloud.delay} scale={cloud.scale} />
-              </g>
-            ))}
-          </svg>
-        )}
+            <filter
+              id='cloud-soft-night'
+              x='-80%'
+              y='-80%'
+              width='260%'
+              height='260%'
+            >
+              <feGaussianBlur stdDeviation='12' />
+            </filter>
+
+            {/* gentle inner gradient for clouds */}
+            <linearGradient id='cloud-grad' x1='0' x2='1' y1='0' y2='1'>
+              <stop offset='0%' stopColor='white' stopOpacity='0.95' />
+              <stop offset='60%' stopColor='white' stopOpacity='0.8' />
+              <stop offset='100%' stopColor='white' stopOpacity='0.55' />
+            </linearGradient>
+          </defs>
+
+          {/* Milky Way galaxy band */}
+          {isDarkMode && (
+            <g aria-hidden>
+              <defs>
+                <radialGradient id='milky-way-core' cx='50%' cy='50%'>
+                  <stop offset='0%' stopColor='#e8f4ff' stopOpacity='0.15' />
+                  <stop offset='30%' stopColor='#b8d4f0' stopOpacity='0.08' />
+                  <stop offset='70%' stopColor='#7a9dc9' stopOpacity='0.03' />
+                  <stop offset='100%' stopColor='#4a6b8a' stopOpacity='0' />
+                </radialGradient>
+                <filter
+                  id='milky-way-glow'
+                  x='-50%'
+                  y='-50%'
+                  width='200%'
+                  height='200%'
+                >
+                  <feGaussianBlur stdDeviation='40' />
+                </filter>
+              </defs>
+
+              {/* Main Milky Way band - diagonal sweep across sky */}
+              <ellipse
+                cx='30%'
+                cy='25%'
+                rx='45%'
+                ry='12%'
+                fill='url(#milky-way-core)'
+                filter='url(#milky-way-glow)'
+                transform='rotate(-35 30 25)'
+                opacity='0.7'
+              />
+
+              {/* Secondary glow for depth */}
+              <ellipse
+                cx='55%'
+                cy='30%'
+                rx='35%'
+                ry='8%'
+                fill='url(#milky-way-core)'
+                filter='url(#milky-way-glow)'
+                transform='rotate(-35 55 30)'
+                opacity='0.5'
+              />
+
+              {/* Dense star cluster within Milky Way */}
+              {Array.from({ length: 80 }).map((_, i) => {
+                const angle = -35 * (Math.PI / 180)
+                const t = (i / 80) * 2 - 1 // -1 to 1
+                const centerX = 30 + t * 45
+                const centerY = 25 + t * 12
+                const spread = 12 * (1 - Math.abs(t) * 0.3)
+
+                const offsetX = (Math.random() - 0.5) * spread
+                const offsetY = (Math.random() - 0.5) * spread * 0.4
+
+                const rotatedX =
+                  centerX +
+                  offsetX * Math.cos(angle) -
+                  offsetY * Math.sin(angle)
+                const rotatedY =
+                  centerY +
+                  offsetX * Math.sin(angle) +
+                  offsetY * Math.cos(angle)
+
+                return (
+                  <circle
+                    key={`mw-${i}`}
+                    cx={`${rotatedX}%`}
+                    cy={`${rotatedY}%`}
+                    r={Math.random() * 0.6 + 0.2}
+                    fill='#f0f8ff'
+                    opacity={Math.random() * 0.5 + 0.3}
+                  />
+                )
+              })}
+            </g>
+          )}
+
+          {/* Stars for dark mode (kept lightweight) */}
+          {isDarkMode && (
+            <g aria-hidden>
+              {Array.from({
+                length: Math.max(
+                  140,
+                  Math.floor((window.innerHeight || 900) / 5)
+                ),
+              }).map((_, i) => {
+                const x = Math.random() * 100
+                const y = Math.random() * 65
+                const baseR = Math.random() * 1.4 + 0.3
+                const depth = Math.random()
+                const opacity = 0.75 + depth * 0.5
+                const drift = 90 + Math.random() * 120
+                return (
+                  <circle
+                    key={i}
+                    cx={`${x}%`}
+                    cy={`${y}%`}
+                    r={baseR + depth * 0.8}
+                    fill={Math.random() < 0.5 ? '#f8fafc' : '#e6f0ff'}
+                    opacity={opacity}
+                  >
+                    <animate
+                      attributeName='opacity'
+                      from='0'
+                      to={opacity.toString()}
+                      dur={`${12 + Math.random() * 20}s`}
+                      fill='freeze'
+                    />
+                    <animate
+                      attributeName='opacity'
+                      from={opacity.toString()}
+                      to='0'
+                      begin={`${drift * 0.8}s`}
+                      dur='20s'
+                      fill='freeze'
+                    />
+                    <animateTransform
+                      attributeName='transform'
+                      type='translate'
+                      from='0 0'
+                      to={`${(Math.random() - 0.5) * 0.6} ${(Math.random() - 0.5) * 0.6}} ${(Math.random() - 0.5) * 2}`}
+                      dur={`${drift}s`}
+                      repeatCount='indefinite'
+                    />
+                    <animateTransform
+                      attributeName='transform'
+                      additive='sum'
+                      type='scale'
+                      from='0.96'
+                      to='1.04'
+                      dur={`${12 + Math.random() * 18}s`}
+                      repeatCount='indefinite'
+                    />
+                  </circle>
+                )
+              })}
+            </g>
+          )}
+
+          {/* Clouds (rendered when not dark mode, or optionally even in dark mode) */}
+          <g style={{ willChange: 'transform', pointerEvents: 'none' }}>
+            {clouds
+              .filter((c) => !isDarkMode || c.isNight)
+              .map((c) => (
+                <g
+                  key={c.id}
+                  ref={(el) => (cloudsRef.current[c.id] = el)}
+                  style={{
+                    transform: `translate3d(${c.xPx}px, ${c.yPx}px, 0) scale(${c.scale})`,
+                    opacity: isDarkMode ? c.opacity * 0.4 : c.opacity,
+                    filter: isDarkMode
+                      ? 'url(#cloud-soft-night)'
+                      : 'url(#cloud-soft)',
+                    transformOrigin: '0 0',
+                  }}
+                >
+                  <g transform={`rotate(${(c.seed - 0.5) * 6})`}>
+                    <CloudShape seed={c.seed} />
+
+                    <ellipse cx='18' cy='24' rx='38' ry='10' opacity={0.06} />
+                  </g>
+                </g>
+              ))}
+          </g>
+
+          {/* Accessibility: pause animation if user prefers reduced motion */}
+          <style>{`
+            @media (prefers-reduced-motion: reduce) {
+              .cloud-circle { opacity: 1 !important; }
+            }
+
+            /* cloud circles use the gradient fill */
+            .cloud-circle { fill: url(#cloud-grad); }
+          `}</style>
+        </svg>
       </div>
     </div>
   )
