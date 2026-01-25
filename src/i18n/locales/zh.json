@@ -21,7 +21,7 @@
   "craft": {
     "title": "作为开发者",
     "subtitle": "干净的代码，功能第一，美观包含。",
-    "description1": "我使用React、Next.js、TypeScript、Node.js和Django等尖端技术设计和交付企业级全栈解决方案。我的专业知识涵盖整个软件开发生命周期，从设计直观的用户界面到构建强大的、可扩展的后端架构，为高性能应用程序提供动力。",
+    "description1": "我使用React、Next.js、TypeScript、Node.js和Django REST Framework等尖端技术设计和交付企业级全栈解决方案。我的专业知识涵盖整个软件开发生命周期，从设计直观的用户界面到构建强大的、可扩展的后端架构，为高性能应用程序提供动力。",
     "description2": "凭借经过验证的业绩记录，我带来了技术卓越性和跨文化沟通技能的独特结合。我的代码以干净的架构、严格的测试和性能优化为特点，确保不仅满足而且超越业务目标的解决方案。",
     "description3": "我的开发方法是全面的：我不仅仅是编写代码，而是设计解决方案。凭借前端和后端技术的专业知识，我弥合了设计与实施之间的差距，确保无缝集成、最佳性能和可扩展的架构，随着您的业务需求而增长。",
     "skills": "技能",
@@ -44,7 +44,7 @@
     },
     "positions": {
       "title": "沟通",
-      "item1": "在北约（NATO）监督下的国际培训环境中领导多国团队",
+      "item1": "在北约（NATO）监督下，与跨国团队在国际培训环境中合作",
       "item2": "管理和指导一个大型同行群体（200多名成员），专注于结构、清晰度和责任感",
       "item3": "成立并主持了一个国际关系俱乐部，促进跨文化和跨学科的对话"
     }
@@ -242,7 +242,7 @@
   },
   "seo": {
     "title": "utku cikmaz",
-    "description": "Utku Cikmaz 的作品集网站，一名全栈 Web 开发者，专注于 Vue、Django、React、TypeScript、Node.js、Python 以及现代 Web 技术。",
+    "description": "Utku Cikmaz 的作品集网站，一名全栈 Web 开发者，专注于 Vue、Django REST Framework、React、TypeScript、Node.js、Python 以及现代 Web 技术。",
     "keywords": "全栈开发者，Web 开发者，React 开发者，Vue 开发者，Django 开发者，Django REST Framework，Python 开发者，TypeScript 开发者，Node.js 开发者，JavaScript 开发者，前端开发者，后端开发者，软件工程师，Web 开发，现代 Web 应用，可扩展 Web 解决方案，整洁代码，用户体验，性能优化，汉堡开发者，德国开发者"
   }
 }

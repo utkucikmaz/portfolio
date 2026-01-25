@@ -21,7 +21,7 @@
   "craft": {
     "title": "Als Ontwikkelaar",
     "subtitle": "Schone code, functie eerst, schoonheid inbegrepen.",
-    "description1": "Ik ontwerp en lever enterprise-grade full-stack oplossingen met behulp van geavanceerde technologieën zoals React, Next.js, TypeScript, Node.js en Django. Mijn expertise omvat de volledige softwareontwikkelingslevenscyclus, van het ontwerpen van intuïtieve gebruikersinterfaces tot het bouwen van robuuste, schaalbare backend-architecturen die hoogwaardige applicaties aandrijven.",
+    "description1": "Ik ontwerp en lever enterprise-grade full-stack oplossingen met behulp van geavanceerde technologieën zoals React, Next.js, TypeScript, Node.js en Django REST Framework. Mijn expertise omvat de volledige softwareontwikkelingslevenscyclus, van het ontwerpen van intuïtieve gebruikersinterfaces tot het bouwen van robuuste, schaalbare backend-architecturen die hoogwaardige applicaties aandrijven.",
     "description2": "Met een bewezen trackrecord breng ik een unieke combinatie van technische excellentie en interculturele communicatievaardigheden. Mijn code wordt gekenmerkt door schone architectuur, rigoureuze tests en prestatie-optimalisatie, waardoor oplossingen worden gegarandeerd die niet alleen voldoen aan maar ook de bedrijfsdoelstellingen overtreffen.",
     "description3": "Mijn benadering van ontwikkeling is holistisch: ik schrijf niet alleen code, ik ontwerp oplossingen. Met expertise in zowel frontend- als backend-technologieën overbrug ik de kloof tussen ontwerp en implementatie, waardoor naadloze integratie, optimale prestaties en schaalbare architectuur worden gegarandeerd die meegroeit met de behoeften van uw bedrijf.",
     "skills": "Vaardigheden",
@@ -44,7 +44,7 @@
     },
     "positions": {
       "title": "Communicatie",
-      "item1": "Leidde multinationale teams in een internationale trainingsomgeving onder toezicht van de Noord-Atlantische Verdragsorganisatie (NAVO)",
+      "item1": "Werk met multinationale teams in een internationale trainingsomgeving onder toezicht van NAVO (NATO)",
       "item2": "Beheerde en begeleidde een grote peergroep (200+ leden) met focus op structuur, duidelijkheid en verantwoordelijkheid",
       "item3": "Richtte een internationale betrekkingenclub op en voorzat deze, waardoor dialoog tussen culturen en disciplines werd bevorderd"
     }
@@ -242,7 +242,7 @@
   },
   "seo": {
     "title": "utku cikmaz",
-    "description": "Portfolio-website van Utku Cikmaz, een full-stack webontwikkelaar gespecialiseerd in Vue, Django, React, TypeScript, Node.js, Python en moderne webtechnologieën.",
+    "description": "Portfolio-website van Utku Cikmaz, een full-stack webontwikkelaar gespecialiseerd in Vue, Django REST Framework, React, TypeScript, Node.js, Python en moderne webtechnologieën.",
     "keywords": "full-stack ontwikkelaar, webontwikkelaar, React ontwikkelaar, Vue ontwikkelaar, Django ontwikkelaar, Django REST Framework, Python ontwikkelaar, TypeScript ontwikkelaar, Node.js ontwikkelaar, JavaScript ontwikkelaar, frontend ontwikkelaar, backend ontwikkelaar, software engineer, webontwikkeling, moderne webapplicaties, schaalbare weboplossingen, schone code, gebruikerservaring, prestatie-optimalisatie, ontwikkelaar Hamburg, ontwikkelaar Duitsland"
   }
 }

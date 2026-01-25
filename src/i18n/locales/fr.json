@@ -21,7 +21,7 @@
   "craft": {
     "title": "En tant que Développeur",
     "subtitle": "Code propre, fonction d'abord, beauté incluse.",
-    "description1": "Je conçois et livre des solutions Full Stack de niveau entreprise en utilisant des technologies de pointe comme React, Next.js, TypeScript, Node.js et Django. Mon expertise couvre tout le cycle de vie du développement logiciel, de la conception d'interfaces utilisateur intuitives à la construction d'architectures backend robustes et scalables qui alimentent des applications performantes.",
+    "description1": "Je conçois et livre des solutions Full Stack de niveau entreprise en utilisant des technologies de pointe comme React, Next.js, TypeScript, Node.js et Django REST Framework. Mon expertise couvre tout le cycle de vie du développement logiciel, de la conception d'interfaces utilisateur intuitives à la construction d'architectures backend robustes et scalables qui alimentent des applications performantes.",
     "description2": "Avec un historique éprouvé, j'apporte une combinaison unique d'excellence technique et de compétences en communication interculturelle. Mon code se caractérise par une architecture propre, des tests rigoureux et une optimisation des performances, garantissant des solutions qui non seulement répondent mais dépassent les objectifs commerciaux.",
     "description3": "Mon approche du développement est holistique : je ne me contente pas d'écrire du code, j'ingénierie des solutions. Avec une expertise dans les technologies frontend et backend, je comble le fossé entre la conception et l'implémentation, garantissant une intégration transparente, des performances optimales et une architecture scalable qui évolue avec les besoins de votre entreprise.",
     "skills": "Compétences",
@@ -44,7 +44,7 @@
     },
     "positions": {
       "title": "Communication",
-      "item1": "Dirigé des équipes multinationales dans un environnement de formation international sous la supervision de l'Organisation du Traité de l'Atlantique Nord (OTAN)",
+      "item1": "Travailler avec des équipes multinationales dans un environnement de formation international sous la supervision de l'OTAN (NATO)",
       "item2": "Géré et mentoré un grand groupe de pairs (200+ membres) avec un accent sur la structure, la clarté et la responsabilité",
       "item3": "Fondé et présidé un club de relations internationales, favorisant le dialogue entre les cultures et les disciplines"
     }
@@ -242,7 +242,7 @@
   },
   "seo": {
     "title": "utku cikmaz",
-    "description": "Site portfolio d’Utku Cikmaz, développeur web full stack spécialisé en Vue, Django, React, TypeScript, Node.js, Python et les technologies web modernes.",
+    "description": "Site portfolio d’Utku Cikmaz, développeur web full stack spécialisé en Vue, Django REST Framework, React, TypeScript, Node.js, Python et les technologies web modernes.",
     "keywords": "développeur full stack, développeur web, développeur React, développeur Vue, développeur Django, Django REST Framework, développeur Python, développeur TypeScript, développeur Node.js, développeur JavaScript, développeur frontend, développeur backend, ingénieur logiciel, développement web, applications web modernes, solutions web évolutives, code propre, expérience utilisateur, optimisation des performances, développeur à Hambourg, développeur en Allemagne"
   }
 }

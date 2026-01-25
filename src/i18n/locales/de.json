@@ -21,7 +21,7 @@
   "craft": {
     "title": "Als Entwickler",
     "subtitle": "Sauberer Code, Funktion zuerst, Schönheit inklusive.",
-    "description1": "Ich entwickle und liefere unternehmensreife Full-Stack-Lösungen mit modernsten Technologien wie React, Next.js, TypeScript, Node.js und Django. Meine Expertise erstreckt sich über den gesamten Softwareentwicklungslebenszyklus, vom Entwurf intuitiver Benutzeroberflächen bis zum Aufbau robuster, skalierbarer Backend-Architekturen, die leistungsstarke Anwendungen antreiben.",
+    "description1": "Ich entwickle und liefere unternehmensreife Full-Stack-Lösungen mit modernsten Technologien wie React, Next.js, TypeScript, Node.js und Django REST Framework. Meine Expertise erstreckt sich über den gesamten Softwareentwicklungslebenszyklus, vom Entwurf intuitiver Benutzeroberflächen bis zum Aufbau robuster, skalierbarer Backend-Architekturen, die leistungsstarke Anwendungen antreiben.",
     "description2": "Mit einer bewährten Erfolgsbilanz bringe ich eine einzigartige Mischung aus technischer Exzellenz und interkulturellen Kommunikationsfähigkeiten mit. Mein Code zeichnet sich durch saubere Architektur, rigoroses Testen und Leistungsoptimierung aus – und gewährleistet Lösungen, die nicht nur die Geschäftsziele erfüllen, sondern übertreffen.",
     "description3": "Mein Entwicklungsansatz ist ganzheitlich: Ich schreibe nicht nur Code – ich entwickle Lösungen. Mit Expertise in Frontend- und Backend-Technologien überbrücke ich die Lücke zwischen Design und Implementierung und gewährleiste nahtlose Integration, optimale Leistung und skalierbare Architektur, die mit den Bedürfnissen Ihres Unternehmens wächst.",
     "skills": "Fähigkeiten",
@@ -44,7 +44,7 @@
     },
     "positions": {
       "title": "Kommunikation",
-      "item1": "Führung multinationaler Teams in einer internationalen Trainingsumgebung unter Aufsicht der Nordatlantikvertrags-Organisation (NATO)",
+      "item1": "Arbeiten mit multinationalen Teams in einer internationalen Trainingsumgebung unter Aufsicht der NATO",
       "item2": "Verwaltung und Betreuung einer großen Peer-Gruppe (200+ Mitglieder) mit Fokus auf Struktur, Klarheit und Verantwortung",
       "item3": "Gründung und Vorsitz eines internationalen Beziehungsclubs, Förderung des Dialogs über Kulturen und Disziplinen hinweg"
     }
@@ -242,7 +242,7 @@
   },
   "seo": {
     "title": "utku cikmaz",
-    "description": "Portfolio-Website von Utku Cikmaz, einem Full-Stack-Webentwickler mit Schwerpunkt auf Vue, Django, React, TypeScript, Node.js, Python und modernen Webtechnologien.",
+    "description": "Portfolio-Website von Utku Cikmaz, einem Full-Stack-Webentwickler mit Schwerpunkt auf Vue, Django REST Framework, React, TypeScript, Node.js, Python und modernen Webtechnologien.",
     "keywords": "Full-Stack-Entwickler, Webentwickler, React-Entwickler, Vue-Entwickler, Django-Entwickler, Django REST Framework Entwickler, Python-Entwickler, TypeScript-Entwickler, Node.js-Entwickler, JavaScript-Entwickler, Frontend-Entwickler, Backend-Entwickler, Softwareentwickler, Webentwicklung, moderne Webanwendungen, skalierbare Weblösungen, sauberer Code, Benutzererfahrung, Performance-Optimierung, Entwickler Hamburg, Entwickler Deutschland"
   }
 }
