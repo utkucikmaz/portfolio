@@ -30,10 +30,10 @@ export default function ThemeCelestialImproved({
         id: i,
         xPx: 0,
         yPx: 0,
-        yPct: Math.random() * 30 + 3, // 3% .. 33% from top
+        yPct: Math.random() * 15 + 10, // 5% .. 20% from top
         scale: Math.random() * 0.9 + 0.5, // 0.5 .. 1.4
         opacity: Math.random() * 0.4 + 0.35, // 0.35 .. 0.75
-        speed: (Math.random() * 18 + 6) * layer, // 6 .. 24 px/s scaled
+        speed: (Math.random() * 25 + 5) * layer,
         seed: Math.random(),
         isNight: Math.random() < 0.35,
       } as Cloud
@@ -111,19 +111,57 @@ export default function ThemeCelestialImproved({
     }
   }, [clouds])
 
-  function CloudShape({ seed = 0 }: { seed?: number }) {
-    const offsets = [
-      { x: -10 + seed * 30, y: 0, r: 18 + seed * 8 },
-      { x: 12 - seed * 10, y: -6, r: 26 - seed * 6 },
-      { x: 34 - seed * 20, y: 3, r: 18 + seed * 4 },
-      { x: 8, y: 12, r: 14 },
-      { x: 28, y: 12, r: 12 },
-    ]
+  function CloudShape({
+    seed = 0,
+    isNight = false,
+  }: {
+    seed?: number
+    isNight?: boolean
+  }) {
+    if (!isNight) {
+      const offsets = [
+        { x: 60 + seed * 30, y: 0, r: 18 + seed * 16 },
+        { x: 55 - seed * 10, y: -6, r: 26 - seed * 12 },
+        { x: 145 - seed * 20, y: 3, r: 18 + seed * 4 },
+        { x: 95, y: 12, r: 14 },
+        { x: 28, y: 12, r: 12 },
+      ]
+
+      return (
+        <g>
+          {offsets.map((o, i) => (
+            <circle
+              key={i}
+              cx={o.x}
+              cy={o.y}
+              r={o.r}
+              className='cloud-circle'
+            />
+          ))}
+        </g>
+      )
+    }
+
+    const blobs = Array.from({ length: 7 }).map((_) => ({
+      x: (Math.random() - 0.125) * 100, // wider horizontal spread
+      y: (Math.random() - 0.5) * 1, // small vertical spread
+      rx: 100 + Math.random() * 50, // wider width
+      ry: 15 + Math.random() * 1, // flatter height
+      opacity: 0.05 + Math.random() * 0.1, // very subtle
+    }))
 
     return (
       <g>
-        {offsets.map((o, i) => (
-          <circle key={i} cx={o.x} cy={o.y} r={o.r} className='cloud-circle' />
+        {blobs.map((b, i) => (
+          <ellipse
+            key={i}
+            cx={b.x}
+            cy={b.y}
+            rx={b.rx}
+            ry={b.ry}
+            opacity={b.opacity}
+            fill='white'
+          />
         ))}
       </g>
     )
@@ -168,7 +206,7 @@ export default function ThemeCelestialImproved({
               width='260%'
               height='260%'
             >
-              <feGaussianBlur stdDeviation='12' />
+              <feGaussianBlur stdDeviation='18' />
             </filter>
 
             {/* gentle inner gradient for clouds */}
@@ -323,18 +361,22 @@ export default function ThemeCelestialImproved({
           {/* Clouds (rendered when not dark mode, or optionally even in dark mode) */}
           <g style={{ willChange: 'transform', pointerEvents: 'none' }}>
             {clouds
-              .filter((c) => !isDarkMode || c.isNight)
+              .filter((c) => {
+                if (!isDarkMode) return true
+                return c.isNight
+              })
+              .slice(0, isDarkMode ? 5 : clouds.length)
               .map((c) => (
                 <g
                   key={c.id}
                   ref={(el) => (cloudsRef.current[c.id] = el)}
                   style={{
-                    transform: `translate3d(${c.xPx}px, ${c.yPx}px, 0) scale(${c.scale})`,
-                    opacity: isDarkMode ? c.opacity * 0.4 : c.opacity,
+                    transform: `translate3d(${c.xPx}px, ${c.yPx}px, 0) scaleX(${isDarkMode ? c.scale * 1000 : c.scale}) scaleY(${c.scale})`,
+                    opacity: isDarkMode ? c.opacity * 0.35 : c.opacity,
                     filter: isDarkMode
                       ? 'url(#cloud-soft-night)'
                       : 'url(#cloud-soft)',
-                    transformOrigin: '0 0',
+                    transformOrigin: '67% 73% 42%',
                   }}
                 >
                   <g transform={`rotate(${(c.seed - 0.5) * 6})`}>
