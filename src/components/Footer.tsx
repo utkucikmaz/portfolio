@@ -9,6 +9,9 @@ const Footer = (): JSX.Element => {
       <div className='container mx-auto px-4 sm:px-6 lg:px-8 py-8'>
         <div className='flex flex-row sm:flex-row items-center justify-between gap-4 m-6'>
           <div className='flex items-center gap-3'>
+            <span className='text-sm font-medium text-neutral-700 dark:text-neutral-300'>
+              utku
+            </span>
             <img
               className='w-10 h-10'
               src='/images/tree.png'
@@ -18,11 +21,11 @@ const Footer = (): JSX.Element => {
               loading='lazy'
             />
             <span className='text-sm font-medium text-neutral-700 dark:text-neutral-300'>
-              utku cikmaz
+              cikmaz
             </span>
           </div>
 
-          <div className='flex items-center gap-6'>
+          <div className='flex items-center gap-6 md:absolute md:left-1/2 md:transform md:-translate-x-1/2 lg:static lg:transform-none'>
             <a
               href='https://www.linkedin.com/in/utkucikmaz/'
               target='_blank'
@@ -60,17 +63,25 @@ const Footer = (): JSX.Element => {
               />
             </a>
           </div>
-
-          <div className='hidden sm:block'>
-            <p className='text-sm text-neutral-500 dark:text-neutral-500'>
-              &copy; {currentYear} Utku Cikmaz. {t('footer.copyright')}
+          <div className='hidden md:block md:pr-10 lg:pr-12'>
+            {/* Privacy lines side-by-side on lg+ screens, column on md screens */}
+            <p className='text-xs text-right text-neutral-500 dark:text-neutral-500 mt-1'>
+              &copy; {currentYear}. {t('footer.copyright')}
             </p>
           </div>
         </div>
-
-        <div className='sm:hidden text-center mt-4'>
-          <p className='text-sm text-neutral-500 dark:text-neutral-500'>
-            &copy; {currentYear} Utku Cikmaz. {t('footer.copyright')}
+        <div className='flex flex-col md:flex-row lg:gap-1 justify-center lg:mb-6'>
+          <p className='text-xs text-center text-neutral-500 dark:text-neutral-500'>
+            {t('footer.privacyLine1')}
+          </p>
+          <p className='text-xs text-center text-neutral-500 dark:text-neutral-500'>
+            {t('footer.privacyLine2')}
+          </p>
+        </div>
+        <div className='md:hidden lg:hidden'>
+          {/* Privacy lines side-by-side on lg+ screens, column on md screens */}
+          <p className='text-xs text-center text-neutral-500 dark:text-neutral-500 mt-3'>
+            &copy; {currentYear}. {t('footer.copyright')}
           </p>
         </div>
       </div>

@@ -200,6 +200,9 @@
     }
   },
   "footer": {
+    "privacyNotice": "このサイトはプライバシーに配慮した分析を使用しています。Cookiesは使用せず、個人データは収集しません。",
+    "privacyLine1": "このサイトはプライバシーに配慮した分析を使用しています。",
+    "privacyLine2": "Cookiesは使用せず、個人データは収集しません。",
     "copyright": "全著作権所有。",
     "github": "GitHub",
     "linkedin": "LinkedIn"

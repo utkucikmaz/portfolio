@@ -199,6 +199,9 @@
     }
   },
   "footer": {
+    "privacyNotice": "This site uses privacy-friendly analytics. No cookies, no personal data.",
+    "privacyLine1": "This site uses privacy-friendly analytics.",
+    "privacyLine2": "No cookies, no personal data.",
     "copyright": "All rights reserved.",
     "github": "GitHub",
     "linkedin": "LinkedIn"

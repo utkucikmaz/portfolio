@@ -40,6 +40,12 @@ const sectionIds = navLinks.map((link) => link.path.replace('#', ''))
 const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps): JSX.Element => {
   const { t } = useTranslation()
   const [navbarOpen, setNavbarOpen] = useState<boolean>(false)
+  // Show desktop navigation above 900px; burger/mobile below. This overrides default Tailwind breakpoints
+  // to align with the requested 900px threshold without modifying global Tailwind config.
+  const [isWide, setIsWide] = useState<boolean>(() => {
+    if (typeof window === 'undefined') return true
+    return window.innerWidth >= 900
+  })
   const [scrolled, setScrolled] = useState<boolean>(false)
   const [activeSection, setActiveSection] = useState<string>('')
 
@@ -106,6 +112,17 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps): JSX.Element => {
     }
   }, [])
 
+  // Track window width to toggle between desktop nav and burger menu at 900px
+  useEffect(() => {
+    const onResize = (): void => {
+      setIsWide(window.innerWidth >= 900)
+    }
+    window.addEventListener('resize', onResize)
+    // initialize in case of hydration
+    onResize()
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent): void => {
       if (navbarOpen) {
@@ -162,8 +179,8 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps): JSX.Element => {
             </span>
           </a>
 
-          {/* Desktop Navigation */}
-          <div className='hidden md:flex items-center space-x-1'>
+          {/* Desktop Navigation (visible >= 900px) */}
+          <div className={isWide ? 'flex items-center space-x-1' : 'hidden'}>
             <ul className='flex items-center space-x-1'>
               {navLinks.map((link, index) => (
                 <li key={index}>
@@ -198,7 +215,8 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps): JSX.Element => {
             </button>
           </div>
 
-          <div className='flex items-center space-x-2 md:hidden'>
+          {/* Mobile / Burger group (visible < 900px) */}
+          <div className={isWide ? 'hidden' : 'flex'}>
             <LanguageSwitcher onOpen={() => setNavbarOpen(false)} />
             <button
               onClick={toggleTheme}

@@ -200,6 +200,9 @@
     }
   },
   "footer": {
+    "privacyNotice": "Diese Website verwendet datenschutzfreundliche Analytics.",
+    "privacyLine1": "Diese Website verwendet datenschutzfreundliche Analytics.",
+    "privacyLine2": "Keine Cookies, keine personenbezogenen Daten.",
     "copyright": "Alle Rechte vorbehalten.",
     "github": "GitHub",
     "linkedin": "LinkedIn"

@@ -661,12 +661,12 @@ const HeroSection = ({ isDarkMode = true }: HeroSectionProps): JSX.Element => {
         </Draggable>
       </div>
       <div className='flex flex-col lg:flex-row items-center justify-between gap-12 w-full max-w-7xl mx-auto px-4'>
-        <div className='flex flex-col items-center lg:items-start justify-center space-y-8 flex-1 order-2 lg:order-1 lg:pt-20'>
+        <div className='flex flex-col items-center md:items-start justify-center space-y-8 flex-1 order-2 lg:order-1 lg:pt-20'>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className='text-center lg:text-left space-y-6 w-full'
+            className='text-center md:text-left space-y-6 w-full'
           >
             <motion.div
               initial={{ opacity: 0 }}
@@ -676,7 +676,7 @@ const HeroSection = ({ isDarkMode = true }: HeroSectionProps): JSX.Element => {
             >
               <h1
                 ref={typeAnimationRef}
-                className='text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-neutral-900 dark:text-neutral-50 leading-tight text-center lg:text-left'
+                className='text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-neutral-900 dark:text-neutral-50 leading-tight text-center md:text-left'
               >
                 <span className='block sm:inline'>{t('hero.greeting')}</span>{' '}
                 <span className='block sm:inline text-primary-600 dark:text-primary-400'>
@@ -689,7 +689,7 @@ const HeroSection = ({ isDarkMode = true }: HeroSectionProps): JSX.Element => {
                   />
                 </span>
               </h1>
-              <p className='text-base sm:text-lg lg:text-xl text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto lg:mx-0 text-center lg:text-left leading-relaxed'>
+              <p className='text-base sm:text-lg lg:text-xl text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto lg:mx-0 text-center md:text-left leading-relaxed'>
                 {t('hero.subtitle')}
               </p>
             </motion.div>
@@ -698,7 +698,7 @@ const HeroSection = ({ isDarkMode = true }: HeroSectionProps): JSX.Element => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className='flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start'
+              className='flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start'
             >
               <button
                 onClick={(_e) => {

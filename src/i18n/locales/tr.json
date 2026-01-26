@@ -200,6 +200,9 @@
     }
   },
   "footer": {
+    "privacyNotice": "Bu site gizlilik odaklı analizler kullanır.",
+    "privacyLine1": "Bu site gizlilik odaklı analizler kullanır.",
+    "privacyLine2": "Çerez kullanılmaz, kişisel veriler toplanmaz.",
     "copyright": "Tüm hakları saklıdır.",
     "github": "GitHub",
     "linkedin": "LinkedIn"

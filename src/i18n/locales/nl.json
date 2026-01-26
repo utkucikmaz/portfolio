@@ -200,6 +200,9 @@
     }
   },
   "footer": {
+    "privacyNotice": "Deze site gebruikt privacyvriendelijke analytics. Geen cookies, geen persoonsgegevens.",
+    "privacyLine1": "Deze site gebruikt privacyvriendelijke analytics.",
+    "privacyLine2": "Geen cookies, geen persoonsgegevens.",
     "copyright": "Alle rechten voorbehouden.",
     "github": "GitHub",
     "linkedin": "LinkedIn"

@@ -200,6 +200,7 @@
     }
   },
   "footer": {
+    "privacyNotice": "이 사이트는 개인정보 보호에 친화적인 분석을 사용합니다. 쿠키가 없고 개인 데이터도 수집되지 않습니다.",
     "copyright": "모든 권리 보유.",
     "github": "GitHub",
     "linkedin": "LinkedIn"

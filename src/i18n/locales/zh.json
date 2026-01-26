@@ -200,6 +200,7 @@
     }
   },
   "footer": {
+    "privacyNotice": "本站使用隐私友好型分析。不会使用 cookies，也不收集个人数据。",
     "copyright": "版权所有。",
     "github": "GitHub",
     "linkedin": "LinkedIn"
