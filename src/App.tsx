@@ -37,7 +37,6 @@ function App(): JSX.Element {
     }
   }, [])
 
-  // Initialize scroll tracking for rybbit analytics
   useEffect(() => {
     const cleanup = initScrollTracking()
     return cleanup

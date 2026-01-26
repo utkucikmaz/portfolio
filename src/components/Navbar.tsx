@@ -40,8 +40,6 @@ const sectionIds = navLinks.map((link) => link.path.replace('#', ''))
 const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps): JSX.Element => {
   const { t } = useTranslation()
   const [navbarOpen, setNavbarOpen] = useState<boolean>(false)
-  // Show desktop navigation above 900px; burger/mobile below. This overrides default Tailwind breakpoints
-  // to align with the requested 900px threshold without modifying global Tailwind config.
   const [isWide, setIsWide] = useState<boolean>(() => {
     if (typeof window === 'undefined') return true
     return window.innerWidth >= 900
@@ -52,27 +50,6 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps): JSX.Element => {
   const { scrollY } = useScroll()
   const bgOpacity = useTransform(scrollY, [0, 200], [0.65, 0.95])
 
-  // place near top of your component
-  const gradientPreset = {
-    subtle: 0.06, // slightly visible at the bottom
-    moderate: 0.1, // a little stronger
-    strong: 0.02, // very transparent (almost invisible)
-  }
-
-  // helper that returns the gradient string
-  const makeGradient = (
-    isDark: boolean,
-    bottomAlpha = gradientPreset.subtle
-  ) =>
-    isDark
-      ? // dark: keep the mid-tone, but reduce bottom alpha
-        `linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.04) 50%, rgba(0,0,0,${bottomAlpha}) 100%)`
-      : // light: same, lower bottom alpha than before (was 0.15)
-        `linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.04) 50%, rgba(255,255,255,${bottomAlpha}) 100%)`
-
-  const targetAlpha = scrolled ? 0.08 : 0
-  const gradientOverlay = makeGradient(isDarkMode, targetAlpha)
-
   useEffect(() => {
     trackEvent('navbar_impression', { section: 'navbar' })
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -80,18 +57,21 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps): JSX.Element => {
 
   useEffect(() => {
     let scrollRaf: number | null = null
+    const SCROLL_TRIGGER = 200
+    const SCROLL_TOP_OFFSET = 100
     const handleScroll = (): void => {
       if (scrollRaf !== null) return
       scrollRaf = window.requestAnimationFrame(() => {
-        const nextScrolled = window.scrollY > 20
+        const nextScrolled = window.scrollY > SCROLL_TRIGGER
         setScrolled((prev) => (prev === nextScrolled ? prev : nextScrolled))
 
-        const scrollPosition = window.scrollY + 100
+        const scrollPosition = window.scrollY + SCROLL_TOP_OFFSET
 
         const heroElement = document.getElementById('hero')
         if (heroElement) {
           const heroRect = heroElement.getBoundingClientRect()
-          const heroBottom = heroRect.bottom + window.scrollY - 100
+          const heroBottom =
+            heroRect.bottom + window.scrollY - SCROLL_TOP_OFFSET
 
           if (scrollPosition < heroBottom) {
             setActiveSection((prev) => (prev === '' ? prev : ''))
@@ -133,13 +113,11 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps): JSX.Element => {
     }
   }, [])
 
-  // Track window width to toggle between desktop nav and burger menu at 900px
   useEffect(() => {
     const onResize = (): void => {
       setIsWide(window.innerWidth >= 900)
     }
     window.addEventListener('resize', onResize)
-    // initialize in case of hydration
     onResize()
     return () => window.removeEventListener('resize', onResize)
   }, [])
@@ -168,14 +146,13 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps): JSX.Element => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-in-out ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
         scrolled
-          ? 'bg-white/80 dark:bg-neutral-950/80 backdrop-blur-md shadow-sm'
-          : 'bg-white/10 dark:bg-neutral-950/10 backdrop-blur-sm'
+          ? 'bg-white/60 lg:bg-white/70 dark:bg-neutral-950/60 md:dark:bg-neutral-950/80 backdrop-blur lg:backdrop-blur-md'
+          : 'bg-white/0 dark:bg-neutral-950/0'
       }`}
       role='navigation'
       aria-label='Main navigation'
-      style={{ backgroundImage: gradientOverlay }}
     >
       <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='flex items-center justify-between h-20'>

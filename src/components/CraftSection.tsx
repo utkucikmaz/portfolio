@@ -209,7 +209,7 @@ const CraftSection = (): JSX.Element => {
           className='space-y-6'
         >
           <div className='pt-4'>
-            <div className='flex flex-nowrap gap-3 mb-6 overflow-x-visible justify-center sm:justify-start'>
+            <div className='flex flex-nowrap gap-3 mb-6 overflow-x-visible justify-center lg:justify-start'>
               <motion.button
                 onClick={() => {
                   handleTabChange('skills')
