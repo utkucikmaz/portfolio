@@ -11,7 +11,7 @@
   "hero": {
     "greeting": "Merhaba, ben",
     "title": "bir yazılımcıyım.",
-    "subtitle": "Ölçeklenebilir, yüksek performanslı web uygulamaları oluşturmada kanıtlanmış uzmanlığa sahip sonuç odaklı Full Stack Geliştirici. Modern JavaScript ekosistemleri ve sağlam backend mimarilerinde bilgili bir yazılımcıyım.",
+    "subtitle": "Ölçeklenebilir, yüksek performanslı web uygulamaları geliştirme konusunda kanıtlanmış uzmanlığa sahip, sonuç odaklı Full Stack yazılımcı. Modern JavaScript ekosistemleri ve sağlam backend mimarileri konusunda bilgi sahibiyim.",
     "getInTouch": "İletişime geç",
     "downloadCV": "CV İndir",
     "downloadCVTooltip": "Web sitesi dilini değiştirerek özgeçmişi farklı dillerde indirebilirsiniz.",
@@ -21,9 +21,9 @@
   "craft": {
     "title": "Geliştirici Olarak",
     "subtitle": "Temiz kod, önce işlev, güzellik dahil.",
-    "description1": "React, Next.js, TypeScript, Node.js ve Django REST Framework gibi son teknoloji teknolojileri kullanarak kurumsal düzeyde full-stack çözümler tasarlıyor ve sunuyorum. Sezgisel kullanıcı arayüzleri tasarlamaktan, yüksek performanslı uygulamaları destekleyen, sağlam, ölçeklenebilir backend mimarileri oluşturmaya kadar yazılım geliştirme yaşam döngüsünün tamamı uzmanlığımdır.",
-    "description2": "Yapmış olduġum ișler, teknik mükemmellik ve kültürler arası iletişim becerilerinin benzersiz bir karışımını getiriyor. Kodum temiz mimari, titiz testler ve performans optimizasyonu ile karakterize edilir - yalnızca iş hedeflerini karşılamakla kalmayıp aşan çözümler sağlar.",
-    "description3": "Geliştirme yaklaşımım bütünseldir: sadece kod yazmıyorum - çözümler tasarlıyorum. Hem frontend hem de backend teknolojilerinde uzmanlıkla, tasarım ve uygulama arasındaki boşluğu kapatarak, sorunsuz entegrasyon, optimal performans ve işletmenizin ihtiyaçlarıyla büyüyen ölçeklenebilir mimariler kuruyorum.",
+    "description1": "React, Next.js, TypeScript, Node.js ve Django REST Framework gibi en son teknolojileri kullanarak kurumsal düzeyde full-stack çözümler tasarlıyor ve sunuyorum. Sezgisel kullanıcı arayüzleri oluşturmaktan, yüksek performanslı uygulamaları destekleyen güçlü ve ölçeklenebilir backend mimarileri geliştirmeye kadar, yazılım geliştirme yaşam döngüsünün her aşamasında uzmanlığım bulunuyor.",
+    "description2": "Yaptığım işler, teknik mükemmeliyet ve kültürler arası iletişim becerilerinin benzersiz bir karışımını yansıtıyor. Kodum, temiz mimari, titiz testler ve performans optimizasyonu ile karakterize edilir; bu da yalnızca iş hedeflerini karşılamakla kalmayıp, onları aşan çözümler üretmemi sağlar.",
+    "description3": "Geliştirme yaklaşımım bütünseldir: sadece kod yazmam, çözümler tasarlarım. Hem frontend hem de backend teknolojilerindeki uzmanlığımla, tasarım ve uygulama arasındaki boşluğu kapatır, sorunsuz entegrasyon, optimal performans ve işletmenizin ihtiyaçlarıyla birlikte büyüyen ölçeklenebilir mimariler inşa ederim.",
     "skills": "Yetenekler",
     "certifications": {
       "title": "Sertifikalar",
@@ -52,12 +52,12 @@
   "personal": {
     "title": "Insan Olarak",
     "subtitle": "Kendisi tarafından açıklanmış bir otoportre.",
-    "unformal1": "Ben bir yıldızım. Fizik ve astronomi tutkunu. Felsefe dalgıcı. Programlamaya, sanata, müziğe, edebiyata ve dünyadaki diğer tüm güzelliklere, özellikle de varlıklarını haklı çıkarmaları gerekmeyenleri seviyorum.",
-    "unformal2": "Ben bir kavanozun içinde sıkışmış sanatsal bir zihnim, boyalarım sızıyor, sadece makinelerin tam olarak anladığı büyüleyici dillerde sessizce kaçış rüyalarını kodluyorum. Platon'un mağarasından kaçtım ve hala dışarıda kaybolmuş durumdayım. Spagettileşmeden korkuyorum ama olay ufuklarının ötesini merak ediyorum, asla bitmeyebilecek düşünceler derliyorum. Tüm renkleri seviyorum ama sarıyı hepsinden daha çok. Yuri Gagarin'in geride bıraktığı çocuğum, hala merakın etrafında dönüyorum.",
-    "unformal3": "Düşüncelerim sonsuz döngülerde çalışıyor; bazıları oldukça zarif bir şekilde. Deniz aşığı, dağ özleyicisi, yerçekimi derleyicisiyim. Sorular bana geri sormaya başlayana kadar her şeyi sorguluyorum. Neredeyse şehirdeki en rahat daire, sanatın, mantığın, müziğin ve sözdiziminin izin istemeden bir arada var olduğu yerdeyim.",
-    "formal1": "Ben Utku. İstanbul'da doğdum, şu anda Hamburg'da yaşıyorum. Geliştirmeye giden yolum kodla değil, insanlara, sistemlere ve soruları canlı tutan sessiz merak duygusuna olan merakla başladı.",
-    "formal2": "İki üniversitede okudum, çok farklı türde yapılarla şekillendim. Biri askeri akademi, orada sosyoloji, disiplin ve düzene odaklandım, sistemlerin davranışı nasıl yönlendirdiğini öğrendim. Diğeri Çin Dili ve Edebiyatı, yapı kültür, semboller ve tanıdık olmayan mantıkları anladım. Yazılımdan çok daha önce, desenleri, bağlamı ve anlamı gözlemlemek için eğitildim.",
-    "formal3": "Geliştirme, tüm bunların tutarlı bir sistem oluşturduğu tuval oldu. Benim için kod sadece teknik değil, aynı zamanda canlı, mantıklı, insani, ince yollarla ifade edici bir olgudur. Bugün, netlik, sakin arayüzler ve hem kullanıcıyı hem de ürünün arkasındaki fikre saygı duyarak, dijital deneyimler inşa ediyorum."
+    "unformal1": "Ben bir yıldızım. Fizik ve astronomi tutkunuyum. Felsefe dalgıcıyım. Programlamaya, sanata, müziğe, edebiyata ve dünyadaki diğer tüm güzel şeylere, özellikle de varlıklarını haklı çıkarmak zorunda olmayanlara yakınım.",
+    "unformal2": "Ben bir kavanozda sıkışmış sanatsal bir zihnim; boyalarım sızıyor, sadece makinelerin tam olarak anladığı büyüleyici dillerde sessizce rüyalarımı kodluyorum. Platon'un mağarasından kaçtım ve hâlâ dışarıda kaybolmuş durumdayım. Spagettileşmekten korkuyorum ama olay ufuklarının ötesini merak ediyorum; asla bitmeyebilecek düşünceler topluyorum. Tüm renkleri seviyorum ama sarıyı hepsinden daha çok. Yuri Gagarin'in geride bıraktığı bir çocuğum; hâlâ merakın etrafında dönüyorum.",
+    "unformal3": "Düşüncelerim sonsuz döngülerde çalışıyor; bazıları oldukça zarif. Deniz aşığı, dağ özlemcisi, yerçekimi derleyicisiyim. Sorular bana geri sormaya başlayana kadar her şeyi sorguluyorum. Neredeyse şehirdeki en rahat dairedeyim; sanatın, mantığın, müziğin ve sözdiziminin izin istemeden bir arada var olduğu yerde.",
+    "formal1": "Ben Utku. İstanbul'da doğdum, şu anda Hamburg'da yaşıyorum. Geliştirmeye giden yolum kodla değil; insanlara, sistemlere ve soruları canlı tutan o sessiz merak duygusuna olan ilgimle başladı.",
+    "formal2": "İki üniversitede okudum; çok farklı türde yapılara aşina oldum. Biri askeri akademiydi; orada sosyoloji, disiplin ve düzene odaklandım, sistemlerin davranışı nasıl yönlendirdiğini öğrendim. Diğeri Çin Dili ve Edebiyatıydı; burada yapı, kültür, semboller ve tanıdık olmayan mantıkları anladım. Yazılımdan çok önce, desenleri, bağlamı ve anlamı gözlemledim.",
+    "formal3": "Geliştirme, tüm bunların tutarlı bir sistem oluşturduğu tuval oldu. Benim için kod, sadece teknik bir olgu değil; aynı zamanda canlı, mantıklı, insani ve ince yollarla ifade edici bir araçtır. Bugün, netlik, sakin arayüzler ve hem kullanıcıya hem de ürünün arkasındaki fikre saygı duyarak dijital deneyimler inşa ediyorum."
   },
   "journey": {
     "title": "Yörünge",
@@ -164,14 +164,14 @@
   },
   "contact": {
     "title": "Bağlantı Kur",
-    "subtitle": "Fikirler, sorular veya sessiz merhabalar.",
+    "subtitle": "Fikirler, sorular veya sessiz merhabalar için.",
     "name": "İsim",
     "email": "E-posta",
     "subject": "Konu",
     "message": "Mesaj",
     "placeholder": {
-      "name": "Ahmet Yılmaz",
-      "email": "ahmet@ornek.com",
+      "name": "Mehmet Yilmaz",
+      "email": "yilmaz@ornek.com",
       "subject": "Proje sorusu",
       "message": "Projenizden bahsedin..."
     },
