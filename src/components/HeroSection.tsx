@@ -904,7 +904,7 @@ const HeroSection = ({ isDarkMode = true }: HeroSectionProps): JSX.Element => {
                 duration: 1,
                 exit: { duration: 0.5 },
               }}
-              className='absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden lg:block'
+              className='absolute bottom-16 left-1/2 transform -translate-x-1/2 hidden lg:block'
             >
               <a
                 href='#craft'
