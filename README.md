@@ -282,7 +282,7 @@ portfolio/
 │   ├── images/               # Image assets
 │   │   ├── hero.jpg
 │   │   ├── hero-hover.png
-│   │   └── tree.png
+│   │   └── logo.png
 │   ├── logo/                 # Company/school logos
 │   ├── svg/                  # SVG icons and assets
 │   ├── robots.txt            # SEO robots file

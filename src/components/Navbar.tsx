@@ -168,7 +168,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps): JSX.Element => {
           >
             <img
               className='w-10 h-10 transition-transform duration-100 group-hover:scale-105'
-              src='/images/tree.png'
+              src='/images/logo.png'
               alt='Utku Cikmaz'
               width={40}
               height={40}
@@ -265,16 +265,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps): JSX.Element => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-            className='
-  fixed inset-x-0 top-18
-  mx-auto w-[92vw] max-w-[440px]
-  sm:absolute sm:inset-x-auto sm:right-0
-  sm:mx-0
-  rounded-2xl border
-  bg-white dark:bg-neutral-950 backdrop-blur-xl shadow-xl
-  border-neutral-200/50 dark:border-neutral-800/50
-  overflow-hidden z-50
-'
+            className='fixed inset-x-0 top-18 mx-auto w-[92vw] max-w-[440px] sm:absolute sm:inset-x-auto sm:right-0 sm:mx-0 rounded-2xl border bg-white dark:bg-neutral-950 backdrop-blur-sm shadow-xl border-neutral-200/50 dark:border-neutral-800/50 overflow-hidden z-50'
           >
             <div className='px-4 sm:px-6'>
               <motion.ul

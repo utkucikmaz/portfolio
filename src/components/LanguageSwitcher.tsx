@@ -161,16 +161,7 @@ export default function LanguageSwitcher({
             animate='visible'
             exit='exit'
             style={{ '--tw-bg-opacity': bgOpacity } as React.CSSProperties}
-            className='
-  fixed inset-x-0 top-18
-  mx-auto w-[92vw] max-w-[440px]
-  sm:absolute sm:inset-x-auto sm:right-0
-  sm:mx-0
-  rounded-2xl border
-  bg-white dark:bg-neutral-950 backdrop-blur-xl shadow-xl
-  border-neutral-200/50 dark:border-neutral-800/50
-  overflow-hidden z-50
-'
+            className='fixed inset-x-0 top-18 mx-auto w-[92vw] max-w-[440px] sm:absolute sm:inset-x-auto sm:right-0 sm:mx-0 rounded-2xl border bg-white dark:bg-neutral-950 backdrop-blur-sm shadow-xl border-neutral-200/50 dark:border-neutral-800/50 overflow-hidden z-50'
           >
             <div className='grid grid-cols-2 gap-3 p-4 max-h-[70vh] overflow-y-auto'>
               {renderColumn(leftLanguages)}

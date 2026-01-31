@@ -40,6 +40,67 @@ export default function ThemeCelestialImproved({
     })
   }, [cloudCount])
 
+  // Memoize Milky Way stars to prevent regeneration and hydration mismatches
+  const milkyWayStars = useMemo(() => {
+    return Array.from({ length: 80 }).map((_, i) => {
+      const angle = -35 * (Math.PI / 180)
+      const t = (i / 80) * 2 - 1 // -1 to 1
+      const centerX = 30 + t * 45
+      const centerY = 25 + t * 12
+      const spread = 12 * (1 - Math.abs(t) * 0.3)
+
+      const offsetX = (Math.random() - 0.5) * spread
+      const offsetY = (Math.random() - 0.5) * spread * 0.4
+
+      const rotatedX =
+        centerX + offsetX * Math.cos(angle) - offsetY * Math.sin(angle)
+      const rotatedY =
+        centerY + offsetX * Math.sin(angle) + offsetY * Math.cos(angle)
+
+      return {
+        id: i,
+        cx: rotatedX,
+        cy: rotatedY,
+        r: Math.random() * 0.6 + 0.2,
+        opacity: Math.random() * 0.5 + 0.3,
+      }
+    })
+  }, [])
+
+  // Memoize Background stars
+  const backgroundStars = useMemo(() => {
+    // Use a fixed count to avoid hydration mismatch (window.innerHeight on server vs client)
+    // 200 is a reasonable default covering most screens
+    const count = 200
+    return Array.from({ length: count }).map((_, i) => {
+      const x = Math.random() * 100
+      const y = Math.random() * 65
+      const baseR = Math.random() * 1.4 + 0.3
+      const depth = Math.random()
+      const opacity = 0.75 + depth * 0.5
+      const drift = 90 + Math.random() * 120
+      const durFadeIn = 12 + Math.random() * 20
+      const beginFadeOut = drift * 0.8
+      const transformDur = drift
+      const scaleDur = 12 + Math.random() * 18
+      const transformTo = `${(Math.random() - 0.5) * 0.6} ${(Math.random() - 0.5) * 0.6} ${(Math.random() - 0.5) * 2}`
+
+      return {
+        id: i,
+        cx: x,
+        cy: y,
+        r: baseR + depth * 0.8,
+        fill: Math.random() < 0.5 ? '#f8fafc' : '#e6f0ff',
+        opacity,
+        durFadeIn,
+        beginFadeOut,
+        transformTo,
+        transformDur,
+        scaleDur,
+      }
+    })
+  }, [])
+
   useEffect(() => {
     const el = containerRef.current
     if (!el) return
@@ -217,146 +278,121 @@ export default function ThemeCelestialImproved({
             </linearGradient>
           </defs>
 
-          {/* Milky Way galaxy band */}
-          {isDarkMode && (
-            <g aria-hidden>
-              <defs>
-                <radialGradient id='milky-way-core' cx='50%' cy='50%'>
-                  <stop offset='0%' stopColor='#e8f4ff' stopOpacity='0.15' />
-                  <stop offset='30%' stopColor='#b8d4f0' stopOpacity='0.08' />
-                  <stop offset='70%' stopColor='#7a9dc9' stopOpacity='0.03' />
-                  <stop offset='100%' stopColor='#4a6b8a' stopOpacity='0' />
-                </radialGradient>
-                <filter
-                  id='milky-way-glow'
-                  x='-50%'
-                  y='-50%'
-                  width='200%'
-                  height='200%'
-                >
-                  <feGaussianBlur stdDeviation='40' />
-                </filter>
-              </defs>
+          {/* Milky Way galaxy band - Always rendered, opacity controlled by CSS */}
+          <g
+            aria-hidden
+            style={{
+              opacity: isDarkMode ? 1 : 0,
+              transition: 'opacity 1.5s ease-in-out',
+            }}
+          >
+            <defs>
+              <radialGradient id='milky-way-core' cx='50%' cy='50%'>
+                <stop offset='0%' stopColor='#e8f4ff' stopOpacity='0.15' />
+                <stop offset='30%' stopColor='#b8d4f0' stopOpacity='0.08' />
+                <stop offset='70%' stopColor='#7a9dc9' stopOpacity='0.03' />
+                <stop offset='100%' stopColor='#4a6b8a' stopOpacity='0' />
+              </radialGradient>
+              <filter
+                id='milky-way-glow'
+                x='-50%'
+                y='-50%'
+                width='200%'
+                height='200%'
+              >
+                <feGaussianBlur stdDeviation='40' />
+              </filter>
+            </defs>
 
-              {/* Main Milky Way band - diagonal sweep across sky */}
-              <ellipse
-                cx='30%'
-                cy='25%'
-                rx='45%'
-                ry='12%'
-                fill='url(#milky-way-core)'
-                filter='url(#milky-way-glow)'
-                transform='rotate(-35 30 25)'
-                opacity='0.7'
+            {/* Main Milky Way band - diagonal sweep across sky */}
+            <ellipse
+              cx='30%'
+              cy='25%'
+              rx='45%'
+              ry='12%'
+              fill='url(#milky-way-core)'
+              filter='url(#milky-way-glow)'
+              transform='rotate(-35 30 25)'
+              opacity='0.7'
+            />
+
+            {/* Secondary glow for depth */}
+            <ellipse
+              cx='55%'
+              cy='30%'
+              rx='35%'
+              ry='8%'
+              fill='url(#milky-way-core)'
+              filter='url(#milky-way-glow)'
+              transform='rotate(-35 55 30)'
+              opacity='0.5'
+            />
+
+            {/* Dense star cluster within Milky Way */}
+            {milkyWayStars.map((star) => (
+              <circle
+                key={`mw-${star.id}`}
+                cx={`${star.cx}%`}
+                cy={`${star.cy}%`}
+                r={star.r}
+                fill='#f0f8ff'
+                opacity={star.opacity}
               />
+            ))}
+          </g>
 
-              {/* Secondary glow for depth */}
-              <ellipse
-                cx='55%'
-                cy='30%'
-                rx='35%'
-                ry='8%'
-                fill='url(#milky-way-core)'
-                filter='url(#milky-way-glow)'
-                transform='rotate(-35 55 30)'
-                opacity='0.5'
-              />
-
-              {/* Dense star cluster within Milky Way */}
-              {Array.from({ length: 80 }).map((_, i) => {
-                const angle = -35 * (Math.PI / 180)
-                const t = (i / 80) * 2 - 1 // -1 to 1
-                const centerX = 30 + t * 45
-                const centerY = 25 + t * 12
-                const spread = 12 * (1 - Math.abs(t) * 0.3)
-
-                const offsetX = (Math.random() - 0.5) * spread
-                const offsetY = (Math.random() - 0.5) * spread * 0.4
-
-                const rotatedX =
-                  centerX +
-                  offsetX * Math.cos(angle) -
-                  offsetY * Math.sin(angle)
-                const rotatedY =
-                  centerY +
-                  offsetX * Math.sin(angle) +
-                  offsetY * Math.cos(angle)
-
-                return (
-                  <circle
-                    key={`mw-${i}`}
-                    cx={`${rotatedX}%`}
-                    cy={`${rotatedY}%`}
-                    r={Math.random() * 0.6 + 0.2}
-                    fill='#f0f8ff'
-                    opacity={Math.random() * 0.5 + 0.3}
-                  />
-                )
-              })}
-            </g>
-          )}
-
-          {/* Stars for dark mode (kept lightweight) */}
-          {isDarkMode && (
-            <g aria-hidden>
-              {Array.from({
-                length: Math.max(
-                  140,
-                  Math.floor((window.innerHeight || 900) / 5)
-                ),
-              }).map((_, i) => {
-                const x = Math.random() * 100
-                const y = Math.random() * 65
-                const baseR = Math.random() * 1.4 + 0.3
-                const depth = Math.random()
-                const opacity = 0.75 + depth * 0.5
-                const drift = 90 + Math.random() * 120
-                return (
-                  <circle
-                    key={i}
-                    cx={`${x}%`}
-                    cy={`${y}%`}
-                    r={baseR + depth * 0.8}
-                    fill={Math.random() < 0.5 ? '#f8fafc' : '#e6f0ff'}
-                    opacity={opacity}
-                  >
-                    <animate
-                      attributeName='opacity'
-                      from='0'
-                      to={opacity.toString()}
-                      dur={`${12 + Math.random() * 20}s`}
-                      fill='freeze'
-                    />
-                    <animate
-                      attributeName='opacity'
-                      from={opacity.toString()}
-                      to='0'
-                      begin={`${drift * 0.8}s`}
-                      dur='20s'
-                      fill='freeze'
-                    />
-                    <animateTransform
-                      attributeName='transform'
-                      type='translate'
-                      from='0 0'
-                      to={`${(Math.random() - 0.5) * 0.6} ${(Math.random() - 0.5) * 0.6}} ${(Math.random() - 0.5) * 2}`}
-                      dur={`${drift}s`}
-                      repeatCount='indefinite'
-                    />
-                    <animateTransform
-                      attributeName='transform'
-                      additive='sum'
-                      type='scale'
-                      from='0.96'
-                      to='1.04'
-                      dur={`${12 + Math.random() * 18}s`}
-                      repeatCount='indefinite'
-                    />
-                  </circle>
-                )
-              })}
-            </g>
-          )}
+          {/* Stars for dark mode - Always rendered, opacity controlled by CSS */}
+          <g
+            aria-hidden
+            style={{
+              opacity: isDarkMode ? 1 : 0,
+              transition: 'opacity 1.5s ease-in-out',
+            }}
+          >
+            {backgroundStars.map((star) => (
+              <circle
+                key={star.id}
+                cx={`${star.cx}%`}
+                cy={`${star.cy}%`}
+                r={star.r}
+                fill={star.fill}
+                opacity={star.opacity}
+              >
+                <animate
+                  attributeName='opacity'
+                  from='0'
+                  to={star.opacity.toString()}
+                  dur={`${star.durFadeIn}s`}
+                  fill='freeze'
+                />
+                <animate
+                  attributeName='opacity'
+                  from={star.opacity.toString()}
+                  to='0'
+                  begin={`${star.beginFadeOut}s`}
+                  dur='20s'
+                  fill='freeze'
+                />
+                <animateTransform
+                  attributeName='transform'
+                  type='translate'
+                  from='0 0'
+                  to={star.transformTo}
+                  dur={`${star.transformDur}s`}
+                  repeatCount='indefinite'
+                />
+                <animateTransform
+                  attributeName='transform'
+                  additive='sum'
+                  type='scale'
+                  from='0.96'
+                  to='1.04'
+                  dur={`${star.scaleDur}s`}
+                  repeatCount='indefinite'
+                />
+              </circle>
+            ))}
+          </g>
 
           {/* Clouds (rendered when not dark mode, or optionally even in dark mode) */}
           <g style={{ willChange: 'transform', pointerEvents: 'none' }}>

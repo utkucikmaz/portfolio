@@ -14,7 +14,7 @@ const Footer = (): JSX.Element => {
             </span>
             <img
               className='w-10 h-10'
-              src='/images/tree.png'
+              src='/images/logo.png'
               alt='Utku Cikmaz'
               width={40}
               height={40}

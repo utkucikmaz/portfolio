@@ -24,10 +24,10 @@ export default function SplashScreen({
       }}
     >
       <div className='relative w-full h-full flex flex-col items-center justify-center'>
-        {/* Tree Image */}
+        {/* logo Image */}
         <motion.img
-          src='/images/tree.png'
-          alt='Tree'
+          src='/images/logo.png'
+          alt='logo'
           className='w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 z-10'
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -37,7 +37,7 @@ export default function SplashScreen({
           }}
         />
 
-        {/* Text under the tree */}
+        {/* Text under the logo */}
         <motion.div
           className='mt-6 text-center'
           initial={{ y: 20, opacity: 0 }}
