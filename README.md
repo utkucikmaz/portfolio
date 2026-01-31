@@ -52,7 +52,7 @@ For detailed technical information, including:
 - Project Structure
 - Customization Guide
 
-👉 **[Read the Technical Documentation](TECHNICAL_DETAILS.md)**
+👉 **[Read the Technical Documentation](Technical_Details.md)**
 
 ---
 
