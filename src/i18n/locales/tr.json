@@ -149,6 +149,7 @@
     "subtitle": "Seçilmiş dijital eserler.",
     "code": "Kod",
     "live": "Canlı",
+    "privateRepo": "GitHub deposu gizlidir.",
     "memoria": {
       "description": "Sevdiklerinizle bağlantı kurmak için sosyal medya platformu. Özel gruplar, AI ile geliştirilmiş gönderiler ve erişilebilirlik odaklı hikaye anlatımı özelliklerine sahiptir."
     },

@@ -38,27 +38,34 @@ const ProjectCard = ({
       <p className='text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed mb-12'>
         {description}
       </p>
-      <a
-        href={gitUrl}
-        onClick={() => {
-          trackEvent('project_view_code_click', { title })
-        }}
-        target='_blank'
-        rel='noopener noreferrer'
-        className='absolute bottom-4 left-4 flex items-center gap-2 px-4 py-2 bg-neutral-400 dark:bg-neutral-600 text-neutral-100 dark:text-neutral-100 hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white transition-all rounded-md font-medium text-sm'
-        aria-label={t('accessibility.viewCode')}
-      >
-        <img
-          src='/svg/github-icon.svg'
-          alt='GitHub'
-          className='h-4 w-4 opacity-70'
-          style={{
-            filter: isDarkMode ? 'brightness(0) invert(1)' : 'invert',
+      {gitUrl && (
+        <a
+          href={gitUrl}
+          onClick={() => {
+            trackEvent('project_view_code_click', { title })
           }}
-          loading='lazy'
-        />
-        <span>GitHub</span>
-      </a>
+          target='_blank'
+          rel='noopener noreferrer'
+          className='absolute bottom-4 left-4 flex items-center gap-2 px-4 py-2 bg-neutral-400 dark:bg-neutral-600 text-neutral-100 dark:text-neutral-100 hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white transition-all rounded-md font-medium text-sm'
+          aria-label={t('accessibility.viewCode')}
+        >
+          <img
+            src='/svg/github-icon.svg'
+            alt='GitHub'
+            className='h-4 w-4 opacity-70'
+            style={{
+              filter: isDarkMode ? 'brightness(0) invert(1)' : 'invert',
+            }}
+            loading='lazy'
+          />
+          <span>GitHub</span>
+        </a>
+      )}
+      {!gitUrl && (
+        <p className='absolute bottom-4 left-4 text-xs font-medium text-neutral-500 dark:text-neutral-400'>
+          {t('projects.privateRepo')}
+        </p>
+      )}
     </motion.div>
   )
 }

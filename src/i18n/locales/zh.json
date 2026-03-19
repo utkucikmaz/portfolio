@@ -149,6 +149,7 @@
     "subtitle": "精选的数字文物。",
     "code": "代码",
     "live": "在线演示",
+    "privateRepo": "GitHub 仓库为私有。",
     "memoria": {
       "description": "与亲人联系的社交媒体平台。具有私人群组、AI增强帖子和专注于可访问性的故事叙述功能。"
     },

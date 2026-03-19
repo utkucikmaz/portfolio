@@ -149,6 +149,7 @@
     "subtitle": "Artefacts numériques sélectionnés.",
     "code": "Code",
     "live": "En direct",
+    "privateRepo": "Le dépôt GitHub est privé.",
     "memoria": {
       "description": "Plateforme de médias sociaux pour se connecter avec ses proches. Comprend des groupes privés, des publications améliorées par l'IA et une narration d'histoires axée sur l'accessibilité."
     },

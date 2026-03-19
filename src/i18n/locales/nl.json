@@ -149,6 +149,7 @@
     "subtitle": "Geselecteerde digitale artefacten.",
     "code": "Code",
     "live": "Live",
+    "privateRepo": "De GitHub-repository is privé.",
     "memoria": {
       "description": "Social media platform om in contact te komen met dierbaren. Biedt privégroepen, AI-verbeterde posts en toegankelijkheidsgerichte verhaalvertelling."
     },

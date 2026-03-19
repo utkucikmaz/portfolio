@@ -3,29 +3,29 @@ import { trackEvent } from '../utils/rybbit'
 import { useTranslation } from 'react-i18next'
 import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion'
 import toast from 'react-hot-toast'
+import FlagIcon from './FlagIcon'
 
 interface Language {
   code: string
   name: string
-  flag: string
 }
 
 const LANGUAGE_COLUMNS: readonly [Language[], Language[]] = [
   [
-    { code: 'en', name: 'English', flag: '🇬🇧' },
-    { code: 'fr', name: 'Français', flag: '🇫🇷' },
-    { code: 'zh', name: '中文', flag: '🇨🇳' },
-    { code: 'ar', name: 'العربية', flag: '🇸🇦' },
-    { code: 'es', name: 'Español', flag: '🇪🇸' },
-    { code: 'nl', name: 'Nederlands', flag: '🇳🇱' },
+    { code: 'en', name: 'English' },
+    { code: 'fr', name: 'Français' },
+    { code: 'zh', name: '中文' },
+    { code: 'ar', name: 'العربية' },
+    { code: 'es', name: 'Español' },
+    { code: 'nl', name: 'Nederlands' },
   ],
   [
-    { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-    { code: 'tr', name: 'Türkçe', flag: '🇹🇷' },
-    { code: 'ja', name: '日本語', flag: '🇯🇵' },
-    { code: 'ko', name: '한국어', flag: '🇰🇷' },
-    { code: 'ru', name: 'Русский', flag: '🇷🇺' },
-    { code: 'pt', name: 'Português', flag: '🇵🇹' },
+    { code: 'de', name: 'Deutsch' },
+    { code: 'tr', name: 'Türkçe' },
+    { code: 'ja', name: '日本語' },
+    { code: 'ko', name: '한국어' },
+    { code: 'ru', name: 'Русский' },
+    { code: 'pt', name: 'Português' },
   ],
 ] as const
 
@@ -60,7 +60,6 @@ export default function LanguageSwitcher({
   const FALLBACK_LANGUAGE: Language = {
     code: 'en',
     name: 'English',
-    flag: '🇬🇧',
   }
 
   const currentLanguage = useMemo<Language>(() => {
@@ -123,11 +122,17 @@ export default function LanguageSwitcher({
             } ${alignRight ? 'justify-end text-right' : ''}`}
           >
             {!alignRight && (
-              <span className='text-lg flex-shrink-0'>{language.flag}</span>
+              <FlagIcon
+                code={language.code}
+                className='h-4 w-6 flex-shrink-0 rounded-[2px] shadow-sm ring-1 ring-black/10'
+              />
             )}
             <span className='truncate'>{language.name}</span>
             {alignRight && (
-              <span className='text-lg flex-shrink-0'>{language.flag}</span>
+              <FlagIcon
+                code={language.code}
+                className='h-4 w-6 flex-shrink-0 rounded-[2px] shadow-sm ring-1 ring-black/10'
+              />
             )}
           </button>
         )
@@ -150,7 +155,10 @@ export default function LanguageSwitcher({
           text-neutral-700 dark:text-neutral-300
           hover:bg-neutral-100 dark:hover:bg-neutral-800/50'
       >
-        {currentLanguage.flag}
+        <FlagIcon
+          code={currentLanguage.code}
+          className='h-4 w-6 rounded-[2px] shadow-sm ring-1 ring-black/10'
+        />
       </button>
 
       <AnimatePresence>

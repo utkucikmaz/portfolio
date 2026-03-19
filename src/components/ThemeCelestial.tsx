@@ -5,6 +5,15 @@ interface ThemeCelestialImprovedProps {
   cloudCount?: number
 }
 
+function createSeededRandom(seed: number) {
+  let value = seed
+
+  return () => {
+    value = (value * 1664525 + 1013904223) >>> 0
+    return value / 4294967296
+  }
+}
+
 type Cloud = {
   id: number
   xPx: number
@@ -23,6 +32,8 @@ export default function ThemeCelestialImproved({
 }: ThemeCelestialImprovedProps) {
   const containerRef = useRef<HTMLDivElement | null>(null)
   const cloudsRef = useRef<Record<number, SVGGElement | null>>({})
+  const milkyWayRandom = useMemo(() => createSeededRandom(1337), [])
+  const backgroundStarsRandom = useMemo(() => createSeededRandom(7331), [])
   const clouds = useMemo(() => {
     return Array.from({ length: cloudCount }).map((_, i) => {
       const layer = Math.random() < 0.5 ? 0.6 : 1 // deeper layer moves a bit slower
@@ -49,8 +60,8 @@ export default function ThemeCelestialImproved({
       const centerY = 25 + t * 12
       const spread = 12 * (1 - Math.abs(t) * 0.3)
 
-      const offsetX = (Math.random() - 0.5) * spread
-      const offsetY = (Math.random() - 0.5) * spread * 0.4
+      const offsetX = (milkyWayRandom() - 0.5) * spread
+      const offsetY = (milkyWayRandom() - 0.5) * spread * 0.4
 
       const rotatedX =
         centerX + offsetX * Math.cos(angle) - offsetY * Math.sin(angle)
@@ -61,11 +72,11 @@ export default function ThemeCelestialImproved({
         id: i,
         cx: rotatedX,
         cy: rotatedY,
-        r: Math.random() * 0.6 + 0.2,
-        opacity: Math.random() * 0.5 + 0.3,
+        r: milkyWayRandom() * 0.6 + 0.2,
+        opacity: milkyWayRandom() * 0.5 + 0.3,
       }
     })
-  }, [])
+  }, [milkyWayRandom])
 
   // Memoize Background stars
   const backgroundStars = useMemo(() => {
@@ -73,33 +84,32 @@ export default function ThemeCelestialImproved({
     // 200 is a reasonable default covering most screens
     const count = 200
     return Array.from({ length: count }).map((_, i) => {
-      const x = Math.random() * 100
-      const y = Math.random() * 65
-      const baseR = Math.random() * 1.4 + 0.3
-      const depth = Math.random()
+      const x = backgroundStarsRandom() * 100
+      const y = backgroundStarsRandom() * 65
+      const baseR = backgroundStarsRandom() * 1.4 + 0.3
+      const depth = backgroundStarsRandom()
       const opacity = 0.75 + depth * 0.5
-      const drift = 90 + Math.random() * 120
-      const durFadeIn = 12 + Math.random() * 20
-      const beginFadeOut = drift * 0.8
-      const transformDur = drift
-      const scaleDur = 12 + Math.random() * 18
-      const transformTo = `${(Math.random() - 0.5) * 0.6} ${(Math.random() - 0.5) * 0.6} ${(Math.random() - 0.5) * 2}`
+      const driftX = (backgroundStarsRandom() - 0.5) * 0.8
+      const driftY = (backgroundStarsRandom() - 0.5) * 0.8
+      const twinkleDur = 6 + backgroundStarsRandom() * 10
+      const driftDur = 40 + backgroundStarsRandom() * 80
+      const delay = backgroundStarsRandom() * 12
 
       return {
         id: i,
         cx: x,
         cy: y,
         r: baseR + depth * 0.8,
-        fill: Math.random() < 0.5 ? '#f8fafc' : '#e6f0ff',
+        fill: backgroundStarsRandom() < 0.5 ? '#f8fafc' : '#e6f0ff',
         opacity,
-        durFadeIn,
-        beginFadeOut,
-        transformTo,
-        transformDur,
-        scaleDur,
+        driftX,
+        driftY,
+        twinkleDur,
+        driftDur,
+        delay,
       }
     })
-  }, [])
+  }, [backgroundStarsRandom])
 
   useEffect(() => {
     const el = containerRef.current
@@ -357,40 +367,15 @@ export default function ThemeCelestialImproved({
                 r={star.r}
                 fill={star.fill}
                 opacity={star.opacity}
-              >
-                <animate
-                  attributeName='opacity'
-                  from='0'
-                  to={star.opacity.toString()}
-                  dur={`${star.durFadeIn}s`}
-                  fill='freeze'
-                />
-                <animate
-                  attributeName='opacity'
-                  from={star.opacity.toString()}
-                  to='0'
-                  begin={`${star.beginFadeOut}s`}
-                  dur='20s'
-                  fill='freeze'
-                />
-                <animateTransform
-                  attributeName='transform'
-                  type='translate'
-                  from='0 0'
-                  to={star.transformTo}
-                  dur={`${star.transformDur}s`}
-                  repeatCount='indefinite'
-                />
-                <animateTransform
-                  attributeName='transform'
-                  additive='sum'
-                  type='scale'
-                  from='0.96'
-                  to='1.04'
-                  dur={`${star.scaleDur}s`}
-                  repeatCount='indefinite'
-                />
-              </circle>
+                style={{
+                  transformBox: 'fill-box',
+                  transformOrigin: 'center',
+                  animation: `star-twinkle ${star.twinkleDur}s ease-in-out ${star.delay}s infinite alternate, star-drift ${star.driftDur}s ease-in-out ${star.delay}s infinite alternate`,
+                  ['--star-opacity' as string]: star.opacity,
+                  ['--star-drift-x' as string]: `${star.driftX}px`,
+                  ['--star-drift-y' as string]: `${star.driftY}px`,
+                }}
+              />
             ))}
           </g>
 
@@ -428,6 +413,16 @@ export default function ThemeCelestialImproved({
           <style>{`
             @media (prefers-reduced-motion: reduce) {
               .cloud-circle { opacity: 1 !important; }
+            }
+
+            @keyframes star-twinkle {
+              0% { opacity: calc(var(--star-opacity) * 0.72); }
+              100% { opacity: var(--star-opacity); }
+            }
+
+            @keyframes star-drift {
+              0% { transform: translate3d(0, 0, 0) scale(0.96); }
+              100% { transform: translate3d(var(--star-drift-x), var(--star-drift-y), 0) scale(1.04); }
             }
 
             /* cloud circles use the gradient fill */

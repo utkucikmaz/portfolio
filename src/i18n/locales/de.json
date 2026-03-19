@@ -149,6 +149,7 @@
     "subtitle": "Ausgewählte digitale Artefakte.",
     "code": "Code",
     "live": "Live",
+    "privateRepo": "GitHub-Repository ist privat.",
     "memoria": {
       "description": "Social-Media-Plattform zur Verbindung mit geliebten Menschen. Bietet private Gruppen, KI-verbesserte Beiträge und barrierefrei fokussierte Geschichtenerzählung."
     },

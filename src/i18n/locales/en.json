@@ -149,6 +149,7 @@
     "subtitle": "Selected digital artifacts.",
     "code": "Code",
     "live": "Live",
+    "privateRepo": "GitHub repository is private.",
     "memoria": {
       "description": "Social media platform for connecting with loved ones. Features private groups, AI-enhanced posts, and accessibility-focused story narration."
     },

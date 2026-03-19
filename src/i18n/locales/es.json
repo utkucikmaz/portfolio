@@ -149,6 +149,7 @@
     "subtitle": "Artefactos digitales seleccionados.",
     "code": "Código",
     "live": "En vivo",
+    "privateRepo": "El repositorio de GitHub es privado.",
     "memoria": {
       "description": "Plataforma de redes sociales para conectar con seres queridos. Incluye grupos privados, publicaciones mejoradas con IA, y narración de historias enfocada en accesibilidad."
     },

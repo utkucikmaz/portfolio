@@ -9,18 +9,11 @@ const ProjectsSection = ({
 
   const projectsData: ProjectData[] = [
     {
-      id: 1,
-      title: 'Memoria',
-      description: t('projects.memoria.description'),
-      gitUrl: 'https://github.com/Drunk-Aunties/Memoria-client',
-      previewUrl: 'https://memoriapp.netlify.app/',
-    },
-    {
       id: 2,
-      title: 'PlantIQ',
+      title: 'Plantim',
       description: t('projects.plantiq.description'),
-      gitUrl: 'https://github.com/Drunk-Aunties/PlantIQ',
-      previewUrl: 'https://plantiq.fly.dev/',
+      gitUrl: '',
+      previewUrl: 'https://plantim.app/',
     },
     {
       id: 3,
@@ -28,13 +21,6 @@ const ProjectsSection = ({
       description: t('projects.hotelmiddleearth.description'),
       gitUrl: 'https://github.com/utkucikmaz/Hotel-Middle-Earth',
       previewUrl: 'https://utkucikmaz.github.io/Hotel-Middle-Earth/',
-    },
-    {
-      id: 4,
-      title: 'React Movie App',
-      description: t('projects.reactmovieapp.description'),
-      gitUrl: 'https://github.com/utkucikmaz/React-Movie-App',
-      previewUrl: 'https://utkucikmazmovieapp.vercel.app/',
     },
   ]
 
