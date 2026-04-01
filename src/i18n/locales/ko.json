@@ -150,17 +150,11 @@
     "code": "코드",
     "live": "라이브",
     "privateRepo": "GitHub 저장소는 비공개입니다.",
-    "memoria": {
-      "description": "사랑하는 사람들과 연결하기 위한 소셜 미디어 플랫폼. 비공개 그룹, AI 강화 게시물 및 접근성 중심 스토리 내레이션 기능을 제공합니다."
-    },
     "plantiq": {
       "description": "AI 기반 식물 식별 및 관리 플랫폼. 이미지 인식 및 GPT 통합을 사용하여 전문적인 원예 조언을 제공합니다."
     },
     "hotelmiddleearth": {
       "description": "중간계를 배경으로 한 대화형 웹 기반 게임. 매력적인 게임플레이를 통해 의사 결정, 집중력 및 반사 신경을 도전합니다."
-    },
-    "reactmovieapp": {
-      "description": "React로 구축된 현대적인 영화 발견 앱. 컴포넌트 아키텍처, 사용자 정의 훅 및 포괄적인 테스트 기능을 제공합니다."
     }
   },
   "contact": {

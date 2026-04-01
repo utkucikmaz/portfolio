@@ -150,17 +150,11 @@
     "code": "Código",
     "live": "Ao vivo",
     "privateRepo": "O repositório do GitHub é privado.",
-    "memoria": {
-      "description": "Plataforma de mídia social para conectar com entes queridos. Inclui grupos privados, publicações aprimoradas por IA e narração de histórias focada em acessibilidade."
-    },
     "plantiq": {
       "description": "Plataforma de identificação e cuidado de plantas alimentada por IA. Usa reconhecimento de imagem e integração GPT para conselhos especializados em jardinagem."
     },
     "hotelmiddleearth": {
       "description": "Jogo web interativo ambientado na Terra Média. Desafia a tomada de decisões, foco e reflexos através de jogabilidade envolvente."
-    },
-    "reactmovieapp": {
-      "description": "App moderno de descoberta de filmes construído com React. Inclui arquitetura de componentes, hooks personalizados e testes abrangentes."
     }
   },
   "contact": {

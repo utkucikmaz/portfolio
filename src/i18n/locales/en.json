@@ -150,17 +150,11 @@
     "code": "Code",
     "live": "Live",
     "privateRepo": "GitHub repository is private.",
-    "memoria": {
-      "description": "Social media platform for connecting with loved ones. Features private groups, AI-enhanced posts, and accessibility-focused story narration."
-    },
     "plantiq": {
       "description": "AI-powered plant identification and care platform. Uses image recognition and GPT integration for expert gardening advice."
     },
     "hotelmiddleearth": {
       "description": "Interactive web-based game set in Middle Earth. Challenges decision-making, focus, and reflexes through engaging gameplay."
-    },
-    "reactmovieapp": {
-      "description": "Modern movie discovery app built with React. Features component architecture, custom hooks, and comprehensive testing."
     }
   },
   "contact": {

@@ -150,17 +150,11 @@
     "code": "Kod",
     "live": "Canlı",
     "privateRepo": "GitHub deposu gizlidir.",
-    "memoria": {
-      "description": "Sevdiklerinizle bağlantı kurmak için sosyal medya platformu. Özel gruplar, AI ile geliştirilmiş gönderiler ve erişilebilirlik odaklı hikaye anlatımı özelliklerine sahiptir."
-    },
     "plantiq": {
       "description": "AI destekli bitki tanımlama ve bakım platformu. Uzman bahçıvanlık tavsiyeleri için görüntü tanıma ve GPT entegrasyonu kullanır."
     },
     "hotelmiddleearth": {
       "description": "Orta Dünya'da geçen interaktif web tabanlı oyun. Etkileyici oynanış yoluyla karar verme, odaklanma ve refleksleri zorlar."
-    },
-    "reactmovieapp": {
-      "description": "React ile oluşturulmuş modern film keşif uygulaması. Bileşen mimarisi, özel hook'lar ve kapsamlı test özelliklerine sahiptir."
     }
   },
   "contact": {

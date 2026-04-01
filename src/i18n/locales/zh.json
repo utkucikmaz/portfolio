@@ -150,17 +150,11 @@
     "code": "代码",
     "live": "在线演示",
     "privateRepo": "GitHub 仓库为私有。",
-    "memoria": {
-      "description": "与亲人联系的社交媒体平台。具有私人群组、AI增强帖子和专注于可访问性的故事叙述功能。"
-    },
     "plantiq": {
       "description": "AI驱动的植物识别和护理平台。使用图像识别和GPT集成提供专业的园艺建议。"
     },
     "hotelmiddleearth": {
       "description": "以中土世界为背景的互动网页游戏。通过引人入胜的游戏玩法挑战决策能力、专注力和反应能力。"
-    },
-    "reactmovieapp": {
-      "description": "使用React构建的现代电影发现应用。具有组件架构、自定义钩子和全面的测试功能。"
     }
   },
   "contact": {

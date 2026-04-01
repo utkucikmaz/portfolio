@@ -150,17 +150,11 @@
     "code": "Code",
     "live": "Live",
     "privateRepo": "GitHub-Repository ist privat.",
-    "memoria": {
-      "description": "Social-Media-Plattform zur Verbindung mit geliebten Menschen. Bietet private Gruppen, KI-verbesserte Beiträge und barrierefrei fokussierte Geschichtenerzählung."
-    },
     "plantiq": {
       "description": "KI-gestützte Plattform zur Pflanzenerkennung und -pflege. Verwendet Bilderkennung und GPT-Integration für fachkundige Gartenberatung."
     },
     "hotelmiddleearth": {
       "description": "Interaktives webbasiertes Spiel in Mittelerde. Fordert Entscheidungsfindung, Konzentration und Reflexe durch ansprechendes Gameplay heraus."
-    },
-    "reactmovieapp": {
-      "description": "Moderne Film-Entdeckungs-App mit React erstellt. Bietet Komponentenarchitektur, benutzerdefinierte Hooks und umfassende Tests."
     }
   },
   "contact": {

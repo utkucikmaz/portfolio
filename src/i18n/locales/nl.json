@@ -150,17 +150,11 @@
     "code": "Code",
     "live": "Live",
     "privateRepo": "De GitHub-repository is privé.",
-    "memoria": {
-      "description": "Social media platform om in contact te komen met dierbaren. Biedt privégroepen, AI-verbeterde posts en toegankelijkheidsgerichte verhaalvertelling."
-    },
     "plantiq": {
       "description": "AI-aangedreven plantidentificatie- en verzorgingsplatform. Gebruikt beeldherkenning en GPT-integratie voor deskundig tuinadvies."
     },
     "hotelmiddleearth": {
       "description": "Interactief webbased spel in Midden-aarde. Daagt besluitvorming, focus en reflexen uit door boeiende gameplay."
-    },
-    "reactmovieapp": {
-      "description": "Moderne filmontdekkingsapp gebouwd met React. Biedt componentarchitectuur, aangepaste hooks en uitgebreide tests."
     }
   },
   "contact": {
